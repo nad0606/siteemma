@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+    <html lang="fr">
+        
+
+        <head>
+          <link rel="stylesheet" href="site_emma.css">
+            <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+
+
+
+<title> Les Créations Emma 06 </title> 
+
+
+ </head>
+
+<body>
+<div class="lightbox" id="lightbox" onclick="fermerLightbox()">
+  <img id="lightboxImg" src="" alt="zoom">
+</div>
+<div class="bandeausite">
+  <div class="bandeaudeplacement">
+     <span><b> 🚚 Livraison gratuite dès 50€ d'achat en France métropolitaine ! &nbsp; &nbsp; &nbsp; &nbsp; 🚚 Livraison gratuite dès 50€ d'achat en France métropolitaine ! &nbsp; &nbsp; &nbsp; &nbsp; 🚚 Livraison gratuite dès 50€ d'achat en France métropolitaine ! </b></span>
+  </div>
+</div>
+ <a href="site_emma.html" ><h1> Les Créations Emma 06 </h1></a>
+
+<h2 class="pacifico-regular"> 💫 Boutique Française qui personnalise votre quotidien 💫 </h2>
+
+  <form class="boutonrecherche" action="/recherche" method="get">
+  <input type="text" name="q" placeholder="Rechercher..." required>
+  <button type="submit">🔍</button>
+</form>
+
+ <nav class="menuprincipale">
+  <button class="menu-hamburger" id="menuHamburger" onclick="toggleMenu()" aria-label="Menu">&#9776;</button>
+  <div class="menuhaut">
+    <img src="logo_entreprise.webp" alt="Les Créations Emma 06" class="logo-menu">
+    <ul class="menuboutons">
+  
+    <li><a href="site_emma.html" class="boutononglet">Accueil</a></li>
+    <li><a href="meilleuresventes.html" class="boutononglet">Meilleures ventes 👑</a></li>
+       <li><a href="catalogueemma.html" class="boutononglet">Catalogue produits</a></li>
+    <li><a href="apropos.html" class="boutononglet">À propos</a></li>
+    <li><a href="contactemma.html" class="boutononglet">Contact 📬</a></li>
+    <li class="panieritem">
+  <a href="panieremma.html" class="boutononglet boutonpanier">
+    🛒 Panier <span class="badgepanier" id="badgeMenu">0</span>
+  </a>
+</li>
+  </ul>
+</div>
+</nav>
+
+<div class="catalogue-page">
+  <div class="cat-filtres" id="catFiltres">
+    <button class="cat-btn actif" onclick="filtrer('tous', this)">✨ Tous</button>
+    <button class="cat-btn" onclick="filtrer('Naissance', this)">🍼 Naissance & Bébé</button>
+    <button class="cat-btn" onclick="filtrer('Chambre', this)">🐻 Chambre Enfant</button>
+    <button class="cat-btn" onclick="filtrer('Décoration Famille', this)">👨‍👩‍👧 Décoration Famille</button>
+    <button class="cat-btn" onclick="filtrer('Décoration Maison', this)">🪵 Décoration Maison</button>
+    <button class="cat-btn" onclick="filtrer('Noël', this)">🎄 Noël Personnalisé</button>
+    <button class="cat-btn" onclick="filtrer('Annonce', this)">🐣 Annonce & Parrain</button>
+    <button class="cat-btn" onclick="filtrer('Bijoux', this)">💍 Bijoux & Accessoires</button>
+    <button class="cat-btn" onclick="filtrer('Papeterie', this)">📖 Papeterie & Jeux</button>
+    <button class="cat-btn" onclick="filtrer('Insert', this)">🧸 Insert en bois bac IKEA</button>
+  </div>
+</div>
+
+<div class="fiche-page">
+  <a href="catalogueemma.html" class="fiche-retour">← Retour au catalogue</a>
+  <div class="fiche-grille" id="ficheProduit"></div>
+</div>
+
+<div class="toast-fiche" id="toastFiche"></div>
+<script src="produit_site_emme.js"></script>
+<script>
+    /*zoom photo*/
+    function ouvrirLightbox(src) {
+  var lb = document.getElementById('lightbox');
+  document.getElementById('lightboxImg').src = src;
+  lb.classList.add('active');
+}
+function fermerLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+  // Récupérer l'id du produit dans l'URL
+  var params = new URLSearchParams(window.location.search);
+  var id = parseInt(params.get('id'));
+  var produit = produits.find(function(p) { return p.id === id; });
+
+  function toastFiche(msg) {
+    var t = document.getElementById('toastFiche');
+    t.textContent = msg; t.classList.add('show');
+    setTimeout(function() { t.classList.remove('show'); }, 2800);
+  }
+
+ var indexImg = 0; 
+
+function changerImg(src, el) {
+  var img = document.getElementById('imgPrincipale'); 
+  img.classList.add('fondu');
+  setTimeout(function() {
+    img.src = src;
+    img.classList.remove('fondu');
+  }, 300);
+  document.querySelectorAll('.fiche-thumb').forEach(function(t) { t.classList.remove('actif'); }); 
+  el.classList.add('actif'); 
+}
+
+function naviguerImg(direction) {
+  if (!produit) return;
+  indexImg = (indexImg + direction + produit.images.length) % produit.images.length;
+  var src = produit.images[indexImg];      
+  var thumbs = document.querySelectorAll('.fiche-thumb');
+  var img = document.getElementById('imgPrincipale');
+  img.classList.add('fondu');
+  setTimeout(function() { img.src = src; img.classList.remove('fondu'); }, 300); 
+  thumbs.forEach(function(t) { t.classList.remove('actif'); });
+  if (thumbs[indexImg]) thumbs[indexImg].classList.add('actif'); 
+}
+
+  function ajouterAuPanier() {
+      var champsVides = [];
+document.querySelectorAll('.fiche-input, .fiche-textarea').forEach(function(i) {
+  if (!i.value.trim()) {
+    champsVides.push(i);
+    i.style.border = '2px solid red';
+  } else { i.style.border = ''; }
+});
+if (champsVides.length > 0) {
+  toastFiche('⚠️ Merci de remplir les champs obligatoires (*)');
+  champsVides[0].focus();
+  return;
+}
+    if (!produit) return;
+
+    /* ── Vérification stock ── */
+    if (produit.stock !== undefined) {
+      if (produit.stock === 0) {
+        toastFiche('❌ Ce produit est en rupture de stock.');
+        return;
+      }
+      if (quantite > produit.stock) {
+        toastFiche('⚠️ Stock insuffisant — maximum ' + produit.stock + ' disponible' + (produit.stock > 1 ? 's' : '') + '.');
+        return;
+      }
+    }
+    // Récupérer les variations choisies
+    var perso = {};
+    document.querySelectorAll('.fiche-select').forEach(function(s) {
+      perso[s.dataset.nom] = s.value;
+    });
+    document.querySelectorAll('.fiche-input, .fiche-textarea').forEach(function(i) {
+      perso[i.dataset.nom] = i.value;
+    });
+
+   var quantite = 1;
+var prixFinal = parseFloat(produit.prix.replace(',','.'));
+
+if (produit.prixUnitaire && produit.variationPrix) {
+  var selectQte = document.querySelector('.fiche-select[data-nom="' + produit.variationPrix + '"]');
+  if (selectQte) {
+    quantite = parseInt(selectQte.value) || 1;
+    prixFinal = produit.prixUnitaire;
+  }
+} else if (produit.prixOptions && produit.variationPrix) {
+  var selectOpt = document.querySelector('.fiche-select[data-nom="' + produit.variationPrix + '"]');
+  if (selectOpt) prixFinal = produit.prixOptions[selectOpt.value] || prixFinal;
+}
+
+var panier = JSON.parse(localStorage.getItem('panier') || '[]');
+panier.push({
+  nom: produit.nom,
+  prix: prixFinal,
+  image: produit.images[0],
+  quantite: quantite,
+  personnalisation: perso
+});
+
+    ;
+    localStorage.setItem('panier', JSON.stringify(panier));
+    toastFiche('🛒 Ajouté au panier !');
+    setTimeout(function() { ouvrirMiniPanier(); }, 600);
+  }
+
+  // Construire la fiche
+  if (produit) {
+    document.title = produit.nom + ' — Les Créations Emma 06';
+
+    var thumbsHtml = produit.images.map(function(img, i) {
+      return '<img src="' + img + '" class="fiche-thumb' + (i===0?' actif':'') + '" onclick="changerImg(\'' + img + '\', this)" alt="photo ' + (i+1) + '">';
+    }).join('');
+
+  var variationsHtml = produit.variations.map(function(v) {
+  var isPrix = produit.variationPrix && v.nom === produit.variationPrix;
+  var onchange = isPrix ? ' onchange="majPrix(this.value)"' : ''; 
+  return '<div class="fiche-section-titre">' + v.nom + '</div>' +
+    '<select class="fiche-select" data-nom="' + v.nom + '"' + onchange + '>' +
+    v.options.map(function(o) {
+      var label = o;
+      if (isPrix && produit.prixUnitaire) {
+        var qte = parseInt(o) || 1;
+        var total = (produit.prixUnitaire * qte).toFixed(2).replace('.', ',');
+        label = o + ' — ' + total + ' €';                       
+      }
+      return '<option value="' + o + '">' + label + '</option>';
+    }).join('') +
+    '</select>';
+}).join('');
+
+    var champsHtml = produit.champs.map(function(c) {
+      return '<div class="fiche-section-titre">✏️ ' + c.label.replace(/\n/g, '<br>') + '</div>' +
+        (c.type === 'textarea'
+          ? '<textarea class="fiche-textarea" data-nom="' + c.label + '" placeholder="' + c.placeholder + '" rows="3"></textarea>'
+          : '<input class="fiche-input" data-nom="' + c.label + '" type="text" placeholder="' + c.placeholder + '">');
+    }).join('');
+
+    document.getElementById('ficheProduit').innerHTML =
+  
+'<div class="fiche-galerie">' +    
+  
+  '<div class="fiche-img-wrapper">' +
+    '<button class="fiche-fleche gauche" onclick="naviguerImg(-1)">&#8592;</button>' + 
+      '<img id="imgPrincipale" class="fiche-img-principale" src="' + produit.images[0] + '" alt="' + produit.nom + '" onclick="ouvrirLightbox(this.src)">' +
+    '<button class="fiche-fleche droite" onclick="naviguerImg(1)">&#8594;</button>' +  
+    '<div class="fiche-badge-zoom">🔍 Cliquer pour zoomer</div>' +
+    '<div class="fiche-thumbnails">' + thumbsHtml + '</div>' +
+  '</div>' +                       
+'</div>' +   
+       
+      '<div>' +
+        '<div class="fiche-cat">' + produit.categorie + '</div>' +
+        '<div class="fiche-nom">' + produit.nom + '</div>' +
+        '<div class="fiche-prix" id="fichePrixAffiche">' + produit.prix + ' €</div>'+
+        '<div class="fiche-tva">TVA non applicable — Art. 293B du CGI</div>' +
+        '<div class="fiche-delai">⏱ Délai de fabrication : ' + produit.delai + '</div>' +
+        '<div class="fiche-materiaux">🌿 Matériaux : ' + produit.materiaux + '</div>' +
+        variationsHtml +
+         (produit.stock !== undefined && produit.stock <= 5
+          ? '<div class="fiche-stock-faible">' + (produit.stock === 0
+              ? '❌ Rupture de stock'
+              : '⚠️ Plus que ' + produit.stock + ' disponible' + (produit.stock > 1 ? 's' : ''))
+            + '</div>'
+          : '') +
+        champsHtml +
+        '<button class="fiche-btn-panier" onclick="ajouterAuPanier()">🛒 Ajouter au panier 🛒</button>' +
+      '</div>' +
+      '<div class="fiche-desc">' +
+        '<div class="fiche-desc-titre">📋 Description</div>' +
+        '<p>' + produit.description.replace(/\n/g, '<br>') + '</p>' +
+      '</div>';
+  } else {
+    document.getElementById('ficheProduit').innerHTML = '<p style="text-align:center;font-family:Pacifico,cursive;color:#E365C1;padding:40px">Produit introuvable 😕</p>';
+  }
+  function filtrer(mot) {
+    window.location = 'catalogueemma.html?filtre=' + encodeURIComponent(mot);
+  }
+  function majPrix(valeur) {
+  if (!produit || !produit.prixUnitaire) return;
+  var qte = parseInt(valeur) || 1;
+  var total = (produit.prixUnitaire * qte).toFixed(2).replace('.', ',');
+  document.getElementById('fichePrixAffiche').textContent = total + ' €';
+}
+
+</script>
+
+<div class="minipanier-overlay" id="minipanierOverlay" onclick="fermerMiniPanier()"></div>
+
+
+<div class="minipanier-drawer" id="minipanierDrawer">
+
+  <div class="minipanier-header">
+    <a href="panieremma.html" class="minipanier-titre-lien">🛒 Mon Panier<span class="minipanier-badge" id="miniBadgeQte">0</span></a>
+    <button class="minipanier-close" onclick="fermerMiniPanier()">✕</button>
+  </div>
+
+  <div class="minipanier-corps" id="minipanierCorps">
+   
+  </div>
+
+  <div class="minipanier-footer" id="minipanierFooter" style="display:none">
+    <div class="minipanier-lignes">
+      <div class="minipanier-ligne"><span>Sous-total</span><span id="miniSousTotal">0,00 €</span></div>
+      <div class="minipanier-ligne"><span>Livraison</span><span id="miniLivraison">—</span></div>
+      <div class="minipanier-total"><span>Total</span><span id="miniTotal">0,00 €</span></div>
+    </div>
+    <div class="minipanier-actions">
+      <a href="panieremma.html" class="mini-btn-voir">Voir le panier</a>
+      <button class="mini-btn-commander" onclick="miniCommander()">Passer commande ✨</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toastMini"></div>
+
+
+<script src="fonctionboutonscrollhaut.js"></script>
+<script src="fonctionpanierquantite.js"></script> 
+<script src="minipanierflottant.js"></script>    
+<script src="fonctionpanierquantite.js"></script>  
+<script src="site_emma.js"></script>
+<script src="fonctionscrollapparition.js"></script>  
+
+
+        <script>
+function toggleMenu() {
+  var menu = document.getElementById("menuHamburger");
+  var nav = document.querySelector(".menuboutons");
+  nav.classList.toggle("ouvert");
+  menu.classList.toggle("ouvert");
+}
+document.addEventListener("click", function(e) {
+  var nav = document.querySelector(".menuboutons");
+  var btn = document.getElementById("menuHamburger");
+  if (nav && btn && !nav.contains(e.target) && !btn.contains(e.target)) {
+    nav.classList.remove("ouvert");
+    btn.classList.remove("ouvert");
+  }
+});
+</script>
+</body>
+        
+<footer> 
+  <div class="basdepage">
+    <p>&copy; 2023 LESCREATIONSEMMA06. Tous droits réservés.</p>
+
+     <div class="reseaux">
+      <a href="https://www.instagram.com/lescreationsemma06" target="_blank" class="reseau-lien reseau-insta">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.242 1.308 3.608.058 1.265.07 1.645.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.242 1.246-3.608 1.308-1.265.058-1.645.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.974 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.014 7.052.072 5.197.157 3.355.673 2.014 2.014.673 3.355.157 5.197.072 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.085 1.855.601 3.697 1.942 5.038 1.341 1.341 3.183 1.857 5.038 1.942C8.332 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 1.855-.085 3.697-.601 5.038-1.942 1.341-1.341 1.857-3.183 1.942-5.038.058-1.28.072-1.689.072-4.948s-.014-3.668-.072-4.948c-.085-1.855-.601-3.697-1.942-5.038C20.645.673 18.803.157 16.948.072 15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+        </svg>
+        Instagram
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61581198513354" target="_blank" class="reseau-lien reseau-facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+        </svg>
+        Facebook
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="contactemma.html">Contact 📬</a></li>
+        <li><a href="cgvcgr.html">Conditions Générales de Vente</a></li>
+        <li><a href="cgvcgr.html">Conditions Générales de Retour</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+    </html>
