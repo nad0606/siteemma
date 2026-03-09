@@ -24,7 +24,7 @@
     var conteneur = document.getElementById('panierContenu');
     var recap = document.getElementById('panierRecap');
     if (panier.length === 0) {
-      conteneur.innerHTML = '<div class="paniervide"><span class="videicon">🛒</span>Ton panier est vide...<br><a href="site_emma.html" style="color:#E365C1;font-family:Pacifico,cursive;font-size:0.9rem;margin-top:12px;display:inline-block;">Découvrir nos produits ✨</a></div>';
+      conteneur.innerHTML = '<div class="paniervide"><span class="videicon">🛒</span>Ton panier est vide...<br><a href="index.html" style="color:#E365C1;font-family:Pacifico,cursive;font-size:0.9rem;margin-top:12px;display:inline-block;">Découvrir nos produits ✨</a></div>';
       recap.style.display = 'none';
       majBadge();
       return;
@@ -53,8 +53,23 @@
   }
   function changerQte(i, delta) {
     var p = getPanier();
-    p[i].quantite += delta;
-    if (p[i].quantite <= 0) { p.splice(i, 1); toast('Article retiré du panier 🗑️'); }
+    var nouvelleQte = p[i].quantite + delta;
+
+    if (nouvelleQte <= 0) {
+      p.splice(i, 1);
+      toast('Article retiré du panier 🗑️');
+    } else {
+      /* Vérification stock */
+      var produitData = typeof produits !== 'undefined'
+        ? produits.find(function(pr) { return pr.nom === p[i].nom; })
+        : null;
+      if (produitData && produitData.stock !== undefined && nouvelleQte > produitData.stock) {
+        toast('⚠️ Stock insuffisant — maximum ' + produitData.stock + ' disponible' + (produitData.stock > 1 ? 's' : '') + '.');
+        return;
+      }
+      p[i].quantite = nouvelleQte;
+    }
+
     savePanier(p); rendrePanier();
   }
   function supprimer(i) {

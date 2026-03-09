@@ -5,28 +5,184 @@ var produits = [
     id: 1,
     nom: "Marque-page papillon violet",
     categorie: "Papeterie & Jeux",
-    prix: "6,50",
-    description: "Envolez-vous dans vos lectures avec ce marque-page papillon violet, un véritable bijou inspiré de la nature. Magnifiquement conçu en métal doré émaillé, il représente un papillon aux ailes délicatement rosées, accompagné d'une petite breloque papillon au bout d'une chaînette. Dimensions : 4,5cm x 5cm x 0,5mm.",
+    prix: "à partir de 6,50",
+    prixOptions: { "Sans pendentif": 6.50, "Avec pendentif": 9.00 },
+     variationPrix: "Choix",
+    description: "<div style='color:#4A2060;'>" + 
+  "<div style='text-align:center'>✨ <strong>Petit papillon marque page</strong> ✨</div>\n\n" +
+  "Envolez-vous dans vos lectures avec notre marque-page papillon violet, un véritable bijou inspiré de la nature.🌟\n" +
+  " Ce marque-page unique est bien plus qu'un simple accessoire, c'est une invitation à la rêverie et à la légèreté.\n" +
+  "​C'est le cadeau idéal pour les amateurs de livres, les passionnés de nature ou toute personne qui apprécie les objets délicats et raffinés.\n\n" +
+  "<strong>Pourquoi craquer pour notre marque-page ?</strong>\n" +
+  "• 100% Personnalisable : Personnalisez le avec l'un de nos nombreux pendentifs 🎨\n" +
+  "• Fait Main avec Amour : Chaque marque-page est monté avec soin dans mon atelier des Alpes-Maritimes (06). Une création française et artisanale ! \n" +
+  "• Un Cadeau pour la Vie : Idéal pour une naissance, un baptême, un anniversaire ou même la fête des mères/pères. C’est le souvenir parfait qui traverse les années. 🎁\n\n" +
+  "<strong>📋 Caractéristiques & Conseils</strong>\n" +
+  "• Dimensions : 4,5cm de hauteur, 5cm de largeur et 0,5mm d épaisseur.\n" +
+  "• Matériaux : ​Magnifiquement conçu en métal doré émaillé, il représente un papillon aux ailes délicates, accompagné d'une petite breloque papillon au bout d'une chaînette et si vous le souhaitez, un pendentif au choix rendant votre commande vraiment unique !).\n" +
+  "• Usage : Objet de décoration (ceci n'est pas un jouet, à manipuler avec précaution). ⚠️\n" +
+  "• Sur mesure : Une envie particulière ? Choisissez la breloque ou la lettre qui vous représente le plus ! 💌\n\n" +
+  "<div style='text-align:center'>❤️ <strong>Faites-vous plaisir ou gâtez vos proches !</strong> ❤️</div>\n" +
+  "Chaque création est une pièce unique réalisée pour vous" +
+"</div>",
+
     images: [
-      "https://i.etsystatic.com/50081081/r/il/493a7d/7214498919/il_fullxfull.7214498919_6wsr.jpg",
-      "https://i.etsystatic.com/50081081/r/il/b7ff83/7166512606/il_fullxfull.7166512606_nmqa.jpg",
-      "https://i.etsystatic.com/50081081/r/il/6b832b/7574468250/il_fullxfull.7574468250_nnyp.jpg",
-      "https://i.etsystatic.com/50081081/r/il/85eb91/7574468248/il_fullxfull.7574468248_dk5e.jpg",
-      "https://i.etsystatic.com/50081081/r/il/ae83f0/7166512602/il_fullxfull.7166512602_lju8.jpg"
+      "imgpapillonviolet1.avif",
+      "imgpapillonviolet2.avif",
+      "imgpapillonviolet3.avif",
+      "imgpapillonviolet4.avif",
+      "imgpapillonviolet5.avif",
+      "imgpapillonviolet6.avif",
+      "imgpapillonviolet7.avif",
+      "imgpapillonviolet8.avif"
     ],
     variations: [
-      { nom: "Pendentif", type: "select", options: ["Sans pendentif", "Avec pendentif"] }
+      { nom: "Choix", type: "select", options: ["Sans pendentif" , "Avec pendentif"] }
     ],
-    champs: [{ label: "Prénom à graver", placeholder: "Ex : Léo", type: "textarea" }],
-    delai: "2 à 4 jours ouvrés",
+    champs: [{ label: "Choix du prendentif", placeholder: "Ex : Sans, lettre M ou numero 12 (voir photos)", type: "textarea" }],
+    delai: "1 à 5 jours ouvrés",
     materiaux: "Métal doré émaillé",
-    stock: 10
+    stock: 3
   },
   
+    {
+    id: 2,
+    nom: "Marque-page papillon bleu",
+    categorie: "Papeterie & Jeux",
+    prix: "à partir de 6,50",
+    prixOptions: { "Sans pendentif": 6.50, "Avec pendentif": 9.00 },
+     variationPrix: "Choix",
+    description: "<div style='color:#4A2060;'>" + 
+  "<div style='text-align:center'>✨ <strong>Petit papillon marque page</strong> ✨</div>\n\n" +
+  "Envolez-vous dans vos lectures avec notre marque-page papillon violet, un véritable bijou inspiré de la nature.🌟\n" +
+  " Ce marque-page unique est bien plus qu'un simple accessoire, c'est une invitation à la rêverie et à la légèreté.\n" +
+  "​C'est le cadeau idéal pour les amateurs de livres, les passionnés de nature ou toute personne qui apprécie les objets délicats et raffinés.\n\n" +
+  "<strong>Pourquoi craquer pour notre marque-page ?</strong>\n" +
+  "• 100% Personnalisable : Personnalisez le avec l'un de nos nombreux pendentifs 🎨\n" +
+  "• Fait Main avec Amour : Chaque marque-page est monté avec soin dans mon atelier des Alpes-Maritimes (06). Une création française et artisanale ! \n" +
+  "• Un Cadeau pour la Vie : Idéal pour une naissance, un baptême, un anniversaire ou même la fête des mères/pères. C’est le souvenir parfait qui traverse les années. 🎁\n\n" +
+  "<strong>📋 Caractéristiques & Conseils</strong>\n" +
+  "• Dimensions : 4,5cm de hauteur, 5cm de largeur et 0,5mm d épaisseur.\n" +
+  "• Matériaux : ​Magnifiquement conçu en métal doré émaillé, il représente un papillon aux ailes délicates, accompagné d'une petite breloque papillon au bout d'une chaînette et si vous le souhaitez, un pendentif au choix rendant votre commande vraiment unique !).\n" +
+  "• Usage : Objet de décoration (ceci n'est pas un jouet, à manipuler avec précaution). ⚠️\n" +
+  "• Sur mesure : Une envie particulière ? Choisissez la breloque ou la lettre qui vous représente le plus ! 💌\n\n" +
+  "<div style='text-align:center'>❤️ <strong>Faites-vous plaisir ou gâtez vos proches !</strong> ❤️</div>\n" +
+  "Chaque création est une pièce unique réalisée pour vous" +
+"</div>",
+
+    images: [
+     "imgpapillonbleu1.webp",
+      "imgpapillonbleu2.webp",
+       "imgpapillonbleu3.webp",
+        "imgpapillonbleu4.webp",
+       "imgpapillonviolet3.avif",
+      "imgpapillonviolet4.avif",
+      "imgpapillonviolet6.avif",
+      "imgpapillonviolet7.avif",
+      "imgpapillonviolet8.avif"
+      
+    ],
+    variations: [
+      { nom: "Choix", type: "select", options: ["Sans pendentif" , "Avec pendentif"] }
+    ],
+    champs: [{ label: "Choix du prendentif", placeholder: "Ex : Sans, lettre M ou numero 12 (voir photos)", type: "textarea" }],
+    delai: "1 à 5 jours ouvrés",
+    materiaux: "Métal doré émaillé",
+    stock: 6
+  },
   
+    {
+    id: 3,
+    nom: "Marque-page papillon vert",
+    categorie: "Papeterie & Jeux",
+    prix: "à partir de 6,50",
+    prixOptions: { "Sans pendentif": 6.50, "Avec pendentif": 9.00 },
+     variationPrix: "Choix",
+    description: "<div style='color:#4A2060;'>" + 
+  "<div style='text-align:center'>✨ <strong>Petit papillon marque page</strong> ✨</div>\n\n" +
+  "Envolez-vous dans vos lectures avec notre marque-page papillon violet, un véritable bijou inspiré de la nature.🌟\n" +
+  " Ce marque-page unique est bien plus qu'un simple accessoire, c'est une invitation à la rêverie et à la légèreté.\n" +
+  "​C'est le cadeau idéal pour les amateurs de livres, les passionnés de nature ou toute personne qui apprécie les objets délicats et raffinés.\n\n" +
+  "<strong>Pourquoi craquer pour notre marque-page ?</strong>\n" +
+  "• 100% Personnalisable : Personnalisez le avec l'un de nos nombreux pendentifs 🎨\n" +
+  "• Fait Main avec Amour : Chaque marque-page est monté avec soin dans mon atelier des Alpes-Maritimes (06). Une création française et artisanale ! \n" +
+  "• Un Cadeau pour la Vie : Idéal pour une naissance, un baptême, un anniversaire ou même la fête des mères/pères. C’est le souvenir parfait qui traverse les années. 🎁\n\n" +
+  "<strong>📋 Caractéristiques & Conseils</strong>\n" +
+  "• Dimensions : 4,5cm de hauteur, 5cm de largeur et 0,5mm d épaisseur.\n" +
+  "• Matériaux : ​Magnifiquement conçu en métal doré émaillé, il représente un papillon aux ailes délicates, accompagné d'une petite breloque papillon au bout d'une chaînette et si vous le souhaitez, un pendentif au choix rendant votre commande vraiment unique !).\n" +
+  "• Usage : Objet de décoration (ceci n'est pas un jouet, à manipuler avec précaution). ⚠️\n" +
+  "• Sur mesure : Une envie particulière ? Choisissez la breloque ou la lettre qui vous représente le plus ! 💌\n\n" +
+  "<div style='text-align:center'>❤️ <strong>Faites-vous plaisir ou gâtez vos proches !</strong> ❤️</div>\n" +
+  "Chaque création est une pièce unique réalisée pour vous" +
+"</div>",
+
+    images: [
+     "imgpapillonvert1.webp",
+      "imgpapillonvert2.webp",
+       "imgpapillonvert3.webp",
+       "imgpapillonviolet3.avif",
+      "imgpapillonviolet4.avif",
+      "imgpapillonviolet6.avif",
+      "imgpapillonviolet7.avif",
+      "imgpapillonviolet8.avif"
+     
+    ],
+    variations: [
+      { nom: "Choix", type: "select", options: ["Sans pendentif" , "Avec pendentif"] }
+    ],
+    champs: [{ label: "Choix du prendentif", placeholder: "Ex : Sans, lettre M ou numero 12 (voir photos)", type: "textarea" }],
+    delai: "1 à 5 jours ouvrés",
+    materiaux: "Métal doré émaillé",
+    stock: 7
+  },
+    {
+    id: 4,
+    nom: "Marque-page papillon rose",
+    categorie: "Papeterie & Jeux",
+    prix: "à partir de 6,50",
+    prixOptions: { "Sans pendentif": 6.50, "Avec pendentif": 9.00 },
+     variationPrix: "Choix",
+    description: "<div style='color:#4A2060;'>" + 
+  "<div style='text-align:center'>✨ <strong>Petit papillon marque page</strong> ✨</div>\n\n" +
+  "Envolez-vous dans vos lectures avec notre marque-page papillon violet, un véritable bijou inspiré de la nature.🌟\n" +
+  " Ce marque-page unique est bien plus qu'un simple accessoire, c'est une invitation à la rêverie et à la légèreté.\n" +
+  "​C'est le cadeau idéal pour les amateurs de livres, les passionnés de nature ou toute personne qui apprécie les objets délicats et raffinés.\n\n" +
+  "<strong>Pourquoi craquer pour notre marque-page ?</strong>\n" +
+  "• 100% Personnalisable : Personnalisez le avec l'un de nos nombreux pendentifs 🎨\n" +
+  "• Fait Main avec Amour : Chaque marque-page est monté avec soin dans mon atelier des Alpes-Maritimes (06). Une création française et artisanale ! \n" +
+  "• Un Cadeau pour la Vie : Idéal pour une naissance, un baptême, un anniversaire ou même la fête des mères/pères. C’est le souvenir parfait qui traverse les années. 🎁\n\n" +
+  "<strong>📋 Caractéristiques & Conseils</strong>\n" +
+  "• Dimensions : 4,5cm de hauteur, 5cm de largeur et 0,5mm d épaisseur.\n" +
+  "• Matériaux : ​Magnifiquement conçu en métal doré émaillé, il représente un papillon aux ailes délicates, accompagné d'une petite breloque papillon au bout d'une chaînette et si vous le souhaitez, un pendentif au choix rendant votre commande vraiment unique !).\n" +
+  "• Usage : Objet de décoration (ceci n'est pas un jouet, à manipuler avec précaution). ⚠️\n" +
+  "• Sur mesure : Une envie particulière ? Choisissez la breloque ou la lettre qui vous représente le plus ! 💌\n\n" +
+  "<div style='text-align:center'>❤️ <strong>Faites-vous plaisir ou gâtez vos proches !</strong> ❤️</div>\n" +
+  "Chaque création est une pièce unique réalisée pour vous" +
+"</div>",
+
+    images: [
+        "imgpapillonrose1.webp",
+        "imgpapillonrose2.webp",
+          "imgpapillonrose3.webp",
+           "imgpapillonviolet3.avif",
+      "imgpapillonviolet4.avif",
+      "imgpapillonviolet6.avif",
+      "imgpapillonviolet7.avif",
+      "imgpapillonviolet8.avif"
+      
+    ],
+    variations: [
+      { nom: "Choix", type: "select", options: ["Sans pendentif" , "Avec pendentif"] }
+    ],
+    champs: [{ label: "Choix du prendentif", placeholder: "Ex : Sans, lettre M ou numero 12 (voir photos)", type: "textarea" }],
+    delai: "1 à 5 jours ouvrés",
+    materiaux: "Métal doré émaillé",
+    stock: 6
+  },
+
   {
    
-    id: 2,
+    id: 5,
     nom: "Cubes en bois personnalisés — Prénom et motifs",
     categorie: "Chambre Enfant",
     prix: "2,00",
@@ -80,49 +236,101 @@ var produits = [
   
   {
    
-    id: 3,
-    nom: "Plaque de porte Simba Lion personnalisée",
+    id: 6,
+    nom: "Plaque de porte Lion personnalisée",
     categorie: "Chambre Enfant",
-    prix: "22,00",
-    description: "Plaque de porte Simba prénom bébé personnalisée en bois de tilleul, décoration Le Roi Lion. Découpe et gravure faites main en France, Alpes-Maritimes. Disponible en 2 largeurs (20cm ou 30cm) et 2 épaisseurs (6mm ou 9mm). Se fixe facilement avec du scotch double face 3M.",
-    images: [
-      "https://i.etsystatic.com/50081081/r/il/c383df/7515231559/il_fullxfull.7515231559_f5cv.jpg",
-      "https://i.etsystatic.com/50081081/r/il/f81cb5/7418603264/il_fullxfull.7418603264_1iet.jpg",
-      "https://i.etsystatic.com/50081081/r/il/df8e9d/7711856947/il_fullxfull.7711856947_qnpw.jpg",
-      "https://i.etsystatic.com/50081081/r/il/816255/7467301314/il_fullxfull.7467301314_6x7j.jpg",
-      "https://i.etsystatic.com/50081081/r/il/049dd3/6103174285/il_fullxfull.6103174285_c18q.jpg"
-    ],
+    prix: "à partir de 22,00",
+    variationPrix: "Taille",
+    prixOptions: {"20cm - 6mm": 22,"20cm - 9mm": 26,"30cm - 6mm": 27,"30cm - 9mm": 31},
+    description: "<div style='color:#4A2060;'>" + 
+  "<div style='text-align:center'>🦁 Plaque de Porte : L'Éveil du Roi Lion dans la Chambre de Bébé ✨</div>\n\n" +
+"Apportez une touche de magie et de rugissante tendresse à l'univers de votre enfant avec notre plaque de porte personnalisée Lion. Un classique indémodable, réinterprété en bois de bouleau pour une décoration naturelle et unique. 🌿\n\n"+
+"<strong>🎁 Le cadeau idéal pour toutes les occasions :</strong>\n"+
+"Que ce soit pour une naissance, un baptême ou un anniversaire, cette plaque est le présent personnalisé qui touche en plein cœur. 💛\n\n"+
+"<strong>✨ Un savoir-faire artisanal & Français :</strong>\n"+
+"Fait main : Découpe et gravure artisanales réalisées avec passion dans les Alpes-Maritimes (06).\n"+
+"Qualité Premium : Conçue en bois de bouleau pour un rendu doux et authentique.\n\n"+
+"<strong>📏 Personnalisation sur-mesure : </strong>Choisissez le format qui s'adaptera parfaitement à votre espace :\n"+
+"• Largeur au choix : 20 cm ou 30 cm. 📐\n"+
+"• Épaisseur au choix : * Option 6mm : Un jeu de relief délicat (3mm au centre / 6mm sur les bords) ou Option 9mm : Un relief plus affirmé et solide (6mm au centre / 9mm sur les bords).\n\n"+
+"<strong>🛠️ Installation & Conseils :</strong>\n"+
+"• Fixation express : Se pose en un clin d'œil avec du ruban adhésif double face (nous vous conseillons la marque 3M pour une tenue parfaite non fourni).💡\n"+
+"• Précautions : Cet objet est une décoration destinée à embellir votre intérieur, ce n'est pas un jouet. À manipuler avec soin et amour. ✨\n"+
+"• Le charme de l'unique : Le bois est une matière vivante. Les variations de grain et de teintes rendent chaque création absolument unique, rien que pour vous. 🪵\n"+
+ "</div>",
+  images: [
+    "plion1.webp",
+    "plion2.webp",
+    "plion3.webp",
+    "plion4.webp",
+    "plion5.webp",
+    "plion6.webp",
+    "plion7.webp",
+    "plion8.webp",
+    "plion9.webp",
+    "plion10.webp",
+    "plion11.webp",
+    "plion12.webp",
+    "plion13.webp",
+    "plion14.webp",
+    "plion15.webp",
+    "plion16.webp",
+    "plion17.webp"
+  ],
     variations: [
       { nom: "Couleur", type: "select", options: ["Rose clair","Rose","Bleu clair","Bleu","Bleu foncé","Rouge","Orange","Jaune","Vert","Vert foncé","Blanc","Noir","Or"] },
       { nom: "Taille", type: "select", options: ["20cm - 6mm","20cm - 9mm","30cm - 6mm","30cm - 9mm"] }
     ],
     champs: [
-      { label: "Prénom à graver", placeholder: "Ex : Léo", type: "textarea" }
+      { label: "Choix prénom", placeholder: "Ex : Léo", type: "textarea" }
     ],
-    delai: "2 à 5 jours ouvrés",
+    delai: "1 à 5 jours ouvrés",
     materiaux: "Bois de Bouleau",
-    stock: 8,
+    stock: 10,
      bestseller: true
   },
+
   {
-    id: 4,
+    id: 7,
     nom: "Insert Trofast IKEA — Pâques & Œufs",
     categorie: "Insert en bois bac IKEA",
-    prix: "3,00",
-    description: "Transformez votre bac Trofast IKEA en atelier de jeu Montessori ! Insert éducatif en bois 3mm, thème Pâques avec œufs. Compatible petit bac IKEA 20cm×30cm. Favorise la motricité fine, la concentration et la coordination. Fabriqué en bois naturel, durable et sûr pour les enfants.",
+    prix: "à partir de 3,00",
+    prixOptions: {"Planche seul": 12,"Planche + 6 œufs": 18,"Planche + 9 œufs": 21,"Planche + 12 œufs": 24,"3 œufs": 3,"6 œufs": 6},
+    variationPrix: "Choix",
+    description: "<div style='color:#4A2060;'>" + 
+  "<div style='text-align:center'>✨ <strong>Plateau d'Encastrement Montessori</strong> ✨</div>\n\n" +
+  "Transformez vos bacs IKEA Trofast (format 20x30 cm) en un véritable atelier d'apprentissage ludique ! Ce couvercle pédagogique en bois est l'accessoire indispensable pour allier organisation et émerveillement.\n\n" +
+  "✨ Ce que contient votre lot :\n"+
+  "• 1 Insert en bois naturel (épaisseur 3mm), découpé avec précision pour s'adapter à votre petit bac.\n"+
+  "• 6 Œufs en bois prêts à être manipulés.\n\n" +
+  "<strong>💡 Pourquoi vous allez l'adorer ?</strong>\n"+
+"Que vous soyez parent ou professionnel de la petite enfance (Assmat), ce plateau inspiré de la pédagogie Montessori offre une multitude de bienfaits :\n"+
+"• Développement ciblé : Boostez la motricité fine, la concentration et la coordination œil-main de votre petit explorateur. 🖐️👀\n"+
+"• Jeu Libre : Un support idéal pour trier, remplir et vider à l'infini.\n" +
+"• Éco-responsable & Durable : Fabriqué en bois naturel, ce jeu est sain, sûr et facile à nettoyer. 🪵🌿\n"+
+"• Design Doux : Un style épuré qui s'intègre parfaitement dans une chambre d'enfant ou une salle de jeux.\n\n"+
+"<strong>Le saviez-vous ? </strong>\n"+
+"Ce couvercle n'est pas qu'un simple puzzle, c'est une invitation à la créativité. Votre enfant peut s'amuser à organiser sa propre chasse aux œufs ! 🧺✨\n\n"+
+"Une envie particulière ? Une gravure spécifique ? N’hésitez pas à me contacter pour vos demandes spéciales ! 💌\n\n" +
+  "<div style='text-align:center'>❤️ <strong>Faites-vous plaisir ou gâtez vos proches !</strong> ❤️</div>\n\n" +
+  "<strong>⚠️ Note de sécurité & Authenticité :</strong>\n"+
+"• Sécurité avant tout : Ce lot contient de petites pièces. Pour la sécurité de vos bouts de chou, le jeu doit toujours se faire sous la surveillance d'un adulte. 🛡️\n"+
+"• Le charme du naturel : Chaque pièce est unique ! Le grain du bois et les nuances peuvent varier légèrement par rapport aux photos, ce qui fait tout le cachet de votre produit. 🪵✨"+
+"</div>",
     images: [
-      "https://i.etsystatic.com/50081081/r/il/43ea35/7169264256/il_fullxfull.7169264256_bofj.jpg",
-      "https://i.etsystatic.com/50081081/r/il/64651a/7169264250/il_fullxfull.7169264250_b3qc.jpg",
-      "https://i.etsystatic.com/50081081/r/il/929676/7169264252/il_fullxfull.7169264252_dv4z.jpg",
-      "https://i.etsystatic.com/50081081/r/il/cb3170/7169264254/il_fullxfull.7169264254_lrlz.jpg",
-      "https://i.etsystatic.com/50081081/r/il/14983c/7217251097/il_fullxfull.7217251097_fm9m.jpg"
+      "trofastpaques1.avif",
+      "trofastpaques2.avif",
+      "trofastpaques3.jpg",
+      "trofastpaques4.jpg",
+      "trofastpaques5.avif"
     ],
     variations: [
       { nom: "Choix", type: "select", options: ["Planche seul","Planche + 6 œufs","Planche + 9 œufs","Planche + 12 œufs","3 œufs","6 œufs"] }
+   
     ],
-    champs: [{ label: "Prénom à graver", placeholder: "Ex : Léo", type: "textarea" }],
-    delai: "2 à 4 jours ouvrés",
+     champs: [{ label: "Personnalisation", placeholder: "Ex : Sans OU vous pouvez m'indiquer les motifs des oeufs souhaitez sinon se sera aléatoire", type: "textarea" }],
+    delai: "1 à 5 jours ouvrés",
     materiaux: "Bois de Bouleau",
-    stock: 3
+    stock: 10
   }
 ];

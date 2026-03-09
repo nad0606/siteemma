@@ -39,7 +39,7 @@ function rendreMiniPanier() {
       '<div class="mini-vide">' +
         '<span class="mini-vide-icon">🛒</span>' +
         'Ton panier est vide...<br>' +
-        '<a href="site_emma.html" onclick="fermerMiniPanier()">Découvrir nos produits ✨</a>' +
+        '<a href="index.html" onclick="fermerMiniPanier()">Découvrir nos produits ✨</a>' +
       '</div>';
     footer.style.display = 'none';
     return;
@@ -82,8 +82,23 @@ function rendreMiniPanier() {
 /* --- Actions --- */
 function miniChangerQte(i, delta) {
   var p = getPanier();
-  p[i].quantite += delta;
-  if (p[i].quantite <= 0) { p.splice(i, 1); toastMini('Article retiré du panier 🗑️'); }
+  var nouvelleQte = p[i].quantite + delta;
+
+  if (nouvelleQte <= 0) {
+    p.splice(i, 1);
+    toastMini('Article retiré du panier 🗑️');
+  } else {
+    /* Vérification stock */
+    var produitData = typeof produits !== 'undefined'
+      ? produits.find(function(pr) { return pr.nom === p[i].nom; })
+      : null;
+    if (produitData && produitData.stock !== undefined && nouvelleQte > produitData.stock) {
+      toastMini('⚠️ Stock insuffisant — maximum ' + produitData.stock + ' disponible' + (produitData.stock > 1 ? 's' : '') + '.');
+      return;
+    }
+    p[i].quantite = nouvelleQte;
+  }
+
   savePanier(p);
   rendreMiniPanier();
   majBadgeGlobal();

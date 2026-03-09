@@ -138,17 +138,6 @@ if (champsVides.length > 0) {
 }
     if (!produit) return;
 
-    /* ── Vérification stock ── */
-    if (produit.stock !== undefined) {
-      if (produit.stock === 0) {
-        toastFiche('❌ Ce produit est en rupture de stock.');
-        return;
-      }
-      if (quantite > produit.stock) {
-        toastFiche('⚠️ Stock insuffisant — maximum ' + produit.stock + ' disponible' + (produit.stock > 1 ? 's' : '') + '.');
-        return;
-      }
-    }
     // Récupérer les variations choisies
     var perso = {};
     document.querySelectorAll('.fiche-select').forEach(function(s) {
@@ -158,30 +147,51 @@ if (champsVides.length > 0) {
       perso[i.dataset.nom] = i.value;
     });
 
-   var quantite = 1;
-var prixFinal = parseFloat(produit.prix.replace(',','.'));
+    var quantite = 1;
+    var prixFinal = parseFloat(produit.prix.replace(',','.'));
 
-if (produit.prixUnitaire && produit.variationPrix) {
-  var selectQte = document.querySelector('.fiche-select[data-nom="' + produit.variationPrix + '"]');
-  if (selectQte) {
-    quantite = parseInt(selectQte.value) || 1;
-    prixFinal = produit.prixUnitaire;
-  }
-} else if (produit.prixOptions && produit.variationPrix) {
-  var selectOpt = document.querySelector('.fiche-select[data-nom="' + produit.variationPrix + '"]');
-  if (selectOpt) prixFinal = produit.prixOptions[selectOpt.value] || prixFinal;
-}
+    if (produit.prixUnitaire && produit.variationPrix) {
+      var selectQte = document.querySelector('.fiche-select[data-nom="' + produit.variationPrix + '"]');
+      if (selectQte) {
+        quantite = parseInt(selectQte.value) || 1;
+        prixFinal = produit.prixUnitaire;
+      }
+    } else if (produit.prixOptions && produit.variationPrix) {
+      var selectOpt = document.querySelector('.fiche-select[data-nom="' + produit.variationPrix + '"]');
+      if (selectOpt) prixFinal = produit.prixOptions[selectOpt.value] || prixFinal;
+    }
 
-var panier = JSON.parse(localStorage.getItem('panier') || '[]');
-panier.push({
-  nom: produit.nom,
-  prix: prixFinal,
-  image: produit.images[0],
-  quantite: quantite,
-  personnalisation: perso
-});
+    /* ── Vérification stock APRÈS avoir la quantite ── */
+    if (produit.stock !== undefined) {
+      if (produit.stock === 0) {
+        toastFiche('❌ Ce produit est en rupture de stock.');
+        return;
+      }
+      /* Quantité déjà dans le panier pour ce produit */
+      var panier = JSON.parse(localStorage.getItem('panier') || '[]');
+      var dejaAuPanier = panier.reduce(function(total, art) {
+        return art.nom === produit.nom ? total + art.quantite : total;
+      }, 0);
+      if (dejaAuPanier + quantite > produit.stock) {
+        var restant = produit.stock - dejaAuPanier;
+        if (restant <= 0) {
+          toastFiche('❌ Stock épuisé — tu as déjà ' + dejaAuPanier + ' dans ton panier.');
+        } else {
+          toastFiche('⚠️ Stock insuffisant — il ne reste que ' + restant + ' disponible' + (restant > 1 ? 's' : '') + '.');
+        }
+        return;
+      }
+    }
 
-    ;
+    var panier = JSON.parse(localStorage.getItem('panier') || '[]');
+    panier.push({
+      nom: produit.nom,
+      prix: prixFinal,
+      image: produit.images[0],
+      quantite: quantite,
+      personnalisation: perso
+    });
+
     localStorage.setItem('panier', JSON.stringify(panier));
     toastFiche('🛒 Ajouté au panier !');
     setTimeout(function() { ouvrirMiniPanier(); }, 600);
@@ -206,6 +216,8 @@ panier.push({
         var qte = parseInt(o) || 1;
         var total = (produit.prixUnitaire * qte).toFixed(2).replace('.', ',');
         label = o + ' — ' + total + ' €';                       
+      } else if (isPrix && produit.prixOptions && produit.prixOptions[o] !== undefined) {
+        label = o + ' — ' + produit.prixOptions[o].toFixed(2).replace('.', ',') + ' €';
       }
       return '<option value="' + o + '">' + label + '</option>';
     }).join('') +
@@ -260,14 +272,130 @@ panier.push({
     window.location = 'catalogueemma.html?filtre=' + encodeURIComponent(mot);
   }
   function majPrix(valeur) {
-  if (!produit || !produit.prixUnitaire) return;
-  var qte = parseInt(valeur) || 1;
-  var total = (produit.prixUnitaire * qte).toFixed(2).replace('.', ',');
-  document.getElementById('fichePrixAffiche').textContent = total + ' €';
-}
+    if (!produit) return;
+    var total;
+    if (produit.prixOptions && produit.prixOptions[valeur] !== undefined) {
+      total = produit.prixOptions[valeur].toFixed(2).replace('.', ',');
+    } else if (produit.prixUnitaire) {
+      var qte = parseInt(valeur) || 1;
+      total = (produit.prixUnitaire * qte).toFixed(2).replace('.', ',');
+    } else return;
+    document.getElementById('fichePrixAffiche').textContent = total + ' €';
+  }
 
 </script>
 
+<div class="minipanier-overlay" id="minipanierOverlay" onclick="fermerMiniPanier()"></div>
+
+
+<div class="minipanier-drawer" id="minipanierDrawer">
+
+  <div class="minipanier-header">
+    <a href="panieremma.html" class="minipanier-titre-lien">🛒 Mon Panier<span class="minipanier-badge" id="miniBadgeQte">0</span></a>
+    <button class="minipanier-close" onclick="fermerMiniPanier()">✕</button>
+  </div>
+
+  <div class="minipanier-corps" id="minipanierCorps">
+   
+  </div>
+
+  <div class="minipanier-footer" id="minipanierFooter" style="display:none">
+    <div class="minipanier-lignes">
+      <div class="minipanier-ligne"><span>Sous-total</span><span id="miniSousTotal">0,00 €</span></div>
+      <div class="minipanier-ligne"><span>Livraison</span><span id="miniLivraison">—</span></div>
+      <div class="minipanier-total"><span>Total</span><span id="miniTotal">0,00 €</span></div>
+    </div>
+    <div class="minipanier-actions">
+      <a href="panieremma.html" class="mini-btn-voir">Voir le panier</a>
+      <button class="mini-btn-commander" onclick="miniCommander()">Passer commande ✨</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toastMini"></div>
+
+
+<script src="fonctionboutonscrollhaut.js"></script>
+<script src="fonctionpanierquantite.js"></script> 
+<script src="minipanierflottant.js"></script>    
+<script src="fonctionpanierquantite.js"></script>  
+<script src="site_emma.js"></script>
+<script src="fonctionscrollapparition.js"></script>  
+
+
+        <script>
+function toggleMenu() {
+  var menu = document.getElementById("menuHamburger");
+  var nav = document.querySelector(".menuboutons");
+  nav.classList.toggle("ouvert");
+  menu.classList.toggle("ouvert");
+}
+document.addEventListener("click", function(e) {
+  var nav = document.querySelector(".menuboutons");
+  var btn = document.getElementById("menuHamburger");
+  if (nav && btn && !nav.contains(e.target) && !btn.contains(e.target)) {
+    nav.classList.remove("ouvert");
+    btn.classList.remove("ouvert");
+  }
+});
+</script>
+
+<div class="minipanier-overlay" id="minipanierOverlay" onclick="fermerMiniPanier()"></div>
+
+
+<div class="minipanier-drawer" id="minipanierDrawer">
+
+  <div class="minipanier-header">
+    <a href="panieremma.html" class="minipanier-titre-lien">🛒 Mon Panier<span class="minipanier-badge" id="miniBadgeQte">0</span></a>
+    <button class="minipanier-close" onclick="fermerMiniPanier()">✕</button>
+  </div>
+
+  <div class="minipanier-corps" id="minipanierCorps">
+   
+  </div>
+
+  <div class="minipanier-footer" id="minipanierFooter" style="display:none">
+    <div class="minipanier-lignes">
+      <div class="minipanier-ligne"><span>Sous-total</span><span id="miniSousTotal">0,00 €</span></div>
+      <div class="minipanier-ligne"><span>Livraison</span><span id="miniLivraison">—</span></div>
+      <div class="minipanier-total"><span>Total</span><span id="miniTotal">0,00 €</span></div>
+    </div>
+    <div class="minipanier-actions">
+      <a href="panieremma.html" class="mini-btn-voir">Voir le panier</a>
+      <button class="mini-btn-commander" onclick="miniCommander()">Passer commande ✨</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toastMini"></div>
+
+
+<script src="fonctionboutonscrollhaut.js"></script>
+<script src="fonctionpanierquantite.js"></script> 
+<script src="minipanierflottant.js"></script>    
+<script src="fonctionpanierquantite.js"></script>  
+<script src="site_emma.js"></script>
+<script src="fonctionscrollapparition.js"></script>  
+
+
+        <script>
+function toggleMenu() {
+  var menu = document.getElementById("menuHamburger");
+  var nav = document.querySelector(".menuboutons");
+  nav.classList.toggle("ouvert");
+  menu.classList.toggle("ouvert");
+}
+document.addEventListener("click", function(e) {
+  var nav = document.querySelector(".menuboutons");
+  var btn = document.getElementById("menuHamburger");
+  if (nav && btn && !nav.contains(e.target) && !btn.contains(e.target)) {
+    nav.classList.remove("ouvert");
+    btn.classList.remove("ouvert");
+  }
+});
+</script>
 <div class="minipanier-overlay" id="minipanierOverlay" onclick="fermerMiniPanier()"></div>
 
 
