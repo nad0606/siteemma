@@ -72,9 +72,9 @@ function rendreMiniPanier() {
   corps.innerHTML = html;
 
   /* Récap */
-  var liv = sous >= 50 ? 0 : 4.99;
+  var liv = sous >= 50 ? 0 : 5.50;
   document.getElementById('miniSousTotal').textContent = fmt(sous);
-  document.getElementById('miniLivraison').textContent = liv === 0 ? 'Gratuite 🎉' : fmt(liv);
+  document.getElementById('miniLivraison').textContent = liv === 0 ? 'Livraison gratuite 🎉' : fmt(liv);
   document.getElementById('miniTotal').textContent     = fmt(sous + liv);
   footer.style.display = 'block';
 }

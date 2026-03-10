@@ -108,6 +108,7 @@ function creerCarte(produit) {
   var carte = document.createElement('div');
   carte.className = 'produit-carte';
   carte.dataset.categorie = produit.categorie;
+  carte.dataset.id = produit.id;
   carte.onclick = function() { window.location = 'ficheproduit.html?id=' + produit.id; };
 
   /* Zone image */
@@ -211,6 +212,28 @@ function filtrer(mot, btn) {
       carte.style.display = cat.includes(mot.toLowerCase()) ? '' : 'none';
     }
   });
+}
+
+/* ── Trier le catalogue ── */
+function trierCatalogue(mode) {
+  var grille = document.getElementById('produitsGrille');
+  if (!grille) return;
+  var cartes = toutesLesCartes.filter(function(c) { return c.style.display !== 'none'; });
+  cartes.sort(function(a, b) {
+    var pa = produits.find(function(p) { return p.id === parseInt(a.dataset.id); });
+    var pb = produits.find(function(p) { return p.id === parseInt(b.dataset.id); });
+    if (!pa || !pb) return 0;
+    switch(mode) {
+      case 'az':       return pa.nom.localeCompare(pb.nom, 'fr');
+      case 'za':       return pb.nom.localeCompare(pa.nom, 'fr');
+      case 'prix-asc': return parseFloat(pa.prix.replace(',','.')) - parseFloat(pb.prix.replace(',','.'));
+      case 'prix-desc':return parseFloat(pb.prix.replace(',','.')) - parseFloat(pa.prix.replace(',','.'));
+      case 'stock':    return (pb.stock || 0) - (pa.stock || 0);
+      case 'bestseller': return (pb.bestseller ? 1 : 0) - (pa.bestseller ? 1 : 0);
+      default: return 0;
+    }
+  });
+  cartes.forEach(function(c) { grille.appendChild(c); });
 }
 
 /* ── Lancement ── */

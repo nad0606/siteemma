@@ -18,7 +18,7 @@ body > *:not(.minipanier-drawer):not(.minipanier-overlay) {
   font-family: "Pacifico", cursive;
   font-weight: 400;
   font-style: normal;
-  color: #E396DF;
+  color: #E365C1;
   text-shadow: 0 0 5px rgba(0,0,0,0.1), 0 0 2px rgba(0,0,0,0.05);
   display: block; width: 100%; box-sizing: border-box;
   text-align: center; padding: 0 16px 8px; overflow-wrap: break-word;
@@ -438,7 +438,7 @@ h2{
   .bestsellers-grille { grid-template-columns: 1fr; }
 }
 
-/* bad de page */
+/* bas de page */
 
 footer { 
   background-color: #CCE8CC; 
@@ -459,7 +459,8 @@ footer ul {
 }
 
 footer li {
-  display: inline;        
+  display: block;
+  text-align: center;        
   margin: 0 15px;         
 }
 
@@ -1178,6 +1179,7 @@ footer a:hover {
   background: rgba(0,0,0,.35);
   z-index: 2000;
   animation: mpFadeIn .25s;
+ 
 }
 .minipanier-overlay.ouvert { display: block; }
 
@@ -1202,6 +1204,7 @@ footer a:hover {
   box-shadow: -6px 0 32px rgba(180,80,180,.18);
   transform: translateX(100%);
   transition: transform .32s cubic-bezier(.4,0,.2,1);
+   padding-bottom: 5%;
 }
 .minipanier-drawer.ouvert { transform: translateX(0); }
 
@@ -2125,7 +2128,7 @@ h2.pacifico-regular {
 }
 
 /*  Footer */
-.basdepage { padding: 16px; }
+.basdepage { padding: 5px; }
 .basdepage nav ul { flex-wrap: wrap; justify-content: center; gap: 8px; }
 
 /* MOBILE ≤ 768px */
@@ -2179,8 +2182,37 @@ h2.pacifico-regular {
   .avis-fleche { width: 30px; height: 30px; font-size: 0.85rem; }
 
   /* Catalogue */
-  .cat-filtres { gap: 8px; }
-  .cat-btn { font-size: 0.78rem; padding: 8px 14px; }
+ .cat-filtres {
+  flex-wrap: nowrap;        /* plus de retour à la ligne */
+  overflow-x: auto;         /* scroll horizontal */
+  justify-content: flex-start;
+  gap: 8px;
+  padding-bottom: 8px;
+  scrollbar-width: none;    /* scrollbar invisible */
+  -webkit-overflow-scrolling: touch;
+}
+.cat-filtres-wrap { position: relative; }
+.cat-scroll-hint {
+  display: flex;
+  position: absolute;
+  right: 0; top: 0; bottom: 8px;
+  width: 36px;
+  background: linear-gradient(to right, transparent, #f6efee 60%);
+  color: #E365C1;
+  font-size: 1.5rem;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.cat-filtres {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  justify-content: flex-start;
+  padding-right: 36px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.cat-filtres::-webkit-scrollbar { display: none; }
+.cat-btn { font-size: 0.78rem; padding: 8px 14px; white-space: nowrap; flex-shrink: 0; }
   .cat-tri { flex-wrap: wrap; justify-content: center; }
   .produits-grille { grid-template-columns: repeat(2, 1fr) !important; gap: 12px; }
 

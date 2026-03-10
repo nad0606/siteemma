@@ -109,18 +109,12 @@
 <script src="catalogue_site_emma.js"></script>
 <script>
   // Filtrer uniquement les bestsellers au chargement
-  document.addEventListener && (function() {
-    var orig = window.rendreCatalogue;
-    // Apres rendreCatalogue, filtrer bestsellers
-    setTimeout(function() {
-      if (typeof toutesLesCartes !== "undefined") {
-        toutesLesCartes.forEach(function(carte) {
-          var produit = carte._produit;
-          if (!produit || !produit.bestseller) carte.style.display = "none";
-        });
-      }
-    }, 50);
-  })();
+  document.addEventListener('DOMContentLoaded', function() {
+    toutesLesCartes.forEach(function(carte) {
+      var produit = produits.find(function(p) { return p.id === parseInt(carte.dataset.id); });
+      if (!produit || !produit.bestseller) carte.style.display = 'none';
+    });
+  });
 </script>
 <script src="fonctionboutonscrollhaut.js"></script>
 <script src="minipanierflottant.js"></script>    
@@ -147,7 +141,8 @@ document.addEventListener("click", function(e) {
 <footer> 
   <div class="basdepage">
     <p>&copy; 2023 LESCREATIONSEMMA06. Tous droits réservés.</p>
-       <div class="reseaux">
+
+     <div class="reseaux">
       <a href="https://www.instagram.com/lescreationsemma06" target="_blank" class="reseau-lien reseau-insta">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.242 1.308 3.608.058 1.265.07 1.645.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.242 1.246-3.608 1.308-1.265.058-1.645.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.974 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.014 7.052.072 5.197.157 3.355.673 2.014 2.014.673 3.355.157 5.197.072 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.085 1.855.601 3.697 1.942 5.038 1.341 1.341 3.183 1.857 5.038 1.942C8.332 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 1.855-.085 3.697-.601 5.038-1.942 1.341-1.341 1.857-3.183 1.942-5.038.058-1.28.072-1.689.072-4.948s-.014-3.668-.072-4.948c-.085-1.855-.601-3.697-1.942-5.038C20.645.673 18.803.157 16.948.072 15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
@@ -162,12 +157,11 @@ document.addEventListener("click", function(e) {
       </a>
     </div>
     <nav>
-      <ul>
-        <li><a href="apropos.html">À propos</a></li>
-        <li><a href="contactemma.html">Contact 📬</a></li>
-        <li><a href="cgvcgr.html">Conditions Générales de Vente</a></li>
-        <li><a href="cgvcgr.html">Conditions Générales de Retour</a></li>
-      </ul>
+        <a href="apropos.html">💖 À propos</a>
+        <a href="contactemma.html">📬 Contact</a>
+        <a href="cgvcgr.html">🌍 Conditions Générales de Vente</a>
+        <a href="cgvcgr.html">🌍 Conditions Générales de Retour</a>
+    
     </nav>
   </div>
 </footer>

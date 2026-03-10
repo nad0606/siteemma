@@ -44,9 +44,9 @@
     });
     html += '</div>';
     conteneur.innerHTML = html;
-    var livNum = sous >= 50 ? 0 : 4.99;
+    var livNum = sous >= 50 ? 0 : 5.50;
     document.getElementById('sousTotal').textContent = fmt(sous);
-    document.getElementById('livraison').textContent = livNum === 0 ? 'Gratuite 🎉' : fmt(livNum);
+    document.getElementById('livraison').textContent = livNum === 0 ? 'Livraison gratuite 🎉' : fmt(livNum);
     document.getElementById('totalFinal').textContent = fmt(sous + livNum);
     recap.style.display = 'block';
     majBadge();
