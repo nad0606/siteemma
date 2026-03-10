@@ -68,8 +68,7 @@ position:fixed;
 
 }
 h1 { 
- font-family: "Pacifico", cursive;
- 
+ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   width: 100%;
     color: transparent;
     text-align: center;
@@ -79,7 +78,7 @@ h1 {
     background-clip: text;
     background-repeat: repeat;
     animation: moveBackground 10s linear infinite;
-    display: block;         
+    display: block;      
     padding-top: clamp(20px, 5vw, 100px);      
     margin-top: 0;           
     transform: scaleY(1.5);
@@ -87,13 +86,20 @@ h1 {
     cursor: pointer;
     padding-top: 80px;
     margin-bottom: 60px;
+     filter: drop-shadow(0 0 5px #f0e4f0)
+            drop-shadow(0 0 10px #ebc8eb)
+            drop-shadow(0 0 15px #e19be1);
 }
 
 
 h1:hover {
     transform: scale(1.1, 1.6);
-    filter: brightness(1.2);
+   
+         filter: drop-shadow(0 0 5px #f0e4f0)
+            drop-shadow(0 0 10px #ebc8eb)
+            drop-shadow(0 0 15px #e19be1);
 }
+
 
 @keyframes moveBackground {
     0% {
@@ -1169,7 +1175,13 @@ footer a:hover {
       color:#E365C1
     }
 
-    @media(max-width:600px){.legalepage{padding:0 16px}.confgrid{grid-template-columns:1fr}}
+  @media(max-width:600px){
+  .legalepage{padding:0 16px}
+  .confgrid{grid-template-columns:1fr}
+  .tableau-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; }
+  .tableau { min-width: 480px; font-size: 0.78rem; }
+  .tableau th, .tableau td { padding: 8px 10px; }
+}
   
 /*mini panier flottant*/
 
@@ -1820,7 +1832,7 @@ footer a:hover {
     .aucun { text-align: center; font-family: "Pacifico", cursive; color: #ccc; padding: 40px; grid-column: 1/-1; }
 
     /* vignette produits*/
-     .produits-grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; max-width: 800px; margin-bottom: 20px; }
+     .produits-grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; max-width: 800px; margin:auto; margin-bottom: 20px; }
 
     .produit-carte {
       background: #fff; border-radius: 18px; overflow: hidden;
@@ -2182,15 +2194,8 @@ h2.pacifico-regular {
   .avis-fleche { width: 30px; height: 30px; font-size: 0.85rem; }
 
   /* Catalogue */
- .cat-filtres {
-  flex-wrap: nowrap;        /* plus de retour à la ligne */
-  overflow-x: auto;         /* scroll horizontal */
-  justify-content: flex-start;
-  gap: 8px;
-  padding-bottom: 8px;
-  scrollbar-width: none;    /* scrollbar invisible */
-  -webkit-overflow-scrolling: touch;
-}
+ 
+
 .cat-filtres-wrap { position: relative; }
 .cat-scroll-hint {
   display: flex;
@@ -2212,7 +2217,9 @@ h2.pacifico-regular {
   -webkit-overflow-scrolling: touch;
 }
 .cat-filtres::-webkit-scrollbar { display: none; }
+
 .cat-btn { font-size: 0.78rem; padding: 8px 14px; white-space: nowrap; flex-shrink: 0; }
+
   .cat-tri { flex-wrap: wrap; justify-content: center; }
   .produits-grille { grid-template-columns: repeat(2, 1fr) !important; gap: 12px; }
 
