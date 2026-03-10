@@ -28,7 +28,7 @@
 
 <h2 class="pacifico-regular"> 💫 Boutique Française qui personnalise votre quotidien 💫</h2>
 
-  <form class="boutonrecherche" action="/recherche" method="get">
+ <form class="boutonrecherche" onsubmit="rechercherProduits(event, this)">
   <input type="text" name="q" placeholder="Rechercher..." required>
   <button type="submit">🔍</button>
 </form>
@@ -203,7 +203,7 @@
       </table>
     </div>
     </div>
-    
+
     <div class="sectionloi">
       <h2>📦 Suivi de commande</h2>
       <p>Chaque commande est expédiée avec un <strong>numéro de suivi Colissimo</strong> communiqué par e-mail dès l'expédition.</p>
@@ -247,6 +247,7 @@
 <script src="minipanierflottant.js"></script>    
 <script src="cgvcgr_site_emma.js"></script>
 <script src="fonctionscrollapparition.js"></script>  
+<script src="recherchesiteemma.js"></script>
 
 
 

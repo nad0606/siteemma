@@ -31,7 +31,7 @@
 
 <h2 class="pacifico-regular"> 💫 Boutique Française qui personnalise votre quotidien 💫</h2>
 
-  <form class="boutonrecherche" action="/recherche" method="get">
+ <form class="boutonrecherche" onsubmit="rechercherProduits(event, this)">
   <input type="text" name="q" placeholder="Rechercher..." required>
   <button type="submit">🔍</button>
 </form>
@@ -107,7 +107,9 @@
 <script src="fonctionpanierquantite.js"></script>   
 <script src="produit_site_emme.js"></script>
 <script src="panier_site_emma.js"></script>
-<script src="fonctionscrollapparition.js"></script>  
+<script src="fonctionscrollapparition.js"></script>
+<script src="recherchesiteemma.js"></script>
+  
         <script>
 function toggleMenu() {
   var menu = document.getElementById('menuHamburger');

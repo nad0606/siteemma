@@ -2197,16 +2197,30 @@ h2.pacifico-regular {
  
 
 .cat-filtres-wrap { position: relative; }
-.cat-scroll-hint {
+.cat-scroll-hint,
+.cat-scroll-left {
   display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  right: 0; top: 0; bottom: 8px;
+  top: 0; bottom: 8px;
   width: 36px;
-  background: linear-gradient(to right, transparent, #f6efee 60%);
   color: #E365C1;
-  font-size: 1.5rem;
-  pointer-events: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  pointer-events: auto;
+  cursor: pointer;
   transition: opacity 0.3s;
+  z-index: 2;
+}
+.cat-scroll-hint {
+  right: 0;
+  background: linear-gradient(to right, transparent, #f6efee 60%);
+}
+.cat-scroll-left {
+  left: 0;
+  opacity: 0;
+  background: linear-gradient(to left, transparent, #f6efee 60%);
 }
 .cat-filtres {
   flex-wrap: nowrap;

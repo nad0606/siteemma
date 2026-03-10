@@ -32,7 +32,7 @@
 
 <h2 class="pacifico-regular"> 💫 Boutique Française qui personnalise votre quotidien 💫</h2>
 
-  <form class="boutonrecherche" action="/recherche" method="get">
+ <form class="boutonrecherche" onsubmit="rechercherProduits(event, this)">
   <input type="text" name="q" placeholder="Rechercher..." required>
   <button type="submit">🔍</button>
 </form>
@@ -60,7 +60,7 @@
   <div class="catalogue-titre">🌈 Catalogue produits</div>
   <div class="catalogue-sous">Toutes nos créations faites main & personnalisées 🌸</div>
 
-<div class="cat-filtres-wrap"></div>
+<div class="cat-filtres-wrap">
     <div class="cat-filtres" id="catFiltres">
     <button class="cat-btn actif" onclick="filtrer('tous', this)">✨ Tous</button>
     <button class="cat-btn" onclick="filtrer('Naissance', this)">🍼 Naissance &amp; Bébé</button>
@@ -72,8 +72,9 @@
     <button class="cat-btn" onclick="filtrer('Bijoux', this)">💍 Bijoux &amp; Accessoires</button>
     <button class="cat-btn" onclick="filtrer('Papeterie', this)">📖 Papeterie &amp; Jeux</button>
     <button class="cat-btn" onclick="filtrer('Insert', this)">🧸 Insert en bois bac IKEA</button>
-  </div>
-     <div class="cat-scroll-hint" id="catScrollHint">👉</div>
+    </div>
+    <div class="cat-scroll-left" id="catScrollLeft">👈</div>
+    <div class="cat-scroll-hint" id="catScrollHint">👉</div>
   </div>
 
   <div class="cat-tri">
@@ -129,13 +130,25 @@
 
 <script src="produit_site_emme.js"></script>
 <script src="catalogue_site_emma.js"></script>
+<script src="recherchesiteemma.js"></script>
+
 <script>
-  var filtres = document.getElementById('catFiltres');
-var hint = document.getElementById('catScrollHint');
-filtres.addEventListener('scroll', function() {
-  var atEnd = filtres.scrollLeft + filtres.clientWidth >= filtres.scrollWidth - 5;
-  hint.style.opacity = atEnd ? '0' : '1';
-});
+var filtres = document.getElementById('catFiltres');
+var hintR = document.getElementById('catScrollHint');
+var hintL = document.getElementById('catScrollLeft');
+
+function majFleches() {
+  var atEnd   = filtres.scrollLeft + filtres.clientWidth >= filtres.scrollWidth - 5;
+  var atStart = filtres.scrollLeft <= 5;
+  hintR.style.opacity = atEnd   ? '0' : '1';
+  hintL.style.opacity = atStart ? '0' : '1';
+}
+majFleches();
+
+hintR.addEventListener('click', function() { filtres.scrollBy({ left: 150, behavior: 'smooth' }); });
+hintL.addEventListener('click', function() { filtres.scrollBy({ left: -150, behavior: 'smooth' }); });
+filtres.addEventListener('scroll', majFleches);
+
   /* Lire le filtre depuis l'URL et l'activer */
   (function() {
     var params = new URLSearchParams(window.location.search);
@@ -183,6 +196,7 @@ mots-clés : insert trofast ikea personnalisé, jouet bois montessori assistante
 <script src="minipanierflottant.js"></script>  
 <script src="fonctionpanierquantite.js"></script> 
 <script src="fonctionscrollapparition.js"></script>   
+
 
  <script>
 function toggleMenu() {

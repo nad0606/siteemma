@@ -31,7 +31,8 @@
 
 <h2 class="pacifico-regular"> 💫 Boutique Française qui personnalise votre quotidien 💫</h2>
 
-  <form class="boutonrecherche" action="/recherche" method="get">
+ 
+  <form class="boutonrecherche" onsubmit="rechercherProduits(event, this)">
   <input type="text" name="q" placeholder="Rechercher..." required>
   <button type="submit">🔍</button>
 </form>
@@ -131,390 +132,32 @@
     "Chaque création est unique, comme vous. Je mets tout mon cœur dans chaque pièce pour que vous ayez entre les mains quelque chose de vraiment spécial."
     <span>— Emma 🌞</span>
   </div>
+ </div>
 
-</div>
 <div class="avis-section">
-
   <div class="avis-titre">⭐ Avis clients</div>
-  <div class="avis-sous-titre">Ce que disent mes clientes et clients 🌸</div>
-
+  <div class="avis-sous-titre">Ce que disent mes clientes et clients</div>
   <div class="avis-compteur">
-    <div>
-      <div class="avis-note-globale">5,0</div>
-      <div class="avis-etoiles-globales">⭐⭐⭐⭐⭐</div>
-      <div class="avis-nb">29 avis vérifiés</div>
-    </div>
-       <a href="https://www.etsy.com/shop/Lescreationsemma06" target="_blank"><div class="avis-etsy-badge">✔ Avis Etsy vérifiés</div></a>
+    <div><div class="avis-note-globale">5,0</div><div class="avis-etoiles-globales">⭐⭐⭐⭐⭐</div><div class="avis-nb">29 avis vérifiés</div></div>
+    <a href="https://www.etsy.com/shop/Lescreationsemma06" target="_blank"><div class="avis-etsy-badge">✔ Avis Etsy vérifiés</div></a>
   </div>
-
-  <div class="avis-grille">
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">A</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Anthony</div>
-          <div class="avis-date">4 février 2026</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Tout simplement incroyable. Vendeuse au top, article au top, livraison rapide !</div>
+  <div class="avis-carrousel-wrap">
+    <button class="avis-fleche gauche" onclick="deplacerAvis(-1)">&#8592;</button>
+    <div class="avis-carrousel" id="avisCarrousel">
+      <div class="avis-carte"><div class="avis-carte-top"><div class="avis-avatar">A</div><div class="avis-auteur-bloc"><div class="avis-auteur">Anthony</div><div class="avis-date">4 février 2026</div></div><div class="avis-etoiles">⭐⭐⭐⭐⭐</div></div><div class="avis-texte">Tout simplement incroyable. Vendeuse au top, article au top, livraison rapide !</div></div>
+      <div class="avis-carte"><div class="avis-carte-top"><div class="avis-avatar">H</div><div class="avis-auteur-bloc"><div class="avis-auteur">Harlinx</div><div class="avis-date">4 février 2026</div></div><div class="avis-etoiles">⭐⭐⭐⭐⭐</div></div><div class="avis-texte">Vraiment magnifique, super beau, j'adore !! 😍😍</div></div>
+      <div class="avis-carte"><div class="avis-carte-top"><div class="avis-avatar">M</div><div class="avis-auteur-bloc"><div class="avis-auteur">Mairenna</div><div class="avis-date">15 décembre 2025</div></div><div class="avis-etoiles">⭐⭐⭐⭐⭐</div></div><div class="avis-texte">Vraiment au top ! Emma a été très réactive et hyper arrangeante. Je recommande +++, rien à redire sur la qualité.</div></div>
+      <div class="avis-carte"><div class="avis-carte-top"><div class="avis-avatar">I</div><div class="avis-auteur-bloc"><div class="avis-auteur">Isabelle</div><div class="avis-date">16 janvier 2026</div></div><div class="avis-etoiles">⭐⭐⭐⭐⭐</div></div><div class="avis-texte">Un régal pour les yeux. Idéal pour ravir les passionnés de lecture.</div></div>
+      <div class="avis-carte"><div class="avis-carte-top"><div class="avis-avatar">C</div><div class="avis-auteur-bloc"><div class="avis-auteur">Camêla</div><div class="avis-date">3 décembre 2025</div></div><div class="avis-etoiles">⭐⭐⭐⭐⭐</div></div><div class="avis-texte">Super résultat, avec une livraison rapide et soignée, c'est nickel :)</div></div>
+      <div class="avis-carte"><div class="avis-carte-top"><div class="avis-avatar">F</div><div class="avis-auteur-bloc"><div class="avis-auteur">Frédérique</div><div class="avis-date">15 novembre 2024</div></div><div class="avis-etoiles">⭐⭐⭐⭐⭐</div></div><div class="avis-texte">J'adore, magnifique travail, je recommande. Livré assez rapidement, franchement top.</div></div>
+      <div class="avis-carte"><div class="avis-carte-top"><div class="avis-avatar">S</div><div class="avis-auteur-bloc"><div class="avis-auteur">Samir</div><div class="avis-date">26 avril 2025</div></div><div class="avis-etoiles">⭐⭐⭐⭐⭐</div></div><div class="avis-texte">Parfait !! Article conforme, super travail, très bien emballé et vite reçu !!</div></div>
+      <div class="avis-carte"><div class="avis-carte-top"><div class="avis-avatar">O</div><div class="avis-auteur-bloc"><div class="avis-auteur">Olivia</div><div class="avis-date">5 décembre 2024</div></div><div class="avis-etoiles">⭐⭐⭐⭐⭐</div></div><div class="avis-texte">Livraison rapide, de plus la créatrice a pris le temps de confirmer mes souhaits !</div></div>
+      <div class="avis-carte"><div class="avis-carte-top"><div class="avis-avatar">K</div><div class="avis-auteur-bloc"><div class="avis-auteur">Kezia</div><div class="avis-date">13 novembre 2025</div></div><div class="avis-etoiles">⭐⭐⭐⭐⭐</div></div><div class="avis-texte">Jolis petits cubes pour décorer la table d'anniversaire de ma fille.</div></div>
     </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">H</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Harlinx</div>
-          <div class="avis-date">4 février 2026</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Vraiment magnifique, super beau, j'adore !! 😍😍</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">I</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Isabelle</div>
-          <div class="avis-date">16 janvier 2026</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Un régal pour les yeux. Idéal pour ravir les passionnés de lecture.</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">M</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Marion</div>
-          <div class="avis-date">25 décembre 2025</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Très bien comme je le voulais.</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">M</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Mairenna</div>
-          <div class="avis-date">15 décembre 2025</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Vraiment au top ! Emma a été très réactive et hyper arrangeante. Je recommande +++, rien à redire sur la qualité, le suivi, l'envoi. Hâte de l'offrir, je sais d'avance que le bracelet fera plaisir.</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">C</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Camêla</div>
-          <div class="avis-date">3 décembre 2025</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Super résultat, avec une livraison rapide et soignée, c'est nickel :)</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">A</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Audrey</div>
-          <div class="avis-date">26 novembre 2025</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Article reçu rapidement et échange avec Emma fluide 😊</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">A</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Alexander</div>
-          <div class="avis-date">31 octobre 2025</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Travail impeccable 👍🏼 Je commanderais à nouveau avec plaisir.</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">M</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Mathilde</div>
-          <div class="avis-date">14 novembre 2025</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Parfait ! Livraison très rapide ! Ravie de mon achat ! Merci beaucoup.</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">K</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Kezia</div>
-          <div class="avis-date">13 novembre 2025</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Jolis petits cubes pour décorer la table d'anniversaire de ma fille.</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">J</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Justine</div>
-          <div class="avis-date">12 novembre 2025</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">L'article correspond à l'annonce, très joli, reçu dans les temps !</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">S</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Samir</div>
-          <div class="avis-date">26 avril 2025</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Parfait !! Article conforme à ma commande, super travail, très bien emballé et vite reçu !! Très satisfait !!!</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">C</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Coraly</div>
-          <div class="avis-date">29 avril 2025</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Le cadeau a été très apprécié.</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">S</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Siria</div>
-          <div class="avis-date">22 janvier 2025</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Très bien fait, mon fils sera content. Je le recommanderai 🥰</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">O</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Olivia</div>
-          <div class="avis-date">5 décembre 2024</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Livraison rapide, de plus la créatrice a pris le temps de confirmer mes souhaits pour cette création !</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">L</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Luna</div>
-          <div class="avis-date">20 décembre 2024</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">L'article est bien fait, j'ai été très satisfait ! L'expédition a été rapide.</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">F</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Frédérique</div>
-          <div class="avis-date">15 novembre 2024</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">J'adore, magnifique travail, je recommande. Livré assez rapidement, franchement top.</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">A</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Andy</div>
-          <div class="avis-date">26 décembre 2024</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Reçu très rapidement et vendeuse sérieuse et très sympathique.</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">A</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">ANEMONE</div>
-          <div class="avis-date">12 juillet 2025</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Très beau cadeau, article exactement comme décrit, livraison rapide. Nous avons eu un petit souci lors de la première livraison et cela a été résolu très rapidement.</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">S</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Sylvie</div>
-          <div class="avis-date">17 juin 2025</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Article magnifique, très bon travail. Hâte de l'offrir à ma fille. Merci beaucoup 😊</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">A</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Andine</div>
-          <div class="avis-date">7 août 2024</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Produit magnifique, le papa de mon filleul en a pleuré ! Emma se soucie du détail, j'ai eu plusieurs échanges pour avoir mon produit qui est juste parfait. Je recommande vivement.</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">N</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Nichilo Roger</div>
-          <div class="avis-date">19 juillet 2024</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Super beau, exactement ce à quoi je m'attendais, et en plus on a eu un petit cadeau (un ruban de la couleur de notre choix). Je recommande ! Merci encore 😄</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">M</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Marine</div>
-          <div class="avis-date">13 juillet 2024</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Vendeuse très réactive, article reçu très vite. Je recommande !!</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">C</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Cél</div>
-          <div class="avis-date">29 juin 2024</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Très réactif, expédition soignée et rapide, produit conforme à la description, article de grande qualité. Je suis ravie de mon achat ! Je recommande +++ cette boutique.</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">A</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Aurélie</div>
-          <div class="avis-date">7 juin 2024</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Très joli, simple mais efficace, ma maman était ravie. Merci.</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">A</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Alissia</div>
-          <div class="avis-date">27 mai 2024</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Parfait ! Je les ai pris pour le baptême de mon neveu qui adore Simba. Mille merci pour l'envoi si rapide !</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">G</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Gaëlle</div>
-          <div class="avis-date">26 mai 2024</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Très belle déco en bois, gravure nickel, un cadeau qui fait son effet. La vendeuse est top, elle a fait au plus vite pour que je reçoive l'article avant la fête des mamans. Je recommande +++</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">C</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">CORINNE</div>
-          <div class="avis-date">24 avril 2024</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Très satisfaite de cet achat. Merci pour votre sérieux et délai de livraison rapide. Je recommande.</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">C</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Christopher</div>
-          <div class="avis-date">13 février 2024</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Super rapide, colis bien emballé dans un carton, la fleur est magnifique. Je recommande, merci beaucoup !</div>
-    </div>
-
-    <div class="avis-carte">
-      <div class="avis-carte-top">
-        <div class="avis-avatar">H</div>
-        <div class="avis-auteur-bloc">
-          <div class="avis-auteur">Hélène</div>
-          <div class="avis-date">5 septembre 2024</div>
-        </div>
-        <div class="avis-etoiles">⭐⭐⭐⭐⭐</div>
-      </div>
-      <div class="avis-texte">Excellent cadeau, comme vendeur 😊</div>
-    </div>
-
+    <button class="avis-fleche droite" onclick="deplacerAvis(1)">&#8594;</button>
   </div>
-
-  <div class="avis-voir-plus">
-    <a href="https://www.etsy.com/shop/Lescreationsemma06" target="_blank">Voir tous les avis sur Etsy ✨</a>
-  </div>
-
+   <div class="avis-dots" id="avisDots"></div>
+  <div class="avis-voir-plus"><a href="https://www.etsy.com/shop/Lescreationsemma06" target="_blank">Voir tous les avis sur Etsy ✨</a></div>
 </div>
 
 
@@ -549,10 +192,13 @@
 
 <div class="toast" id="toastMini"></div>
 
+<script src="produit_site_emme.js"></script>
 <script src="fonctionboutonscrollhaut.js"></script>
-<script src="minipanierflottant.js"></script>  
+<script src="minipanierflottant.js"></script>    
+<script src="fonctionpanierquantite.js"></script>  
+<script src="site_emma.js"></script>
 <script src="fonctionscrollapparition.js"></script>  
-<script src="fonctionpanierquantite.js"></script>
+<script src="recherchesiteemma.js"></script>
 
  <script>
 function toggleMenu() {
