@@ -3,6 +3,14 @@ a { /*enleve tous les lien surligné*/
 }
 /*page acceuil*/
 
+.github {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  background-color: yellow; 
+  padding: 10px;
+}
+
 body {
   margin: 0;
   padding: 0; 
