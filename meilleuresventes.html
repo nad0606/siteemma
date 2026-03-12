@@ -53,7 +53,18 @@
 </nav>
  
 
-
+ <div class="cat-tri">
+    <label for="triSelect">Trier par :</label>
+    <select id="triSelect" onchange="trierCatalogue(this.value)">
+      <option value="">— Choisir —</option>
+      <option value="az">🔤 A → Z</option>
+      <option value="za">🔤 Z → A</option>
+      <option value="prix-asc">💰 Prix croissant</option>
+      <option value="prix-desc">💰 Prix décroissant</option>
+      <option value="stock">⚡ Disponibilité</option>
+      
+    </select>
+  </div>
 
 
 

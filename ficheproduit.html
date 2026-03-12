@@ -56,17 +56,29 @@
 </nav>
 
 <div class="catalogue-page">
-  <div class="cat-filtres" id="catFiltres">
+  <div class="catalogue-sous">Toutes nos créations faites main & personnalisées 🌸</div>
+ 
+<div class="cat-filtres-wrap">
+    <div class="cat-filtres" id="catFiltres">
     <button class="cat-btn actif" onclick="filtrer('tous', this)">✨ Tous</button>
+    <div class="cat-btn-dropdown" id="insertDropdown">
+      <button class="cat-btn cat-btn-has-sub" onclick="filtrer('Insert', this)" onmouseenter="ouvrirSousMenu()" onmouseleave="fermerSousMenuDelai()">🧸 Insert bac IKEA ▾</button>
+      <div class="cat-sous-menu" id="insertSousMenu" onmouseenter="annulerFermeture()" onmouseleave="fermerSousMenuDelai()">
+        <button class="cat-sous-btn" onclick="filtrerInsert('hiver', this)">❄️ Hiver</button>
+        <button class="cat-sous-btn" onclick="filtrerInsert('printemps', this)">🌸 Printemps</button>
+        <button class="cat-sous-btn" onclick="filtrerInsert('ete', this)">☀️ Été</button>
+        <button class="cat-sous-btn" onclick="filtrerInsert('automne', this)">🍂 Automne</button>
+        <button class="cat-sous-btn" onclick="filtrerInsert('tous-inserts', this)">✨ Tous les inserts</button>
+      </div>
+    </div>
     <button class="cat-btn" onclick="filtrer('Naissance', this)">🍼 Naissance & Bébé</button>
     <button class="cat-btn" onclick="filtrer('Chambre', this)">🐻 Chambre Enfant</button>
-    <button class="cat-btn" onclick="filtrer('Décoration Famille', this)">👨‍👩‍👧 Décoration Famille</button>
-    <button class="cat-btn" onclick="filtrer('Décoration Maison', this)">🪵 Décoration Maison</button>
+    <button class="cat-btn" onclick="filtrer('Décoration Famille', this)">👨‍👩‍👧 Décoration Famille et Maison</button>
     <button class="cat-btn" onclick="filtrer('Noël', this)">🎄 Noël Personnalisé</button>
     <button class="cat-btn" onclick="filtrer('Annonce', this)">🐣 Annonce & Parrain</button>
     <button class="cat-btn" onclick="filtrer('Bijoux', this)">💍 Bijoux & Accessoires</button>
     <button class="cat-btn" onclick="filtrer('Papeterie', this)">📖 Papeterie & Jeux</button>
-    <button class="cat-btn" onclick="filtrer('Insert', this)">🧸 Insert en bois bac IKEA</button>
+   
   </div>
 </div>
 
@@ -78,6 +90,67 @@
 <div class="toast-fiche" id="toastFiche"></div>
 <script src="produit_site_emme.js"></script>
 <script>
+  
+/* ── Sous-menu Insert thèmes ── */
+var fermerTimer = null;
+ 
+function ouvrirSousMenu() {
+  clearTimeout(fermerTimer);
+  var btn = document.querySelector('.cat-btn-has-sub');
+  var menu = document.getElementById('insertSousMenu');
+  var rect = btn.getBoundingClientRect();
+  menu.style.top  = (rect.bottom + 6) + 'px';
+  menu.style.left = rect.left + 'px';
+  menu.classList.add('ouvert');
+}
+function fermerSousMenuDelai() {
+  fermerTimer = setTimeout(function() {
+    document.getElementById('insertSousMenu').classList.remove('ouvert');
+  }, 200);
+}
+function annulerFermeture() {
+  clearTimeout(fermerTimer);
+}
+ 
+var motsThemes = {
+  hiver:    ['hiver', 'noël', 'noel', 'banquise', 'bonhomme', 'renne', 'sapin', 'neige'],
+  printemps:['printemps', 'fleur', 'oiseau', 'papillon', 'pâques', 'paques', 'lapin', 'jardin', 'saint valentin'],
+  ete:      ['été', 'ete', 'garage', 'voiture', 'pompier', 'plage', 'couleur'],
+  automne:  ['automne', 'halloween', 'sorcière', 'citrouille', 'écureuil', 'ecureuil', 'gland', 'forêt', 'foret']
+};
+ 
+function filtrerInsert(theme, btn) {
+  /* Marquer bouton actif dans le sous-menu */
+  document.querySelectorAll('.cat-sous-btn').forEach(function(b) { b.classList.remove('actif'); });
+  if (btn) btn.classList.add('actif');
+ 
+  /* Marquer le bouton parent comme actif */
+  document.querySelectorAll('.cat-btn').forEach(function(b) { b.classList.remove('actif'); });
+  document.querySelector('.cat-btn-has-sub').classList.add('actif');
+ 
+  /* Fermer le sous-menu */
+  document.getElementById('insertSousMenu').classList.remove('ouvert');
+ 
+  if (theme === 'tous-inserts') {
+    filtrer('Insert', null);
+    return;
+  }
+ 
+  var mots = motsThemes[theme] || [];
+  toutesLesCartes.forEach(function(carte) {
+    var cat = (carte.dataset.categorie || '').toLowerCase();
+    var nom = (carte.dataset.nom || carte.querySelector('.produit-nom') ? carte.querySelector('.produit-nom').textContent : '').toLowerCase();
+ 
+    /* D'abord, cacher tout ce qui n'est pas Insert */
+    if (!cat.includes('insert')) {
+      carte.style.display = 'none';
+      return;
+    }
+    /* Puis filtrer par thème dans le nom */
+    var match = mots.some(function(m) { return nom.includes(m); });
+    carte.style.display = match ? '' : 'none';
+  });
+}
     /*zoom photo*/
     function ouvrirLightbox(src) {
   var lb = document.getElementById('lightbox');
@@ -109,6 +182,20 @@ function changerImg(src, el) {
   }, 300);
   document.querySelectorAll('.fiche-thumb').forEach(function(t) { t.classList.remove('actif'); }); 
   el.classList.add('actif'); 
+}
+
+/* ── Sélecteur couleur visuel ── */
+function choisirCouleur(el) {
+  var grille = el.closest('.couleur-grille');
+  grille.querySelectorAll('.couleur-option').forEach(function(o) { o.classList.remove('actif'); });
+  el.classList.add('actif');
+  var valeur = el.dataset.valeur;
+  /* Mettre à jour le select caché */
+  var select = grille.nextElementSibling;
+  if (select) select.value = valeur;
+  /* Mettre à jour le label affiché */
+  var label = document.getElementById('couleurChoisie');
+  if (label) label.textContent = valeur;
 }
 
 function naviguerImg(direction) {
@@ -149,8 +236,20 @@ if (champsVides.length > 0) {
 
     var quantite = 1;
     var prixFinal = parseFloat(produit.prix.replace(',','.'));
-
-    if (produit.prixUnitaire && produit.variationPrix) {
+ if (hasMultiPrix) {
+      var prixUnitaireMulti = 0;
+      produit.variations.forEach(function(v) {
+        if (!v.affectePrix) return;
+        var sel = document.querySelector('.fiche-select[data-nom="' + v.nom + '"]');
+        if (!sel) return;
+        if (v.prixParOption) {
+          prixUnitaireMulti = v.prixParOption[sel.value] || 0;
+        } else {
+          quantite = parseInt(sel.value) || 1;
+        }
+      });
+      prixFinal = prixUnitaireMulti;
+    } else if (produit.prixUnitaire && produit.variationPrix) {
       var selectQte = document.querySelector('.fiche-select[data-nom="' + produit.variationPrix + '"]');
       if (selectQte) {
         quantite = parseInt(selectQte.value) || 1;
@@ -160,6 +259,7 @@ if (champsVides.length > 0) {
       var selectOpt = document.querySelector('.fiche-select[data-nom="' + produit.variationPrix + '"]');
       if (selectOpt) prixFinal = produit.prixOptions[selectOpt.value] || prixFinal;
     }
+ 
 
     /* ── Vérification stock APRÈS avoir la quantite ── */
     if (produit.stock !== undefined) {
@@ -197,41 +297,94 @@ if (champsVides.length > 0) {
     setTimeout(function() { ouvrirMiniPanier(); }, 600);
   }
 
-  // Construire la fiche
+   // Construire la fiche
   if (produit) {
     document.title = produit.nom + ' — Les Créations Emma 06';
-
+ 
     var thumbsHtml = produit.images.map(function(img, i) {
       return '<img src="' + img + '" class="fiche-thumb' + (i===0?' actif':'') + '" onclick="changerImg(\'' + img + '\', this)" alt="photo ' + (i+1) + '">';
     }).join('');
-
+ 
+  /* Correspondance nom → code CSS pour le sélecteur couleur */
+  var couleursCSS = {
+    'Rose clair':  '#F2D0F1',
+    'Rose':        '#F0417A',
+    'Bleu clair':  '#8BBfd4',
+    'Bleu':        '#4A90D9',
+    'Bleu foncé':  '#1B3A80',
+    'Rouge':       '#E83232',
+    'Orange':      '#F9663D',
+    'Jaune':       '#F5F064',
+    'Vert':        '#D7F2AA',
+    'Vert foncé':  '#2D6A2D',
+    'Blanc':       '#FFFFFF',
+    'Noir':        '#1A1A1A',
+    'Or':          '#C8952A'
+  };
+ 
+  var hasMultiPrix = produit.variations && produit.variations.some(function(v) { return v.affectePrix; });
+ 
   var variationsHtml = produit.variations.map(function(v) {
-  var isPrix = produit.variationPrix && v.nom === produit.variationPrix;
-  var onchange = isPrix ? ' onchange="majPrix(this.value)"' : ''; 
-  return '<div class="fiche-section-titre">' + v.nom + '</div>' +
-    '<select class="fiche-select" data-nom="' + v.nom + '"' + onchange + '>' +
-    v.options.map(function(o) {
-      var label = o;
-      if (isPrix && produit.prixUnitaire) {
-        var qte = parseInt(o) || 1;
-        var total = (produit.prixUnitaire * qte).toFixed(2).replace('.', ',');
-        label = o + ' — ' + total + ' €';                       
-      } else if (isPrix && produit.prixOptions && produit.prixOptions[o] !== undefined) {
-        label = o + ' — ' + produit.prixOptions[o].toFixed(2).replace('.', ',') + ' €';
-      }
-      return '<option value="' + o + '">' + label + '</option>';
-    }).join('') +
-    '</select>';
-}).join('');
+    var isPrix = produit.variationPrix && v.nom === produit.variationPrix;
+    var onchange = '';
+    if (hasMultiPrix && v.affectePrix) {
+      onchange = ' onchange="majPrixMulti()"';
+    } else if (isPrix) {
+      onchange = ' onchange="majPrix(this.value)"';
+    }
 
+    /* ── Sélecteur couleur visuel ── */
+    if (v.nom.toLowerCase() === 'couleur') {
+      var ronds = v.options.map(function(o, i) {
+        var css = couleursCSS[o] || '#ccc';
+        var estBlanc = o === 'Blanc';
+        return '<div class="couleur-option' + (i === 0 ? ' actif' : '') + '" ' +
+          'data-valeur="' + o + '" ' +
+          'title="' + o + '" ' +
+          'onclick="choisirCouleur(this)" ' +
+          'style="background:' + css + ';' + (estBlanc ? 'border:2px solid #ddd;' : '') + '">' +
+          '<span class="couleur-check">✓</span>' +
+          '</div>';
+      }).join('');
+      return '<div class="fiche-section-titre">Couleur : <span id="couleurChoisie">' + v.options[0] + '</span></div>' +
+        '<div class="couleur-grille" data-nom="' + v.nom + '">' + ronds + '</div>' +
+        /* Select caché pour récupérer la valeur comme les autres */
+        '<select class="fiche-select" data-nom="' + v.nom + '" style="display:none">' +
+        v.options.map(function(o) { return '<option value="' + o + '">' + o + '</option>'; }).join('') +
+        '</select>';
+    }
+ 
+    /* ── Select classique pour les autres variations ── */
+    return '<div class="fiche-section-titre">' + v.nom + '</div>' +
+      '<select class="fiche-select" data-nom="' + v.nom + '"' + onchange + '>' +
+      v.options.map(function(o) {
+        var label = o;
+        if (isPrix && produit.prixUnitaire) {
+          var qte = parseInt(o) || 1;
+          var total = (produit.prixUnitaire * qte).toFixed(2).replace('.', ',');
+          label = o + ' — ' + total + ' €';
+         } else if (isPrix && produit.prixOptions && produit.prixOptions[o] !== undefined) {
+          label = o + ' — ' + produit.prixOptions[o].toFixed(2).replace('.', ',') + ' €';
+        } else if (v.affectePrix && v.prixParOption && v.prixParOption[o] !== undefined) {
+          /* Variation Taille → prix unitaire */
+          label = o + ' — ' + v.prixParOption[o].toFixed(2).replace('.', ',') + ' € / unité';
+        } else if (v.affectePrix && !v.prixParOption) {
+  label = o + ' lettre' + (parseInt(o) > 1 ? 's' : '');
+}
+        return '<option value="' + o + '">' + label + '</option>';
+      }).join('') +
+      '</select>';
+  }).join('');
+ 
     var champsHtml = produit.champs.map(function(c) {
       return '<div class="fiche-section-titre">✏️ ' + c.label.replace(/\n/g, '<br>') + '</div>' +
         (c.type === 'textarea'
           ? '<textarea class="fiche-textarea" data-nom="' + c.label + '" placeholder="' + c.placeholder + '" rows="3"></textarea>'
           : '<input class="fiche-input" data-nom="' + c.label + '" type="text" placeholder="' + c.placeholder + '">');
     }).join('');
-
+ 
     document.getElementById('ficheProduit').innerHTML =
+  
   
 '<div class="fiche-galerie">' +    
   
@@ -271,7 +424,7 @@ if (champsVides.length > 0) {
   function filtrer(mot) {
     window.location = 'catalogueemma.html?filtre=' + encodeURIComponent(mot);
   }
-  function majPrix(valeur) {
+   function majPrix(valeur) {
     if (!produit) return;
     var total;
     if (produit.prixOptions && produit.prixOptions[valeur] !== undefined) {
@@ -282,7 +435,25 @@ if (champsVides.length > 0) {
     } else return;
     document.getElementById('fichePrixAffiche').textContent = total + ' €';
   }
-
+function majPrixMulti() {
+  if (!produit) return;
+  var prixUnitaireMulti = 0;
+  var nombreMulti = 1;
+  produit.variations.forEach(function(v) {
+    if (!v.affectePrix) return;
+    var sel = document.querySelector('.fiche-select[data-nom="' + v.nom + '"]');
+    if (!sel) return;
+    if (v.prixParOption) {
+      prixUnitaireMulti = v.prixParOption[sel.value] || 0;
+    } else {
+      nombreMulti = parseInt(sel.value) || 1;
+    }
+  });
+  if (prixUnitaireMulti > 0) {
+    var total = (prixUnitaireMulti * nombreMulti).toFixed(2).replace('.', ',');
+    document.getElementById('fichePrixAffiche').textContent = total + ' €';
+  }
+}
 </script>
 
 <div class="minipanier-overlay" id="minipanierOverlay" onclick="fermerMiniPanier()"></div>
@@ -423,7 +594,7 @@ document.addEventListener("click", function(e) {
     </div>
   </div>
 
-</div>
+</div></div>
 
 <div class="toast" id="toastMini"></div>
 

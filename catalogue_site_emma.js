@@ -219,16 +219,24 @@ function trierCatalogue(mode) {
   var grille = document.getElementById('produitsGrille');
   if (!grille) return;
   var cartes = toutesLesCartes.filter(function(c) { return c.style.display !== 'none'; });
+
+  function getPrix(p) {
+    // Priorité : prixUnitaire (nombre) > extraction du premier nombre dans la chaîne prix
+    if (p.prixUnitaire) return p.prixUnitaire;
+    var match = p.prix.replace(',', '.').match(/[\d.]+/);
+    return match ? parseFloat(match[0]) : 0;
+  }
+
   cartes.sort(function(a, b) {
     var pa = produits.find(function(p) { return p.id === parseInt(a.dataset.id); });
     var pb = produits.find(function(p) { return p.id === parseInt(b.dataset.id); });
     if (!pa || !pb) return 0;
     switch(mode) {
-      case 'az':       return pa.nom.localeCompare(pb.nom, 'fr');
-      case 'za':       return pb.nom.localeCompare(pa.nom, 'fr');
-      case 'prix-asc': return parseFloat(pa.prix.replace(',','.')) - parseFloat(pb.prix.replace(',','.'));
-      case 'prix-desc':return parseFloat(pb.prix.replace(',','.')) - parseFloat(pa.prix.replace(',','.'));
-      case 'stock':    return (pb.stock || 0) - (pa.stock || 0);
+      case 'az':         return pa.nom.localeCompare(pb.nom, 'fr');
+      case 'za':         return pb.nom.localeCompare(pa.nom, 'fr');
+      case 'prix-asc':   return getPrix(pa) - getPrix(pb);
+      case 'prix-desc':  return getPrix(pb) - getPrix(pa);
+      case 'stock':      return (pb.stock || 0) - (pa.stock || 0);
       case 'bestseller': return (pb.bestseller ? 1 : 0) - (pa.bestseller ? 1 : 0);
       default: return 0;
     }

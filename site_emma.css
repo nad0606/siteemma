@@ -1929,6 +1929,51 @@ footer a:hover {
     .toast-demo.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
 
+    /* ── Sous-menu Insert thèmes ── */
+.cat-btn-dropdown {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+.cat-btn-has-sub {
+  padding-right: 10px;
+}
+.cat-sous-menu {
+  display: none;
+  position: fixed;
+  top: calc(100% + 6px);
+  left: 0;
+  background: #fff;
+  border: 2px solid #e8cce8;
+  border-radius: 14px;
+  padding: 8px;
+   z-index: 9999;
+  box-shadow: 0 6px 20px rgba(180,80,180,0.15);
+  min-width: 180px;
+  flex-direction: column;
+  gap: 4px;
+}
+.cat-sous-menu.ouvert {
+  display: flex;
+}
+.cat-sous-btn {
+  background: none;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+  color: #4A2060;
+  font-weight: 500;
+  transition: background 0.15s;
+}
+.cat-sous-btn:hover, .cat-sous-btn.actif {
+  background: #f3e6ff;
+  color: #7b2fa0;
+}
+
     /* fiche produits*/
 
     .fiche-page { max-width: 1000px; margin: 30px auto 80px; padding: 0 20px; }
@@ -2194,6 +2239,45 @@ h2.pacifico-regular {
   .avis-fleche { width: 30px; height: 30px; font-size: 0.85rem; }
 
   /* Catalogue */
+}
+ 
+/* ── Sélecteur couleur visuel ── */
+.couleur-grille {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.couleur-option {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 3px solid transparent;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  position: relative;
+  transition: transform 0.15s, border-color 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.couleur-option:hover { transform: scale(1.12); }
+.couleur-option.actif { border-color: #E365C1; transform: scale(1.12); box-shadow: 0 0 0 2px #E365C1; }
+.couleur-check {
+  display: none;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  pointer-events: none;
+}
+.couleur-option.actif .couleur-check { display: block; }
+#couleurChoisie { color: #E365C1; font-weight: 600; }
+ 
+ 
+    
  
 
 .cat-filtres-wrap { position: relative; }
@@ -2281,4 +2365,8 @@ h2.pacifico-regular {
   .boutononglet { padding: 8px 12px; font-size: 0.82rem; }
   .pourquoi-grille { grid-template-columns: repeat(2, 1fr); }
   .produits-grille { grid-template-columns: repeat(3, 1fr) !important; }
+}
+/* DESKTOP > 1024px → 4 colonnes */
+@media (min-width: 1025px) {
+  .produits-grille { grid-template-columns: repeat(4, 1fr) !important; gap: 24px; max-width: 1400px; }
 }
