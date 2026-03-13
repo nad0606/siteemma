@@ -139,128 +139,15 @@
 <script src="produit_site_emme.js"></script>
 <script src="catalogue_site_emma.js"></script>
 <script src="recherchesiteemma.js"></script>
-
-<script>
-/* ── Sous-menu Insert thèmes ── */
-var fermerTimer = null;
- 
-function ouvrirSousMenu() {
-  clearTimeout(fermerTimer);
-  var btn = document.querySelector('.cat-btn-has-sub');
-  var menu = document.getElementById('insertSousMenu');
-  var rect = btn.getBoundingClientRect();
-  menu.style.top  = (rect.bottom + 6) + 'px';
-  menu.style.left = rect.left + 'px';
-  menu.classList.add('ouvert');
-}
-function fermerSousMenuDelai() {
-  fermerTimer = setTimeout(function() {
-    document.getElementById('insertSousMenu').classList.remove('ouvert');
-  }, 200);
-}
-function annulerFermeture() {
-  clearTimeout(fermerTimer);
-}
- 
-var motsThemes = {
-  hiver:    ['hiver', 'noël', 'noel', 'banquise', 'bonhomme', 'renne', 'sapin', 'neige'],
-  printemps:['printemps', 'fleur', 'oiseau', 'papillon', 'pâques', 'paques', 'lapin', 'jardin', 'saint valentin'],
-  ete:      ['été', 'ete', 'garage', 'voiture', 'pompier', 'plage', 'couleur'],
-  automne:  ['automne', 'halloween', 'sorcière', 'citrouille', 'écureuil', 'ecureuil', 'gland', 'forêt', 'foret']
-};
- 
-function filtrerInsert(theme, btn) {
-  /* Marquer bouton actif dans le sous-menu */
-  document.querySelectorAll('.cat-sous-btn').forEach(function(b) { b.classList.remove('actif'); });
-  if (btn) btn.classList.add('actif');
- 
-  /* Marquer le bouton parent comme actif */
-  document.querySelectorAll('.cat-btn').forEach(function(b) { b.classList.remove('actif'); });
-  document.querySelector('.cat-btn-has-sub').classList.add('actif');
- 
-  /* Fermer le sous-menu */
-  document.getElementById('insertSousMenu').classList.remove('ouvert');
- 
-  if (theme === 'tous-inserts') {
-    filtrer('Insert', null);
-    return;
-  }
- 
-  var mots = motsThemes[theme] || [];
-  toutesLesCartes.forEach(function(carte) {
-    var cat = (carte.dataset.categorie || '').toLowerCase();
-    var nom = (carte.dataset.nom || carte.querySelector('.produit-nom') ? carte.querySelector('.produit-nom').textContent : '').toLowerCase();
- 
-    /* D'abord, cacher tout ce qui n'est pas Insert */
-    if (!cat.includes('insert')) {
-      carte.style.display = 'none';
-      return;
-    }
-    /* Puis filtrer par thème dans le nom */
-    var match = mots.some(function(m) { return nom.includes(m); });
-    carte.style.display = match ? '' : 'none';
-  });
-}
-</script>
-
-<script>
-var filtres = document.getElementById('catFiltres');
-var hintR = document.getElementById('catScrollHint');
-var hintL = document.getElementById('catScrollLeft');
-
-function majFleches() {
-  var atEnd   = filtres.scrollLeft + filtres.clientWidth >= filtres.scrollWidth - 5;
-  var atStart = filtres.scrollLeft <= 5;
-  hintR.style.opacity = atEnd   ? '0' : '1';
-  hintL.style.opacity = atStart ? '0' : '1';
-}
-majFleches();
-
-hintR.addEventListener('click', function() { filtres.scrollBy({ left: 150, behavior: 'smooth' }); });
-hintL.addEventListener('click', function() { filtres.scrollBy({ left: -150, behavior: 'smooth' }); });
-filtres.addEventListener('scroll', majFleches);
-
-  /* Lire le filtre depuis l'URL et l'activer */
-  (function() {
-    var params = new URLSearchParams(window.location.search);
-    var filtre = params.get('filtre');
-    if (filtre && filtre !== 'tous') {
-      var btns = document.querySelectorAll('.cat-btn');
-      btns.forEach(function(btn) {
-        btn.classList.remove('actif');
-        if (btn.textContent.toLowerCase().includes(filtre.toLowerCase())) {
-          btn.classList.add('actif');
-          filtrer(filtre, btn);
-        }
-      });
-    }
-  })();
- 
-
-</script>
-<script src="fonctionboutonscrollhaut.js"></script>
+<script src="cataloguesousmenu.js"></script>
+<script src="flechescroll.js"></script>
 <script src="minipanierflottant.js"></script>  
 <script src="fonctionpanierquantite.js"></script> 
-<script src="fonctionscrollapparition.js"></script>   
+<script src="fonctionscrollapparition.js"></script>  
+<script src="boutonscrollhaut.js"></script> 
+<script src="menumobile.js"></script>
 
 
- <script>
-function toggleMenu() {
-  var menu = document.getElementById('menuHamburger');
-  var nav = document.querySelector('.menuboutons');
-  nav.classList.toggle('ouvert');
-  menu.classList.toggle('ouvert');
-}
-// Fermer le menu si on clique ailleurs
-document.addEventListener('click', function(e) {
-  var nav = document.querySelector('.menuboutons');
-  var btn = document.getElementById('menuHamburger');
-  if (nav && btn && !nav.contains(e.target) && !btn.contains(e.target)) {
-    nav.classList.remove('ouvert');
-    btn.classList.remove('ouvert');
-  }
-});
-</script>
 
 
 <footer> 

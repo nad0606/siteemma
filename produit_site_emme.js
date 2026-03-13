@@ -6,7 +6,54 @@ var produits = [
     nom: "Marque-page papillon violet",
     categorie: "Papeterie & Jeux",
     prix: "à partir de 6,50",
-    prixOptions: { "Sans pendentif": 6.50, "Avec pendentif": 9.00 },
+    prixOptions: { "Sans pendentif": 6.50,"N°1 — Écureuil": 9.00, "N°2 — Nuage souriant": 9.00,
+  "N°3 — Masque": 9.00,
+  "N°4 — Coccinelle": 9.00,
+  "N°5 — Appareil photo": 9.00,
+  "N°6 — Ballons": 9.00,
+  "N°7 — Ourson": 9.00,
+  "N°8 — Tasse de café avec chat": 9.00,
+  "N°9 — Fer à cheval": 9.00,
+  "N°10 — Fleur blanche": 9.00,
+  "N°11 — Lapin": 9.00,
+  "N°12 — Marguerite": 9.00,
+  "N°13 — Abeille dorée": 9.00,
+  "N°14 — Fraise": 9.00,
+  "N°15 — Enveloppe cœur": 9.00,
+  "N°16 — Cœur doré": 9.00,
+  "N°17 — Abeille": 9.00,
+  "N°18 — Arc-en-ciel": 9.00,
+  "N°19 — Étoile de mer": 9.00,
+  "N°20 — Gobelet café": 9.00,
+  "N°21 — Trèfle à quatre feuilles": 9.00,
+  "N°22 — Plume": 9.00,
+  "N°23 — Cerises": 9.00,
+   "Lettre A": 9.00,
+  "Lettre B": 9.00,
+  "Lettre C": 9.00,
+  "Lettre D": 9.00,
+  "Lettre E": 9.00,
+  "Lettre F": 9.00,
+  "Lettre G": 9.00,
+  "Lettre H": 9.00,
+  "Lettre I": 9.00,
+  "Lettre J": 9.00,
+  "Lettre K": 9.00,
+  "Lettre L": 9.00,
+  "Lettre M": 9.00,
+  "Lettre N": 9.00,
+  "Lettre O": 9.00,
+  "Lettre P": 9.00,
+  "Lettre Q": 9.00,
+  "Lettre R": 9.00,
+  "Lettre S": 9.00,
+  "Lettre T": 9.00,
+  "Lettre U": 9.00,
+  "Lettre V": 9.00,
+  "Lettre W": 9.00,
+  "Lettre X": 9.00,
+  "Lettre Y": 9.00,
+  "Lettre Z": 9.00 },
      variationPrix: "Choix",
     description: "<div style='color:#4A2060;'>" + 
   "<div style='text-align:center'>✨ <strong>Petit papillon marque page</strong> ✨</div>\n\n" +
@@ -37,9 +84,57 @@ var produits = [
       "imgpapillonviolet8.avif"
     ],
     variations: [
-      { nom: "Choix", type: "select", options: ["Sans pendentif" , "Avec pendentif"] }
+      { nom: "Choix", type: "select", options: ["Sans pendentif" ,  "N°1 — Écureuil",
+  "N°2 — Nuage souriant",
+  "N°3 — Masque",
+  "N°4 — Coccinelle",
+  "N°5 — Appareil photo",
+  "N°6 — Ballons",
+  "N°7 — Ourson",
+  "N°8 — Tasse de café avec chat",
+  "N°9 — Fer à cheval",
+  "N°10 — Fleur blanche",
+  "N°11 — Lapin",
+  "N°12 — Marguerite",
+  "N°13 — Abeille dorée",
+  "N°14 — Fraise",
+  "N°15 — Enveloppe cœur",
+  "N°16 — Cœur doré",
+  "N°17 — Abeille",
+  "N°18 — Arc-en-ciel",
+  "N°19 — Étoile de mer",
+  "N°20 — Gobelet café",
+  "N°21 — Trèfle à quatre feuilles",
+  "N°22 — Plume",
+  "N°23 — Cerises",
+  "Lettre A",
+  "Lettre B",
+  "Lettre C",
+  "Lettre D",
+  "Lettre E",
+  "Lettre F",
+  "Lettre G",
+  "Lettre H",
+  "Lettre I",
+  "Lettre J",
+  "Lettre K",
+  "Lettre L",
+  "Lettre M",
+  "Lettre N",
+  "Lettre O",
+  "Lettre P",
+  "Lettre Q",
+  "Lettre R",
+  "Lettre S",
+  "Lettre T",
+  "Lettre U",
+  "Lettre V",
+  "Lettre W",
+  "Lettre X",
+  "Lettre Y",
+  "Lettre Z"] }
     ],
-    champs: [{ label: "Choix du prendentif", placeholder: "Ex : Sans, lettre M ou numero 12 (voir photos)", type: "textarea" }],
+    champs: [{ label: "Choix", placeholder: "Ex : Sans", type: "textarea" }],
     delai: "1 à 5 jours ouvrés",
     materiaux: "Métal doré émaillé",
     stock: 3
@@ -50,7 +145,54 @@ var produits = [
     nom: "Marque-page papillon bleu",
     categorie: "Papeterie & Jeux",
     prix: "à partir de 6,50",
-    prixOptions: { "Sans pendentif": 6.50, "Avec pendentif": 9.00 },
+      prixOptions: { "Sans pendentif": 6.50,"N°1 — Écureuil": 9.00, "N°2 — Nuage souriant": 9.00,
+  "N°3 — Masque": 9.00,
+  "N°4 — Coccinelle": 9.00,
+  "N°5 — Appareil photo": 9.00,
+  "N°6 — Ballons": 9.00,
+  "N°7 — Ourson": 9.00,
+  "N°8 — Tasse de café avec chat": 9.00,
+  "N°9 — Fer à cheval": 9.00,
+  "N°10 — Fleur blanche": 9.00,
+  "N°11 — Lapin": 9.00,
+  "N°12 — Marguerite": 9.00,
+  "N°13 — Abeille dorée": 9.00,
+  "N°14 — Fraise": 9.00,
+  "N°15 — Enveloppe cœur": 9.00,
+  "N°16 — Cœur doré": 9.00,
+  "N°17 — Abeille": 9.00,
+  "N°18 — Arc-en-ciel": 9.00,
+  "N°19 — Étoile de mer": 9.00,
+  "N°20 — Gobelet café": 9.00,
+  "N°21 — Trèfle à quatre feuilles": 9.00,
+  "N°22 — Plume": 9.00,
+  "N°23 — Cerises": 9.00,
+  "Lettre A": 9.00,
+  "Lettre B": 9.00,
+  "Lettre C": 9.00,
+  "Lettre D": 9.00,
+  "Lettre E": 9.00,
+  "Lettre F": 9.00,
+  "Lettre G": 9.00,
+  "Lettre H": 9.00,
+  "Lettre I": 9.00,
+  "Lettre J": 9.00,
+  "Lettre K": 9.00,
+  "Lettre L": 9.00,
+  "Lettre M": 9.00,
+  "Lettre N": 9.00,
+  "Lettre O": 9.00,
+  "Lettre P": 9.00,
+  "Lettre Q": 9.00,
+  "Lettre R": 9.00,
+  "Lettre S": 9.00,
+  "Lettre T": 9.00,
+  "Lettre U": 9.00,
+  "Lettre V": 9.00,
+  "Lettre W": 9.00,
+  "Lettre X": 9.00,
+  "Lettre Y": 9.00,
+  "Lettre Z": 9.00 },
      variationPrix: "Choix",
     description: "<div style='color:#4A2060;'>" + 
   "<div style='text-align:center'>✨ <strong>Petit papillon marque page</strong> ✨</div>\n\n" +
@@ -83,9 +225,57 @@ var produits = [
       
     ],
     variations: [
-      { nom: "Choix", type: "select", options: ["Sans pendentif" , "Avec pendentif"] }
+      { nom: "Choix", type: "select", options: ["Sans pendentif" ,  "N°1 — Écureuil",
+  "N°2 — Nuage souriant",
+  "N°3 — Masque",
+  "N°4 — Coccinelle",
+  "N°5 — Appareil photo",
+  "N°6 — Ballons",
+  "N°7 — Ourson",
+  "N°8 — Tasse de café avec chat",
+  "N°9 — Fer à cheval",
+  "N°10 — Fleur blanche",
+  "N°11 — Lapin",
+  "N°12 — Marguerite",
+  "N°13 — Abeille dorée",
+  "N°14 — Fraise",
+  "N°15 — Enveloppe cœur",
+  "N°16 — Cœur doré",
+  "N°17 — Abeille",
+  "N°18 — Arc-en-ciel",
+  "N°19 — Étoile de mer",
+  "N°20 — Gobelet café",
+  "N°21 — Trèfle à quatre feuilles",
+  "N°22 — Plume",
+  "N°23 — Cerises",
+  "Lettre A",
+  "Lettre B",
+  "Lettre C",
+  "Lettre D",
+  "Lettre E",
+  "Lettre F",
+  "Lettre G",
+  "Lettre H",
+  "Lettre I",
+  "Lettre J",
+  "Lettre K",
+  "Lettre L",
+  "Lettre M",
+  "Lettre N",
+  "Lettre O",
+  "Lettre P",
+  "Lettre Q",
+  "Lettre R",
+  "Lettre S",
+  "Lettre T",
+  "Lettre U",
+  "Lettre V",
+  "Lettre W",
+  "Lettre X",
+  "Lettre Y",
+  "Lettre Z"] }
     ],
-    champs: [{ label: "Choix du prendentif", placeholder: "Ex : Sans, lettre M ou numero 12 (voir photos)", type: "textarea" }],
+    champs: [{ label: "Choix", placeholder: "Ex : Sans", type: "textarea" }],
     delai: "1 à 5 jours ouvrés",
     materiaux: "Métal doré émaillé",
     stock: 6
@@ -96,7 +286,54 @@ var produits = [
     nom: "Marque-page papillon vert",
     categorie: "Papeterie & Jeux",
     prix: "à partir de 6,50",
-    prixOptions: { "Sans pendentif": 6.50, "Avec pendentif": 9.00 },
+     prixOptions: { "Sans pendentif": 6.50,"N°1 — Écureuil": 9.00, "N°2 — Nuage souriant": 9.00,
+  "N°3 — Masque": 9.00,
+  "N°4 — Coccinelle": 9.00,
+  "N°5 — Appareil photo": 9.00,
+  "N°6 — Ballons": 9.00,
+  "N°7 — Ourson": 9.00,
+  "N°8 — Tasse de café avec chat": 9.00,
+  "N°9 — Fer à cheval": 9.00,
+  "N°10 — Fleur blanche": 9.00,
+  "N°11 — Lapin": 9.00,
+  "N°12 — Marguerite": 9.00,
+  "N°13 — Abeille dorée": 9.00,
+  "N°14 — Fraise": 9.00,
+  "N°15 — Enveloppe cœur": 9.00,
+  "N°16 — Cœur doré": 9.00,
+  "N°17 — Abeille": 9.00,
+  "N°18 — Arc-en-ciel": 9.00,
+  "N°19 — Étoile de mer": 9.00,
+  "N°20 — Gobelet café": 9.00,
+  "N°21 — Trèfle à quatre feuilles": 9.00,
+  "N°22 — Plume": 9.00,
+  "N°23 — Cerises": 9.00,
+  "Lettre A": 9.00,
+  "Lettre B": 9.00,
+  "Lettre C": 9.00,
+  "Lettre D": 9.00,
+  "Lettre E": 9.00,
+  "Lettre F": 9.00,
+  "Lettre G": 9.00,
+  "Lettre H": 9.00,
+  "Lettre I": 9.00,
+  "Lettre J": 9.00,
+  "Lettre K": 9.00,
+  "Lettre L": 9.00,
+  "Lettre M": 9.00,
+  "Lettre N": 9.00,
+  "Lettre O": 9.00,
+  "Lettre P": 9.00,
+  "Lettre Q": 9.00,
+  "Lettre R": 9.00,
+  "Lettre S": 9.00,
+  "Lettre T": 9.00,
+  "Lettre U": 9.00,
+  "Lettre V": 9.00,
+  "Lettre W": 9.00,
+  "Lettre X": 9.00,
+  "Lettre Y": 9.00,
+  "Lettre Z": 9.00 },
      variationPrix: "Choix",
     description: "<div style='color:#4A2060;'>" + 
   "<div style='text-align:center'>✨ <strong>Petit papillon marque page</strong> ✨</div>\n\n" +
@@ -128,9 +365,57 @@ var produits = [
      
     ],
     variations: [
-      { nom: "Choix", type: "select", options: ["Sans pendentif" , "Avec pendentif"] }
+      { nom: "Choix", type: "select", options: ["Sans pendentif" ,  "N°1 — Écureuil",
+  "N°2 — Nuage souriant",
+  "N°3 — Masque",
+  "N°4 — Coccinelle",
+  "N°5 — Appareil photo",
+  "N°6 — Ballons",
+  "N°7 — Ourson",
+  "N°8 — Tasse de café avec chat",
+  "N°9 — Fer à cheval",
+  "N°10 — Fleur blanche",
+  "N°11 — Lapin",
+  "N°12 — Marguerite",
+  "N°13 — Abeille dorée",
+  "N°14 — Fraise",
+  "N°15 — Enveloppe cœur",
+  "N°16 — Cœur doré",
+  "N°17 — Abeille",
+  "N°18 — Arc-en-ciel",
+  "N°19 — Étoile de mer",
+  "N°20 — Gobelet café",
+  "N°21 — Trèfle à quatre feuilles",
+  "N°22 — Plume",
+  "N°23 — Cerises",
+  "Lettre A",
+  "Lettre B",
+  "Lettre C",
+  "Lettre D",
+  "Lettre E",
+  "Lettre F",
+  "Lettre G",
+  "Lettre H",
+  "Lettre I",
+  "Lettre J",
+  "Lettre K",
+  "Lettre L",
+  "Lettre M",
+  "Lettre N",
+  "Lettre O",
+  "Lettre P",
+  "Lettre Q",
+  "Lettre R",
+  "Lettre S",
+  "Lettre T",
+  "Lettre U",
+  "Lettre V",
+  "Lettre W",
+  "Lettre X",
+  "Lettre Y",
+  "Lettre Z"] }
     ],
-    champs: [{ label: "Choix du prendentif", placeholder: "Ex : Sans, lettre M ou numero 12 (voir photos)", type: "textarea" }],
+    champs: [{ label: "Choix", placeholder: "Ex : Sans", type: "textarea" }],
     delai: "1 à 5 jours ouvrés",
     materiaux: "Métal doré émaillé",
     stock: 7
@@ -140,7 +425,54 @@ var produits = [
     nom: "Marque-page papillon rose",
     categorie: "Papeterie & Jeux",
     prix: "à partir de 6,50",
-    prixOptions: { "Sans pendentif": 6.50, "Avec pendentif": 9.00 },
+    prixOptions: { "Sans pendentif": 6.50,"N°1 — Écureuil": 9.00, "N°2 — Nuage souriant": 9.00,
+  "N°3 — Masque": 9.00,
+  "N°4 — Coccinelle": 9.00,
+  "N°5 — Appareil photo": 9.00,
+  "N°6 — Ballons": 9.00,
+  "N°7 — Ourson": 9.00,
+  "N°8 — Tasse de café avec chat": 9.00,
+  "N°9 — Fer à cheval": 9.00,
+  "N°10 — Fleur blanche": 9.00,
+  "N°11 — Lapin": 9.00,
+  "N°12 — Marguerite": 9.00,
+  "N°13 — Abeille dorée": 9.00,
+  "N°14 — Fraise": 9.00,
+  "N°15 — Enveloppe cœur": 9.00,
+  "N°16 — Cœur doré": 9.00,
+  "N°17 — Abeille": 9.00,
+  "N°18 — Arc-en-ciel": 9.00,
+  "N°19 — Étoile de mer": 9.00,
+  "N°20 — Gobelet café": 9.00,
+  "N°21 — Trèfle à quatre feuilles": 9.00,
+  "N°22 — Plume": 9.00,
+  "N°23 — Cerises": 9.00,
+  "Lettre A": 9.00,
+  "Lettre B": 9.00,
+  "Lettre C": 9.00,
+  "Lettre D": 9.00,
+  "Lettre E": 9.00,
+  "Lettre F": 9.00,
+  "Lettre G": 9.00,
+  "Lettre H": 9.00,
+  "Lettre I": 9.00,
+  "Lettre J": 9.00,
+  "Lettre K": 9.00,
+  "Lettre L": 9.00,
+  "Lettre M": 9.00,
+  "Lettre N": 9.00,
+  "Lettre O": 9.00,
+  "Lettre P": 9.00,
+  "Lettre Q": 9.00,
+  "Lettre R": 9.00,
+  "Lettre S": 9.00,
+  "Lettre T": 9.00,
+  "Lettre U": 9.00,
+  "Lettre V": 9.00,
+  "Lettre W": 9.00,
+  "Lettre X": 9.00,
+  "Lettre Y": 9.00,
+  "Lettre Z": 9.00 },
      variationPrix: "Choix",
     description: "<div style='color:#4A2060;'>" + 
   "<div style='text-align:center'>✨ <strong>Petit papillon marque page</strong> ✨</div>\n\n" +
@@ -172,9 +504,57 @@ var produits = [
       
     ],
     variations: [
-      { nom: "Choix", type: "select", options: ["Sans pendentif" , "Avec pendentif"] }
+      { nom: "Choix", type: "select", options: ["Sans pendentif" ,  "N°1 — Écureuil",
+  "N°2 — Nuage souriant",
+  "N°3 — Masque",
+  "N°4 — Coccinelle",
+  "N°5 — Appareil photo",
+  "N°6 — Ballons",
+  "N°7 — Ourson",
+  "N°8 — Tasse de café avec chat",
+  "N°9 — Fer à cheval",
+  "N°10 — Fleur blanche",
+  "N°11 — Lapin",
+  "N°12 — Marguerite",
+  "N°13 — Abeille dorée",
+  "N°14 — Fraise",
+  "N°15 — Enveloppe cœur",
+  "N°16 — Cœur doré",
+  "N°17 — Abeille",
+  "N°18 — Arc-en-ciel",
+  "N°19 — Étoile de mer",
+  "N°20 — Gobelet café",
+  "N°21 — Trèfle à quatre feuilles",
+  "N°22 — Plume",
+  "N°23 — Cerises",
+  "Lettre A",
+  "Lettre B",
+  "Lettre C",
+  "Lettre D",
+  "Lettre E",
+  "Lettre F",
+  "Lettre G",
+  "Lettre H",
+  "Lettre I",
+  "Lettre J",
+  "Lettre K",
+  "Lettre L",
+  "Lettre M",
+  "Lettre N",
+  "Lettre O",
+  "Lettre P",
+  "Lettre Q",
+  "Lettre R",
+  "Lettre S",
+  "Lettre T",
+  "Lettre U",
+  "Lettre V",
+  "Lettre W",
+  "Lettre X",
+  "Lettre Y",
+  "Lettre Z"] }
     ],
-    champs: [{ label: "Choix du prendentif", placeholder: "Ex : Sans, lettre M ou numero 12 (voir photos)", type: "textarea" }],
+    champs: [{ label: "Choix", placeholder: "Ex : Sans", type: "textarea" }],
     delai: "1 à 5 jours ouvrés",
     materiaux: "Métal doré émaillé",
     stock: 6
@@ -1379,10 +1759,12 @@ var produits = [
   ],
     variations: [
       { nom: "Couleur", type: "select", options: ["Rose clair","Rose","Bleu clair","Bleu","Bleu foncé","Rouge","Orange","Jaune","Vert","Vert foncé","Blanc","Noir","Or"] },
-      { nom: "Choix", type: "select", options: ["Simple","Avec trou et ruban"] }
+      { nom: "Choix", type: "select", options: ["Simple","Avec trou et ruban"] },
+       { nom: "Ruban", type: "select", options: ["Sans","Ruban 1 — Rouge","Ruban 2 — Rose fuchsia", "Ruban 3 — Orange","Ruban 4 — Rose poudré", "Ruban 5 — Jaune", "Ruban 6 — Vert anis", "Ruban 7 — Vert","Ruban 8 — Turquoise", "Ruban 9 — Bleu roi", "Ruban 10 — Violet"] 
+  },
     ],
     champs: [
-      { label: "Choix prénom", placeholder: "Ex : Merci de m'indiquer le prénom choisi.\n Merci de m'indiquer le numéro de la couleur du ruban choisi, si vous avez pris l'option avec le trou et le ruban.", type: "textarea" }
+      { label: "Choix prénom", placeholder: "Ex : Merci de m'indiquer le prénom choisi.", type: "textarea" }
     ],
     delai: "1 à 5 jours ouvrés",
     materiaux: "Bois de Bouleau",
@@ -1431,11 +1813,1104 @@ var produits = [
       { nom: "Modèlé", type: "select", options: ["Modèle 1","Modèle 2"]}
     ],
     champs: [
-      { label: "Choix prénoms", placeholder: "Ex : Merci de m indiquez la phrase de votre choix pour le coeur (la taille du lettrage dépend de la longueur du texte)\nMerci de m indiquez les prénoms du couple, nom de famille ou la gravure souhaitez sur le pied support.", type: "textarea" }
+      { label: "Choix texte", placeholder: "Ex : Merci de m indiquez la phrase de votre choix pour le coeur (la taille du lettrage dépend de la longueur du texte)\nMerci de m indiquez les prénoms du couple, nom de famille ou la gravure souhaitez sur le pied support.", type: "textarea" }
     ],
     delai: "1 à 5 jours ouvrés",
     materiaux: "Bois de Bouleau",
     stock: 10,
      
   },
+
+   {
+   
+    id: 31,
+    nom: "Plaque naissance personnalisée",
+    categorie: "Naissance et bébé",
+    prix: "12,00",
+    description: "<div style='color:#4A2060;'>" +
+"<div style='text-align:center'>🍼 <strong>Plaque de Naissance Personnalisée en Bois</strong> 💛</div>\n\n" +
+"Célébrez l'arrivée de votre petit trésor avec une plaque de naissance aussi unique que lui. Gravée avec toutes ses informations précieuses, elle deviendra un souvenir intemporel à chérir pour toujours. 🌟\n\n" +
+"<strong>✨ Caractéristiques du produit :</strong>\n" +
+"• Matériau : Bois de tilleul verni, épaisseur 3mm — doux, chaleureux et durable. 🪵\n" +
+"• Dimensions : Plaque ronde de 10cm de diamètre.\n" +
+"• Ruban : Fourni dans la couleur de votre choix pour l'accrocher facilement grâce à l'encoche en haut. 🎀\n" +
+"• Personnalisation complète :\n" +
+"  — Prénom du bébé\n" +
+"  — Date de naissance\n" +
+"  — Heure de naissance\n" +
+"  — Poids de naissance\n" +
+"  — Taille de naissance\n\n" +
+"<strong>💡 Pourquoi vous allez l'adorer ?</strong>\n" +
+"• Cadeau émouvant : Naissance, baptême, fête des mères, fête des pères, Noël, anniversaire... il convient à toutes les occasions ! 🎁\n" +
+"• 100% Personnalisé : Toutes les informations de naissance gravées au laser pour un rendu précis et intemporel. 💎\n" +
+"• Installation facile : Accrochez-la en quelques secondes grâce à l'encoche et au ruban fourni. 🔧\n" +
+"• Fait Main en France : Découpe et gravure réalisées à la main dans mon atelier des Alpes-Maritimes (06). 💜\n\n" +
+"Une envie particulière ? Une couleur de ruban spécifique ? N'hésitez pas à me contacter pour vos demandes spéciales ! 💌\n\n" +
+"<div style='text-align:center'>❤️ Faites-vous plaisir ou gâtez vos proches ! ❤️</div>\n\n" +
+"<strong>⚠️ Note de sécurité & Authenticité :</strong>\n" +
+"• Cet objet est une décoration, non un jouet. À manipuler avec précaution. 🛡️\n" +
+"• Le charme du naturel : Chaque pièce est unique ! Le grain du bois et les nuances peuvent varier légèrement par rapport aux photos, ce qui fait tout le cachet de votre produit. 🪵✨" +
+"</div>",
+  images: [
+    "pplaque1.avif",
+    "pplaque2.jpg",
+    "pplaque3.jpg",
+    "pplaque4.jpg",
+    "pplaque5.jpg",
+    "pplaque6.jpg",
+    "pplaque7.webp"
+   
+  ],
+    variations: [
+      { nom: "Ruban", type: "select", options: ["Ruban 1 — Rouge","Ruban 2 — Rose fuchsia", "Ruban 3 — Orange","Ruban 4 — Rose poudré", "Ruban 5 — Jaune", "Ruban 6 — Vert anis", "Ruban 7 — Vert","Ruban 8 — Turquoise", "Ruban 9 — Bleu roi", "Ruban 10 — Violet"] 
+  },
+      
+    ],
+    champs: [
+      { label: "Choix Personnalisation", placeholder: "Ex : Bonjour, indiquez moi : Le prénom, La date de naissance, Le poids de naissance en kg, La taille de naissance en cm, L'heure de naissance. Merci.", type: "textarea" }
+    ],
+    delai: "1 à 5 jours ouvrés",
+    materiaux: "Bois de Bouleau",
+    stock: 10,
+    
+  },
+
+   {
+   
+    id: 32,
+    nom: "Plaque prénom personnalisée",
+    categorie: "chambre enfant",
+    prix: "à partir de 22,00",
+    variationPrix: "Taille",
+    prixOptions: {"20cm - 3mm":22,"30cm - 3mm":27,"20cm - 6mm":27,"30cm - 6mm":32},
+    description: "<div style='color:#4A2060;'>" +
+"<div style='text-align:center'>🚪 <strong>Plaque de Porte Personnalisée en Bois</strong> ✨</div>\n\n" +
+"Donnez une touche unique et personnalisée à la chambre de votre enfant avec notre plaque de porte gravée au laser. Prénom, surnom, ou mot de votre choix — c'est le petit détail déco qui fait toute la différence ! 🌿\n\n" +
+"<strong>✨ Caractéristiques du produit :</strong>\n" +
+"• Matériau : Bois de tilleul, au choix en épaisseur 3mm ou 6mm. 🪵\n" +
+"• Dimensions : 20cm ou 30cm de largeur selon votre choix.\n" +
+"• Personnalisation : Prénom de bébé, surnom ou tout autre mot de votre choix. 🎨\n" +
+"• Fixation : S'installe en quelques secondes avec du scotch double face type 3M (non fourni). 🔧\n\n" +
+"<strong>💡 Pourquoi vous allez l'adorer ?</strong>\n" +
+"• 100% Personnalisé : Le mot ou prénom de votre choix gravé avec précision pour un rendu soigné et intemporel. 💎\n" +
+"• Au choix : Deux tailles et deux épaisseurs disponibles pour s'adapter à toutes les portes et tous les styles. 🎨\n" +
+"• Cadeau idéal : Naissance, baptême, anniversaire, Noël... c'est le cadeau personnalisé qui fait toujours son effet ! 🎁\n" +
+"• Fait Main en France : Découpe et gravure réalisées à la main dans mon atelier des Alpes-Maritimes (06). 💜\n\n" +
+"Une envie particulière ? Un motif spécifique ? N'hésitez pas à me contacter pour vos demandes spéciales ! 💌\n\n" +
+"<div style='text-align:center'>❤️ Faites-vous plaisir ou gâtez vos proches ! ❤️</div>\n\n" +
+"<strong>⚠️ Note de sécurité & Authenticité :</strong>\n" +
+"• Cet objet est une décoration, non un jouet. À manipuler avec précaution. 🛡️\n" +
+"• Le charme du naturel : Chaque pièce est unique ! Le grain du bois et les nuances peuvent varier légèrement par rapport aux photos, ce qui fait tout le cachet de votre produit. 🪵✨" +
+"</div>",
+  images: [
+    "pprenom1.webp",
+    "pprenom2.webp",
+    "pprenom3.webp",
+    "pprenom4.webp",
+    "pprenom5.webp",
+    "pprenom6.webp",
+  ],
+    variations: [
+      { nom: "Couleur", type: "select", options: ["Rose clair","Rose","Bleu clair","Bleu","Bleu foncé","Rouge","Orange","Jaune","Vert","Vert foncé","Blanc","Noir","Or"] },
+      { nom: "Taille", type: "select", options: ["20cm - 3mm","30cm - 3mm","20cm - 6mm","30cm - 6mm"] }
+    ],
+    champs: [
+      { label: "Choix prénom", placeholder: "Ex : Merci de m'indiquer le prénom choisi.", type: "textarea" }
+    ],
+    delai: "1 à 5 jours ouvrés",
+    materiaux: "Bois de Bouleau",
+    stock: 10,
+    
+  },
+
+
+   {
+   
+    id: 33,
+    nom: "Décapsuleur personnalisée",
+    categorie: "Décoration Famille ",
+    prix: "à partir de 5,00",
+    variationPrix: "Gravure",
+    prixOptions: {"Sans gravure":5,"Gravure recto":9,"Gravure recto verso":13},
+    description: "<div style='color:#4A2060;'>" +
+"<div style='text-align:center'>🍺 <strong>Décapsuleur en Bois Personnalisé</strong> 🎁</div>\n\n" +
+"Offrez un cadeau utile, original et mémorable ! Ce décapsuleur en bois gravé au laser est l'accessoire parfait pour marquer une occasion spéciale avec style. Un objet du quotidien transformé en souvenir unique. ✨\n\n" +
+"<strong>✨ Caractéristiques du produit :</strong>\n" +
+"• Manche : Bois naturel gravé au laser avec votre texte ou motif. 🪵\n" +
+"• Tête : Acier inoxydable durable — robuste et résistant dans le temps. 💪\n" +
+"• Technique : Gravure laser inaltérable pour un rendu professionnel et précis. 🔡\n" +
+"• Dimensions : 13,5cm × 4cm × 2cm — format compact et agréable en main.\n\n" +
+"<strong>✍️ Comment personnaliser votre décapsuleur ?</strong>\n" +
+"1 — Choisissez votre texte : prénom, message, date ou phrase de votre choix (ex : \"Le meilleur Papa du monde\", \"Témoin de folie\").\n" +
+"2 — Motif en option : les motifs sont numérotés sur les photos, indiquez le numéro souhaité dans la case personnalisation. 📸\n" +
+"3 — Vérifiez bien l'orthographe avant de valider — nous graverons exactement ce que vous écrivez ! ✅\n\n" +
+"<strong>💡 Idées cadeaux :</strong>\n" +
+"• Fête des Pères 👨\n" +
+"• Anniversaire d'un conjoint ou meilleur ami 🎂\n" +
+"• Mariage : Témoin, Garçon d'honneur 💍\n" +
+"• Départ à la retraite 🥂\n" +
+"• Souvenir de vacances ou barbecue entre amis 🌞\n\n" +
+"<strong>⚠️ Conseil pour un rendu optimal :</strong>\n" +
+"Plus le texte est long, plus la police sera réduite pour tenir sur la surface. Privilégiez un message court et percutant pour une meilleure lisibilité et un beau rendu visuel. Nous ajustons toujours la taille pour garantir le meilleur équilibre esthétique possible. 🎨\n\n" +
+"Une envie particulière ? N'hésitez pas à me contacter pour vos demandes spéciales ! 💌\n\n" +
+"<div style='text-align:center'>❤️ Faites-vous plaisir ou gâtez vos proches ! ❤️</div>\n\n" +
+"<strong>⚠️ Note :</strong> Cet objet est un accessoire, non un jouet. À manipuler avec précaution. 🛡️" +
+"</div>",
+  images: [
+"pdecapsuleur1.webp",
+"pdecapsuleur2.webp",
+"pdecapsuleur3.webp",
+"pdecapsuleur4.webp",
+"pdecapsuleur5.webp",
+"pdecapsuleur6.webp"
+  ],
+    variations: [
+      { nom: "Gravure", type: "select", options: ["Sans gravure","Gravure recto","Gravure recto verso"] }
+    ],
+    champs: [
+      { label: "Choix texte", placeholder: "Ex : Merci de m indiquer la phrase que vous souhaitez. Merci de m'indiquer le numero du motif (voir photo) si vous en souhaitez un. Si vous avez choisi recto verso, merci de faire la même chose pour la 2ème face.", type: "textarea" }
+    ],
+    delai: "1 à 5 jours ouvrés",
+    materiaux: "Bois de Bouleau",
+    stock: 5,
+    
+  },
+   {
+   
+    id: 34,
+    nom: "Marque-page personnalisé",
+    categorie: "Papeterie & Jeux ",
+    prix: "10,00",
+    description: "<div style='color:#4A2060;'>" +
+"<div style='text-align:center'>📖 <strong>Marque-Page en Bois Personnalisé</strong> 🌿</div>\n\n" +
+"Bien plus qu'un simple marque-page, c'est un souvenir précieux qui accompagnera chaque lecture. Gravé au laser avec le texte de votre choix, il est aussi unique que la personne à qui vous l'offrez. ✨\n\n" +
+"<strong>✨ Caractéristiques du produit :</strong>\n" +
+"• Matériau : Bois de haute qualité, épaisseur 3mm — léger, élégant et durable. 🪵\n" +
+"• Dimensions : 15cm de hauteur × 5cm de largeur.\n" +
+"• Pompon : Inclus dans la couleur de votre choix selon les stocks disponibles (couleur choisie au hasard si non précisée). 🎀\n" +
+"• Personnalisation : Prénom, message, citation ou texte de votre choix gravé au laser avec précision. 🎨\n\n" +
+"<strong>💡 Pourquoi vous allez l'adorer ?</strong>\n" +
+"• Cadeau littéraire unique : Parfait pour tous les amoureux des livres qui apprécient les objets qui ont du sens. 📚\n" +
+"• 100% Personnalisé : Votre message gravé pour un rendu soigné et intemporel. 💎\n" +
+"• Fait Main en France : Découpe et gravure réalisées à la main dans mon atelier des Alpes-Maritimes (06). 💜\n" +
+"• Cadeau idéal : Anniversaire, départ, Noël, fête des mères, fin d'année scolaire... il convient à toutes les occasions ! 🎁\n\n" +
+"Une envie particulière ? Un motif spécifique ? N'hésitez pas à me contacter pour vos demandes spéciales ! 💌\n\n" +
+"<div style='text-align:center'>❤️ Faites-vous plaisir ou gâtez vos proches ! ❤️</div>\n\n" +
+"<strong>⚠️ Note de sécurité & Authenticité :</strong>\n" +
+"• Cet objet est une décoration, non un jouet. À manipuler avec précaution. 🛡️\n" +
+"• Le charme du naturel : Chaque pièce est unique ! Le grain du bois et les nuances peuvent varier légèrement par rapport aux photos, ce qui fait tout le cachet de votre produit. 🪵✨" +
+"</div>",
+  images: [
+"ppage1.jpg",
+"ppage2.jpg",
+"ppage3.jpg",
+"ppage4.avif",
+"ppage5.jpg",
+"ppage6.jpg",
+  ],
+    variations: [
+      { nom: "Motif", type: "select", options: ["N°1 — Animaux qui lisent (lapin, chat, ours)",,"N°2 — Bouquet de fleurs","N°3 — Rose","N°4 — Arbre avec oiseaux","N°5 — Tiges fleuries","N°6 — Fleur en pot","N°7 — Fille qui lit","N°8 — Oiseau sur branche"
+,"N°9 — Fleur d'hibiscus","N°10 — Arbre de vie","N°11 — Oiseau sur branche","N°12 — Chiot mignon","N°13 — Livre ouvert","N°14 — Chaton kawaii","N°15 — Chat qui lit","N°16 — Double cœur entrelacé","N°17 — Chat à lunettes sur livre"] },
+{ nom: "Pompon", type: "select", options: [
+  'Pompon Rouge','Pompon Orange',
+'Pompon Jaune',
+'Pompon Marron clair',
+'Pompon Marron',
+'Pompon Marron foncé',
+'Pompon Crème',
+'Pompon Vert sauge',
+'Pompon Vert',
+'Pompon Vert foncé',
+'Pompon Bleu ciel',
+'Pompon Bleu roi',
+'Pompon Bleu foncé',
+'Pompon Rose poudré',
+'Pompon Rose fuchsia',
+'Pompon Rose - rouge',
+'Pompon Bordeaux',
+'Pompon Noir',
+'Pompon Argent']
+}  
+],
+    champs: [
+      { label: "Choix texte", placeholder: "Ex : Merci de m indiquer le texte 1 et le texte 2 que vous souhaitez. Pour la couleur du pompon, je ferai au mieux selon les stocks..", type: "textarea" }
+    ],
+    delai: "1 à 5 jours ouvrés",
+    materiaux: "Bois de Bouleau",
+    stock: 5,
+    
+  },
+
+   {
+   
+    id: 35,
+    nom: "Plaque renard prénom personnalisée",
+    categorie: "chambre enfant",
+    prix: "à partir de 29,00",
+    variationPrix: "Taille",
+    prixOptions: {"20cm":29,"30cm":39},
+    description:  "<div style='color:#4A2060;'>" +
+"<div style='text-align:center'>🦊 <strong>Renard Personnalisé en Bois — Décoration Chambre Enfant</strong> ✨</div>\n\n" +
+"Craquez pour ce renard trop mignon, gravé au laser avec le prénom de votre choix ! Une décoration douce et originale qui illuminera la chambre de votre enfant avec caractère et tendresse. 🌿💛\n\n" +
+"<strong>✨ Caractéristiques du produit :</strong>\n" +
+"• Matériau : Bois de tilleul, épaisseur 6mm — solide, chaleureux et durable. 🪵\n" +
+"• Dimensions : 20cm ou 30cm de hauteur selon votre choix.\n" +
+"• Couleur : Le prénom ET les yeux du renard sont personnalisables dans la couleur de votre choix. 🎨 (voir photos)\n" +
+"• Support inclus : Fourni avec un pied pour le poser sur une étagère ou une commode.\n" +
+"• Fixation murale : Se fixe aussi très facilement au mur ou sur une porte avec du scotch double face type 3M (non fourni). 🔧\n\n" +
+"<strong>💡 Pourquoi vous allez l'adorer ?</strong>\n" +
+"• 100% Personnalisé : Le prénom de votre enfant gravé avec précision, dans la couleur de votre choix. 💎\n" +
+"• Détail unique : Les yeux du renard assortis à la couleur du prénom pour un rendu harmonieux et soigné. 🦊\n" +
+"• Deux tailles disponibles : 20cm pour une touche discrète, 30cm pour un effet déco affirmé.\n" +
+"• Cadeau idéal : Naissance, baptême, anniversaire, Noël... c'est le cadeau personnalisé qui fait fondre ! 🎁\n" +
+"• Fait Main en France : Découpe et gravure réalisées à la main dans mon atelier des Alpes-Maritimes (06). 💜\n\n" +
+"Une envie particulière ? Une couleur spécifique ? N'hésitez pas à me contacter pour vos demandes spéciales ! 💌\n\n" +
+"<div style='text-align:center'>❤️ Faites-vous plaisir ou gâtez vos proches ! ❤️</div>\n\n" +
+"<strong>⚠️ Note de sécurité & Authenticité :</strong>\n" +
+"• Cet objet est une décoration, non un jouet. À manipuler avec précaution. 🛡️\n" +
+"• Le charme du naturel : Chaque pièce est unique ! Le grain du bois et les nuances peuvent varier légèrement par rapport aux photos, ce qui fait tout le cachet de votre produit. 🪵✨" +
+"</div>",
+  images: [
+    "prenard1.webp",
+    "prenard2.webp",
+    "prenard3.webp",
+    "prenard4.webp",
+    "prenard5.webp",
+  ],
+    variations: [
+      { nom: "Couleur prénom et oeil", type: "select", options: ["Rose clair","Rose","Bleu clair","Bleu","Bleu foncé","Rouge","Orange","Jaune","Vert","Vert foncé","Blanc","Noir","Or"] },
+      { nom: "Taille", type: "select", options: ["20cm","30cm"] }
+    ],
+    champs: [
+      { label: "Choix prénom", placeholder: "Ex : Merci de m'indiquer le prénom choisi.", type: "textarea" }
+    ],
+    delai: "1 à 5 jours ouvrés",
+    materiaux: "Bois de Bouleau",
+    stock: 10,
+    
+  },
+
+  {
+   
+    id: 36,
+    nom: "Marque-page feu personnalisé",
+    categorie: "Papeterie & Jeux ",
+    prix: "10,00",
+    description: "<div style='color:#4A2060;'>" +
+"<div style='text-align:center'>📖 <strong>Marque-Page Livre feu en Bois Personnalisé</strong> 🌿</div>\n\n" +
+"Bien plus qu'un simple marque-page, c'est un bijou de livre unique et personnel. Sa forme élégante de livre ouvert et son pompon soyeux en font un accessoire de lecture aussi beau qu'émouvant. ✨\n\n" +
+"<strong>✨ Caractéristiques du produit :</strong>\n" +
+"• Matériau : Bois de haute qualité gravé au laser — léger, élégant et durable. 🪵\n" +
+"• Dimensions : 15cm de hauteur × 7cm de largeur.\n" +
+"• Forme : Livre ouvert avec feu symbolique et citation de Victor Hugo — un vrai bijou de livre. 📚\n" +
+"• Pompon : Soyeux, inclus dans la couleur de votre choix (couleur choisie au hasard si non précisée). 🎀\n" +
+"• Personnalisation : Citation, prénom ou message de votre choix gravé au laser — 15 mots maximum. 🎨\n\n" +
+"<strong>💡 Pourquoi vous allez l'adorer ?</strong>\n" +
+"• Cadeau littéraire unique : Parfait pour tous les amoureux des livres qui apprécient les objets qui ont du sens. 📖\n" +
+"• 100% Personnalisé : Votre message gravé pour un rendu soigné et intemporel. 💎\n" +
+"• Fait Main en France : Découpe et gravure réalisées à la main dans mon atelier des Alpes-Maritimes (06). 💜\n" +
+"• Cadeau idéal : Anniversaire, départ, Noël, fête des mères, fin d'année scolaire... il convient à toutes les occasions ! 🎁\n\n" +
+"Une envie particulière ? N'hésitez pas à me contacter pour vos demandes spéciales ! 💌\n\n" +
+"<div style='text-align:center'>❤️ Faites-vous plaisir ou gâtez vos proches ! ❤️</div>\n\n" +
+"<strong>⚠️ Note de sécurité & Authenticité :</strong>\n" +
+"• Cet objet est une décoration, non un jouet. À manipuler avec précaution. 🛡️\n" +
+"• Le charme du naturel : Chaque pièce est unique ! Le grain du bois et les nuances peuvent varier légèrement par rapport aux photos, ce qui fait tout le cachet de votre produit. 🪵✨" +
+"</div>",
+  images: [
+"ppagefeu1.webp",
+"ppagefeu2.webp",
+"ppagefeu3.webp",
+"ppagefeu4.webp",
+"ppagefeu5.webp",
+"ppage6.jpg",
+  ],
+    variations: [
+    
+{ nom: "Pompon", type: "select", options: [
+  'Pompon Rouge','Pompon Orange',
+'Pompon Jaune',
+'Pompon Marron clair',
+'Pompon Marron',
+'Pompon Marron foncé',
+'Pompon Crème',
+'Pompon Vert sauge',
+'Pompon Vert',
+'Pompon Vert foncé',
+'Pompon Bleu ciel',
+'Pompon Bleu roi',
+'Pompon Bleu foncé',
+'Pompon Rose poudré',
+'Pompon Rose fuchsia',
+'Pompon Rose - rouge',
+'Pompon Bordeaux',
+'Pompon Noir',
+'Pompon Argent']
+}  
+],
+    champs: [
+      { label: "Choix texte", placeholder: "Ex : Merci de m indiquer la phrase (15 mots maximum). Pour la couleur du pompon, je ferai au mieux selon les stocks..", type: "textarea" }
+    ],
+    delai: "1 à 5 jours ouvrés",
+    materiaux: "Bois de Bouleau",
+    stock: 5,
+    
+  },
+
+  {
+   
+    id: 37,
+    nom: "Marque-page porte personnalisé",
+    categorie: "Papeterie & Jeux ",
+    prix: "10,00",
+    description: "<div style='color:#4A2060;'>" +
+"<div style='text-align:center'>📖 <strong>Marque-Page Livre Ouvert porte en Bois Personnalisé</strong> 🌿</div>\n\n" +
+"Bien plus qu'un simple marque-page, c'est un bijou de livre unique et personnel. Sa forme élégante de livre ouvert, sa porte symbolique et son pompon soyeux en font un accessoire de lecture aussi beau qu'émouvant. ✨\n\n" +
+"<strong>✨ Caractéristiques du produit :</strong>\n" +
+"• Matériau : Bois de haute qualité gravé au laser — léger, élégant et durable. 🪵\n" +
+"• Dimensions : 15cm de hauteur × 7cm de largeur.\n" +
+"• Forme : Livre ouvert avec porte symbolique et une citation de Francois Mauriac — un vrai bijou de livre. 📚\n" +
+"• Pompon : Soyeux, inclus dans la couleur de votre choix (couleur choisie au hasard si non précisée). 🎀\n" +
+"• Personnalisation : Citation, prénom ou message de votre choix gravé au laser — 15 mots maximum. 🎨\n\n" +
+"<strong>💡 Pourquoi vous allez l'adorer ?</strong>\n" +
+"• Cadeau littéraire unique : Parfait pour tous les amoureux des livres qui apprécient les objets qui ont du sens. 📖\n" +
+"• 100% Personnalisé : Votre message gravé pour un rendu soigné et intemporel. 💎\n" +
+"• Fait Main en France : Découpe et gravure réalisées à la main dans mon atelier des Alpes-Maritimes (06). 💜\n" +
+"• Cadeau idéal : Anniversaire, départ, Noël, fête des mères, fin d'année scolaire... il convient à toutes les occasions ! 🎁\n\n" +
+"Une envie particulière ? N'hésitez pas à me contacter pour vos demandes spéciales ! 💌\n\n" +
+"<div style='text-align:center'>❤️ Faites-vous plaisir ou gâtez vos proches ! ❤️</div>\n\n" +
+"<strong>⚠️ Note de sécurité & Authenticité :</strong>\n" +
+"• Cet objet est une décoration, non un jouet. À manipuler avec précaution. 🛡️\n" +
+"• Le charme du naturel : Chaque pièce est unique ! Le grain du bois et les nuances peuvent varier légèrement par rapport aux photos, ce qui fait tout le cachet de votre produit. 🪵✨" +
+"</div>",
+  images: [
+"ppageporte1.webp",
+"ppageporte2.webp",
+"ppageporte3.webp",
+"ppageporte4.webp",
+"ppageporte5.webp",
+"ppageporte6.webp",
+"ppageporte7.webp",
+"ppage6.jpg",
+  ],
+    variations: [
+    
+{ nom: "Pompon", type: "select", options: [
+  'Pompon Rouge','Pompon Orange',
+'Pompon Jaune',
+'Pompon Marron clair',
+'Pompon Marron',
+'Pompon Marron foncé',
+'Pompon Crème',
+'Pompon Vert sauge',
+'Pompon Vert',
+'Pompon Vert foncé',
+'Pompon Bleu ciel',
+'Pompon Bleu roi',
+'Pompon Bleu foncé',
+'Pompon Rose poudré',
+'Pompon Rose fuchsia',
+'Pompon Rose - rouge',
+'Pompon Bordeaux',
+'Pompon Noir',
+'Pompon Argent']
+}  
+],
+    champs: [
+      { label: "Choix texte", placeholder: "Ex : Merci de m indiquer la phrase (15 mots maximum). Pour la couleur du pompon, je ferai au mieux selon les stocks..", type: "textarea" }
+    ],
+    delai: "1 à 5 jours ouvrés",
+    materiaux: "Bois de Bouleau",
+    stock: 5,
+    
+  },
+
+  {
+   
+    id: 38,
+    nom: "Marque-page arbre de vie personnalisé",
+    categorie: "Papeterie & Jeux ",
+    prix: "10,00",
+    description: "<div style='color:#4A2060;'>" +
+"<div style='text-align:center'>📖 <strong>Marque-Page arbre de vie en Bois Personnalisé</strong> 🌿</div>\n\n" +
+"Bien plus qu'un simple marque-page, c'est un bijou de livre unique et personnel. Sa forme élégante de livre ouvert, sa porte symbolique et son pompon soyeux en font un accessoire de lecture aussi beau qu'émouvant. ✨\n\n" +
+"<strong>✨ Caractéristiques du produit :</strong>\n" +
+"• Matériau : Bois de haute qualité gravé au laser — léger, élégant et durable. 🪵\n" +
+"• Dimensions : 15cm de hauteur × 7cm de largeur.\n" +
+"• Forme : Arbre de vie symbolique et une citation de Pierre Dumayet — un vrai bijou de livre. 📚\n" +
+"• Pompon : Soyeux, inclus dans la couleur de votre choix (couleur choisie au hasard si non précisée). 🎀\n" +
+"• Personnalisation : Citation, prénom ou message de votre choix gravé au laser — 15 mots maximum. 🎨\n\n" +
+"<strong>💡 Pourquoi vous allez l'adorer ?</strong>\n" +
+"• Cadeau littéraire unique : Parfait pour tous les amoureux des livres qui apprécient les objets qui ont du sens. 📖\n" +
+"• 100% Personnalisé : Votre message gravé pour un rendu soigné et intemporel. 💎\n" +
+"• Fait Main en France : Découpe et gravure réalisées à la main dans mon atelier des Alpes-Maritimes (06). 💜\n" +
+"• Cadeau idéal : Anniversaire, départ, Noël, fête des mères, fin d'année scolaire... il convient à toutes les occasions ! 🎁\n\n" +
+"Une envie particulière ? N'hésitez pas à me contacter pour vos demandes spéciales ! 💌\n\n" +
+"<div style='text-align:center'>❤️ Faites-vous plaisir ou gâtez vos proches ! ❤️</div>\n\n" +
+"<strong>⚠️ Note de sécurité & Authenticité :</strong>\n" +
+"• Cet objet est une décoration, non un jouet. À manipuler avec précaution. 🛡️\n" +
+"• Le charme du naturel : Chaque pièce est unique ! Le grain du bois et les nuances peuvent varier légèrement par rapport aux photos, ce qui fait tout le cachet de votre produit. 🪵✨" +
+"</div>",
+  images: [
+"ppagearbre1.webp",
+"ppagearbre2.webp",
+"ppagearbre3.webp",
+"ppagearbre4.webp",
+"ppagearbre5.webp",
+"ppagearbre6.webp",
+"ppage6.jpg",
+  ],
+    variations: [
+    
+{ nom: "Pompon", type: "select", options: [
+  'Pompon Rouge','Pompon Orange',
+'Pompon Jaune',
+'Pompon Marron clair',
+'Pompon Marron',
+'Pompon Marron foncé',
+'Pompon Crème',
+'Pompon Vert sauge',
+'Pompon Vert',
+'Pompon Vert foncé',
+'Pompon Bleu ciel',
+'Pompon Bleu roi',
+'Pompon Bleu foncé',
+'Pompon Rose poudré',
+'Pompon Rose fuchsia',
+'Pompon Rose - rouge',
+'Pompon Bordeaux',
+'Pompon Noir',
+'Pompon Argent']
+}  
+],
+    champs: [
+      { label: "Choix texte", placeholder: "Ex : Merci de m indiquer la phrase (15 mots maximum). Pour la couleur du pompon, je ferai au mieux selon les stocks..", type: "textarea" }
+    ],
+    delai: "1 à 5 jours ouvrés",
+    materiaux: "Bois de Bouleau",
+    stock: 5,
+    
+  },
+
+   {
+   
+    id: 39,
+    nom: "Marque-page bateau personnalisé",
+    categorie: "Papeterie & Jeux ",
+    prix: "10,00",
+    description: "<div style='color:#4A2060;'>" +
+"<div style='text-align:center'>📖 <strong>Marque-Page bateau en Bois Personnalisé</strong> 🌿</div>\n\n" +
+"Bien plus qu'un simple marque-page, c'est un bijou de livre unique et personnel. Sa forme élégante de livre ouvert, sa porte symbolique et son pompon soyeux en font un accessoire de lecture aussi beau qu'émouvant. ✨\n\n" +
+"<strong>✨ Caractéristiques du produit :</strong>\n" +
+"• Matériau : Bois de haute qualité gravé au laser — léger, élégant et durable. 🪵\n" +
+"• Dimensions : 15cm de hauteur × 7cm de largeur.\n" +
+"• Forme : Bateau symbolique et une citation de Honoré De Balzac 'J'ai accompli de délicieux voyages, embarqué sur un mot..' — un vrai bijou de livre. 📚\n" +
+"• Pompon : Soyeux, inclus dans la couleur de votre choix (couleur choisie au hasard si non précisée). 🎀\n" +
+"• Personnalisation : Citation, prénom ou message de votre choix gravé au laser — 15 mots maximum. 🎨\n\n" +
+"<strong>💡 Pourquoi vous allez l'adorer ?</strong>\n" +
+"• Cadeau littéraire unique : Parfait pour tous les amoureux des livres qui apprécient les objets qui ont du sens. 📖\n" +
+"• 100% Personnalisé : Votre message gravé pour un rendu soigné et intemporel. 💎\n" +
+"• Fait Main en France : Découpe et gravure réalisées à la main dans mon atelier des Alpes-Maritimes (06). 💜\n" +
+"• Cadeau idéal : Anniversaire, départ, Noël, fête des mères, fin d'année scolaire... il convient à toutes les occasions ! 🎁\n\n" +
+"Une envie particulière ? N'hésitez pas à me contacter pour vos demandes spéciales ! 💌\n\n" +
+"<div style='text-align:center'>❤️ Faites-vous plaisir ou gâtez vos proches ! ❤️</div>\n\n" +
+"<strong>⚠️ Note de sécurité & Authenticité :</strong>\n" +
+"• Cet objet est une décoration, non un jouet. À manipuler avec précaution. 🛡️\n" +
+"• Le charme du naturel : Chaque pièce est unique ! Le grain du bois et les nuances peuvent varier légèrement par rapport aux photos, ce qui fait tout le cachet de votre produit. 🪵✨" +
+"</div>",
+  images: [
+"ppagebateau1.webp",
+"ppagebateau2.webp",
+"ppagebateau3.webp",
+"ppagebateau4.webp",
+"ppagebateau5.webp",
+"ppage6.jpg",
+  ],
+    variations: [
+    
+{ nom: "Pompon", type: "select", options: [
+  'Pompon Rouge','Pompon Orange',
+'Pompon Jaune',
+'Pompon Marron clair',
+'Pompon Marron',
+'Pompon Marron foncé',
+'Pompon Crème',
+'Pompon Vert sauge',
+'Pompon Vert',
+'Pompon Vert foncé',
+'Pompon Bleu ciel',
+'Pompon Bleu roi',
+'Pompon Bleu foncé',
+'Pompon Rose poudré',
+'Pompon Rose fuchsia',
+'Pompon Rose - rouge',
+'Pompon Bordeaux',
+'Pompon Noir',
+'Pompon Argent']
+}  
+],
+    champs: [
+      { label: "Choix texte", placeholder: "Ex : Merci de m indiquer la phrase (15 mots maximum). Pour la couleur du pompon, je ferai au mieux selon les stocks..", type: "textarea" }
+    ],
+    delai: "1 à 5 jours ouvrés",
+    materiaux: "Bois de Bouleau",
+    stock: 5,
+    
+  },
+
+   {
+    id: 40,
+    nom: "Marque-page plume violet",
+    categorie: "Papeterie & Jeux",
+    prix: "à partir de 6,50",
+    prixOptions: { "Sans pendentif": 6.50,"N°1 — Écureuil": 9.00, "N°2 — Nuage souriant": 9.00,
+  "N°3 — Masque": 9.00,
+  "N°4 — Coccinelle": 9.00,
+  "N°5 — Appareil photo": 9.00,
+  "N°6 — Ballons": 9.00,
+  "N°7 — Ourson": 9.00,
+  "N°8 — Tasse de café avec chat": 9.00,
+  "N°9 — Fer à cheval": 9.00,
+  "N°10 — Fleur blanche": 9.00,
+  "N°11 — Lapin": 9.00,
+  "N°12 — Marguerite": 9.00,
+  "N°13 — Abeille dorée": 9.00,
+  "N°14 — Fraise": 9.00,
+  "N°15 — Enveloppe cœur": 9.00,
+  "N°16 — Cœur doré": 9.00,
+  "N°17 — Abeille": 9.00,
+  "N°18 — Arc-en-ciel": 9.00,
+  "N°19 — Étoile de mer": 9.00,
+  "N°20 — Gobelet café": 9.00,
+  "N°21 — Trèfle à quatre feuilles": 9.00,
+  "N°22 — Plume": 9.00,
+  "N°23 — Cerises": 9.00,
+   "Lettre A": 9.00,
+  "Lettre B": 9.00,
+  "Lettre C": 9.00,
+  "Lettre D": 9.00,
+  "Lettre E": 9.00,
+  "Lettre F": 9.00,
+  "Lettre G": 9.00,
+  "Lettre H": 9.00,
+  "Lettre I": 9.00,
+  "Lettre J": 9.00,
+  "Lettre K": 9.00,
+  "Lettre L": 9.00,
+  "Lettre M": 9.00,
+  "Lettre N": 9.00,
+  "Lettre O": 9.00,
+  "Lettre P": 9.00,
+  "Lettre Q": 9.00,
+  "Lettre R": 9.00,
+  "Lettre S": 9.00,
+  "Lettre T": 9.00,
+  "Lettre U": 9.00,
+  "Lettre V": 9.00,
+  "Lettre W": 9.00,
+  "Lettre X": 9.00,
+  "Lettre Y": 9.00,
+  "Lettre Z": 9.00 },
+     variationPrix: "Choix",
+    description: "<div style='color:#4A2060;'>" +
+"<div style='text-align:center'>🪶 <strong>Marque-Page Plume Violet & Or</strong> ✨</div>\n\n" +
+"Envolez-vous dans vos lectures avec ce marque-page plume, véritable bijou inspiré de la nature. Bien plus qu'un simple accessoire, c'est une invitation à la rêverie et à la légèreté. 💜\n\n" +
+"<strong>✨ Caractéristiques du produit :</strong>\n" +
+"• Matériau : Métal doré émaillé — finitions détaillées pour un rendu raffiné et élégant. ✨\n" +
+"• Dimensions : 8cm de hauteur × 2,5cm de largeur × 0,5mm d'épaisseur.\n" +
+"• Design : Forme plume avec petite breloque plume au bout d'une chaînette dorée. 🪶\n" +
+"• Personnalisation : Lettre initiale ou pendentif de votre choix (voir photos). 🎨\n\n" +
+"<strong>💡 Pourquoi vous allez l'adorer ?</strong>\n" +
+"• Une petite œuvre d'art : Les couleurs douces et les finitions détaillées transforment chaque lecture en évasion poétique. 📖\n" +
+"• Personnalisable : Choisissez la lettre ou le pendentif qui lui ressemble parmi les options disponibles. 💎\n" +
+"• Cadeau raffiné : Parfait pour les amateurs de livres, les passionnés de nature et toute personne qui apprécie les objets délicats. 🎁\n" +
+"• Idéal pour : Anniversaire, fête des mères, Noël ou simplement pour faire plaisir. 💐\n\n" +
+"Une envie particulière ? N'hésitez pas à me contacter pour vos demandes spéciales ! 💌\n\n" +
+"<div style='text-align:center'>❤️ Faites-vous plaisir ou gâtez vos proches ! ❤️</div>\n\n" +
+"<strong>⚠️ Note :</strong> Cet objet est une décoration, non un jouet. À manipuler avec précaution. 🛡️" +
+"</div>",
+
+    images: [
+      "pplumev1.jpg",
+      "pplumev2.avif",
+      "pplumev3.jpg",
+      "pplumev4.jpg",
+      "pplumev5.jpg",
+      "pplumev6.jpg",
+      "pplumev7.jpg",
+      "pplumev8.jpg",
+    ],
+    variations: [
+      { nom: "Choix", type: "select", options: ["Sans pendentif" ,  "N°1 — Écureuil",
+  "N°2 — Nuage souriant",
+  "N°3 — Masque",
+  "N°4 — Coccinelle",
+  "N°5 — Appareil photo",
+  "N°6 — Ballons",
+  "N°7 — Ourson",
+  "N°8 — Tasse de café avec chat",
+  "N°9 — Fer à cheval",
+  "N°10 — Fleur blanche",
+  "N°11 — Lapin",
+  "N°12 — Marguerite",
+  "N°13 — Abeille dorée",
+  "N°14 — Fraise",
+  "N°15 — Enveloppe cœur",
+  "N°16 — Cœur doré",
+  "N°17 — Abeille",
+  "N°18 — Arc-en-ciel",
+  "N°19 — Étoile de mer",
+  "N°20 — Gobelet café",
+  "N°21 — Trèfle à quatre feuilles",
+  "N°22 — Plume",
+  "N°23 — Cerises",
+  "Lettre A",
+  "Lettre B",
+  "Lettre C",
+  "Lettre D",
+  "Lettre E",
+  "Lettre F",
+  "Lettre G",
+  "Lettre H",
+  "Lettre I",
+  "Lettre J",
+  "Lettre K",
+  "Lettre L",
+  "Lettre M",
+  "Lettre N",
+  "Lettre O",
+  "Lettre P",
+  "Lettre Q",
+  "Lettre R",
+  "Lettre S",
+  "Lettre T",
+  "Lettre U",
+  "Lettre V",
+  "Lettre W",
+  "Lettre X",
+  "Lettre Y",
+  "Lettre Z"] }
+    ],
+    champs: [{ label: "Choix", placeholder: "Ex : Sans", type: "textarea" }],
+    delai: "1 à 5 jours ouvrés",
+    materiaux: "Métal doré émaillé",
+    stock: 11
+  },
+  {
+    id: 41,
+    nom: "Marque-page plume rose",
+    categorie: "Papeterie & Jeux",
+    prix: "à partir de 6,50",
+    prixOptions: { "Sans pendentif": 6.50,"N°1 — Écureuil": 9.00, "N°2 — Nuage souriant": 9.00,
+  "N°3 — Masque": 9.00,
+  "N°4 — Coccinelle": 9.00,
+  "N°5 — Appareil photo": 9.00,
+  "N°6 — Ballons": 9.00,
+  "N°7 — Ourson": 9.00,
+  "N°8 — Tasse de café avec chat": 9.00,
+  "N°9 — Fer à cheval": 9.00,
+  "N°10 — Fleur blanche": 9.00,
+  "N°11 — Lapin": 9.00,
+  "N°12 — Marguerite": 9.00,
+  "N°13 — Abeille dorée": 9.00,
+  "N°14 — Fraise": 9.00,
+  "N°15 — Enveloppe cœur": 9.00,
+  "N°16 — Cœur doré": 9.00,
+  "N°17 — Abeille": 9.00,
+  "N°18 — Arc-en-ciel": 9.00,
+  "N°19 — Étoile de mer": 9.00,
+  "N°20 — Gobelet café": 9.00,
+  "N°21 — Trèfle à quatre feuilles": 9.00,
+  "N°22 — Plume": 9.00,
+  "N°23 — Cerises": 9.00,
+   "Lettre A": 9.00,
+  "Lettre B": 9.00,
+  "Lettre C": 9.00,
+  "Lettre D": 9.00,
+  "Lettre E": 9.00,
+  "Lettre F": 9.00,
+  "Lettre G": 9.00,
+  "Lettre H": 9.00,
+  "Lettre I": 9.00,
+  "Lettre J": 9.00,
+  "Lettre K": 9.00,
+  "Lettre L": 9.00,
+  "Lettre M": 9.00,
+  "Lettre N": 9.00,
+  "Lettre O": 9.00,
+  "Lettre P": 9.00,
+  "Lettre Q": 9.00,
+  "Lettre R": 9.00,
+  "Lettre S": 9.00,
+  "Lettre T": 9.00,
+  "Lettre U": 9.00,
+  "Lettre V": 9.00,
+  "Lettre W": 9.00,
+  "Lettre X": 9.00,
+  "Lettre Y": 9.00,
+  "Lettre Z": 9.00 },
+     variationPrix: "Choix",
+    description: "<div style='color:#4A2060;'>" +
+"<div style='text-align:center'>🪶 <strong>Marque-Page Plume Rose & Or</strong> ✨</div>\n\n" +
+"Envolez-vous dans vos lectures avec ce marque-page plume, véritable bijou inspiré de la nature. Bien plus qu'un simple accessoire, c'est une invitation à la rêverie et à la légèreté. 💜\n\n" +
+"<strong>✨ Caractéristiques du produit :</strong>\n" +
+"• Matériau : Métal doré émaillé — finitions détaillées pour un rendu raffiné et élégant. ✨\n" +
+"• Dimensions : 8cm de hauteur × 2,5cm de largeur × 0,5mm d'épaisseur.\n" +
+"• Design : Forme plume avec petite breloque plume au bout d'une chaînette dorée. 🪶\n" +
+"• Personnalisation : Lettre initiale ou pendentif de votre choix (voir photos). 🎨\n\n" +
+"<strong>💡 Pourquoi vous allez l'adorer ?</strong>\n" +
+"• Une petite œuvre d'art : Les couleurs douces et les finitions détaillées transforment chaque lecture en évasion poétique. 📖\n" +
+"• Personnalisable : Choisissez la lettre ou le pendentif qui lui ressemble parmi les options disponibles. 💎\n" +
+"• Cadeau raffiné : Parfait pour les amateurs de livres, les passionnés de nature et toute personne qui apprécie les objets délicats. 🎁\n" +
+"• Idéal pour : Anniversaire, fête des mères, Noël ou simplement pour faire plaisir. 💐\n\n" +
+"Une envie particulière ? N'hésitez pas à me contacter pour vos demandes spéciales ! 💌\n\n" +
+"<div style='text-align:center'>❤️ Faites-vous plaisir ou gâtez vos proches ! ❤️</div>\n\n" +
+"<strong>⚠️ Note :</strong> Cet objet est une décoration, non un jouet. À manipuler avec précaution. 🛡️" +
+"</div>",
+
+    images: [
+      "pplumer1.avif",
+      "pplumer2.jpg",
+      "pplumer3.jpg",
+      "pplumer4.jpg",
+      "pplumev5.jpg",
+      "pplumev6.jpg",
+      "pplumev7.jpg",
+      "pplumev8.jpg",
+    ],
+    variations: [
+      { nom: "Choix", type: "select", options: ["Sans pendentif" ,  "N°1 — Écureuil",
+  "N°2 — Nuage souriant",
+  "N°3 — Masque",
+  "N°4 — Coccinelle",
+  "N°5 — Appareil photo",
+  "N°6 — Ballons",
+  "N°7 — Ourson",
+  "N°8 — Tasse de café avec chat",
+  "N°9 — Fer à cheval",
+  "N°10 — Fleur blanche",
+  "N°11 — Lapin",
+  "N°12 — Marguerite",
+  "N°13 — Abeille dorée",
+  "N°14 — Fraise",
+  "N°15 — Enveloppe cœur",
+  "N°16 — Cœur doré",
+  "N°17 — Abeille",
+  "N°18 — Arc-en-ciel",
+  "N°19 — Étoile de mer",
+  "N°20 — Gobelet café",
+  "N°21 — Trèfle à quatre feuilles",
+  "N°22 — Plume",
+  "N°23 — Cerises",
+  "Lettre A",
+  "Lettre B",
+  "Lettre C",
+  "Lettre D",
+  "Lettre E",
+  "Lettre F",
+  "Lettre G",
+  "Lettre H",
+  "Lettre I",
+  "Lettre J",
+  "Lettre K",
+  "Lettre L",
+  "Lettre M",
+  "Lettre N",
+  "Lettre O",
+  "Lettre P",
+  "Lettre Q",
+  "Lettre R",
+  "Lettre S",
+  "Lettre T",
+  "Lettre U",
+  "Lettre V",
+  "Lettre W",
+  "Lettre X",
+  "Lettre Y",
+  "Lettre Z"] }
+    ],
+    champs: [{ label: "Choix", placeholder: "Ex : Sans", type: "textarea" }],
+    delai: "1 à 5 jours ouvrés",
+    materiaux: "Métal doré émaillé",
+    stock: 11
+  },
+
+  {
+    id: 42,
+    nom: "Marque-page plume noir",
+    categorie: "Papeterie & Jeux",
+    prix: "à partir de 6,50",
+    prixOptions: { "Sans pendentif": 6.50,"N°1 — Écureuil": 9.00, "N°2 — Nuage souriant": 9.00,
+  "N°3 — Masque": 9.00,
+  "N°4 — Coccinelle": 9.00,
+  "N°5 — Appareil photo": 9.00,
+  "N°6 — Ballons": 9.00,
+  "N°7 — Ourson": 9.00,
+  "N°8 — Tasse de café avec chat": 9.00,
+  "N°9 — Fer à cheval": 9.00,
+  "N°10 — Fleur blanche": 9.00,
+  "N°11 — Lapin": 9.00,
+  "N°12 — Marguerite": 9.00,
+  "N°13 — Abeille dorée": 9.00,
+  "N°14 — Fraise": 9.00,
+  "N°15 — Enveloppe cœur": 9.00,
+  "N°16 — Cœur doré": 9.00,
+  "N°17 — Abeille": 9.00,
+  "N°18 — Arc-en-ciel": 9.00,
+  "N°19 — Étoile de mer": 9.00,
+  "N°20 — Gobelet café": 9.00,
+  "N°21 — Trèfle à quatre feuilles": 9.00,
+  "N°22 — Plume": 9.00,
+  "N°23 — Cerises": 9.00,
+   "Lettre A": 9.00,
+  "Lettre B": 9.00,
+  "Lettre C": 9.00,
+  "Lettre D": 9.00,
+  "Lettre E": 9.00,
+  "Lettre F": 9.00,
+  "Lettre G": 9.00,
+  "Lettre H": 9.00,
+  "Lettre I": 9.00,
+  "Lettre J": 9.00,
+  "Lettre K": 9.00,
+  "Lettre L": 9.00,
+  "Lettre M": 9.00,
+  "Lettre N": 9.00,
+  "Lettre O": 9.00,
+  "Lettre P": 9.00,
+  "Lettre Q": 9.00,
+  "Lettre R": 9.00,
+  "Lettre S": 9.00,
+  "Lettre T": 9.00,
+  "Lettre U": 9.00,
+  "Lettre V": 9.00,
+  "Lettre W": 9.00,
+  "Lettre X": 9.00,
+  "Lettre Y": 9.00,
+  "Lettre Z": 9.00 },
+     variationPrix: "Choix",
+    description: "<div style='color:#4A2060;'>" +
+"<div style='text-align:center'>🪶 <strong>Marque-Page Plume Noir & Or</strong> ✨</div>\n\n" +
+"Envolez-vous dans vos lectures avec ce marque-page plume, véritable bijou inspiré de la nature. Bien plus qu'un simple accessoire, c'est une invitation à la rêverie et à la légèreté. 💜\n\n" +
+"<strong>✨ Caractéristiques du produit :</strong>\n" +
+"• Matériau : Métal doré émaillé — finitions détaillées pour un rendu raffiné et élégant. ✨\n" +
+"• Dimensions : 8cm de hauteur × 2,5cm de largeur × 0,5mm d'épaisseur.\n" +
+"• Design : Forme plume avec petite breloque plume au bout d'une chaînette dorée. 🪶\n" +
+"• Personnalisation : Lettre initiale ou pendentif de votre choix (voir photos). 🎨\n\n" +
+"<strong>💡 Pourquoi vous allez l'adorer ?</strong>\n" +
+"• Une petite œuvre d'art : Les couleurs douces et les finitions détaillées transforment chaque lecture en évasion poétique. 📖\n" +
+"• Personnalisable : Choisissez la lettre ou le pendentif qui lui ressemble parmi les options disponibles. 💎\n" +
+"• Cadeau raffiné : Parfait pour les amateurs de livres, les passionnés de nature et toute personne qui apprécie les objets délicats. 🎁\n" +
+"• Idéal pour : Anniversaire, fête des mères, Noël ou simplement pour faire plaisir. 💐\n\n" +
+"Une envie particulière ? N'hésitez pas à me contacter pour vos demandes spéciales ! 💌\n\n" +
+"<div style='text-align:center'>❤️ Faites-vous plaisir ou gâtez vos proches ! ❤️</div>\n\n" +
+"<strong>⚠️ Note :</strong> Cet objet est une décoration, non un jouet. À manipuler avec précaution. 🛡️" +
+"</div>",
+
+    images: [
+      "pplumen1.avif",
+        "pplumen2.jpg",
+          "pplumen3.jpg",
+            "pplumen4.jpg",
+      "pplumev5.jpg",
+      "pplumev6.jpg",
+      "pplumev7.jpg",
+      "pplumev8.jpg",
+    ],
+    variations: [
+      { nom: "Choix", type: "select", options: ["Sans pendentif" ,  "N°1 — Écureuil",
+  "N°2 — Nuage souriant",
+  "N°3 — Masque",
+  "N°4 — Coccinelle",
+  "N°5 — Appareil photo",
+  "N°6 — Ballons",
+  "N°7 — Ourson",
+  "N°8 — Tasse de café avec chat",
+  "N°9 — Fer à cheval",
+  "N°10 — Fleur blanche",
+  "N°11 — Lapin",
+  "N°12 — Marguerite",
+  "N°13 — Abeille dorée",
+  "N°14 — Fraise",
+  "N°15 — Enveloppe cœur",
+  "N°16 — Cœur doré",
+  "N°17 — Abeille",
+  "N°18 — Arc-en-ciel",
+  "N°19 — Étoile de mer",
+  "N°20 — Gobelet café",
+  "N°21 — Trèfle à quatre feuilles",
+  "N°22 — Plume",
+  "N°23 — Cerises",
+  "Lettre A",
+  "Lettre B",
+  "Lettre C",
+  "Lettre D",
+  "Lettre E",
+  "Lettre F",
+  "Lettre G",
+  "Lettre H",
+  "Lettre I",
+  "Lettre J",
+  "Lettre K",
+  "Lettre L",
+  "Lettre M",
+  "Lettre N",
+  "Lettre O",
+  "Lettre P",
+  "Lettre Q",
+  "Lettre R",
+  "Lettre S",
+  "Lettre T",
+  "Lettre U",
+  "Lettre V",
+  "Lettre W",
+  "Lettre X",
+  "Lettre Y",
+  "Lettre Z"] }
+    ],
+    champs: [{ label: "Choix", placeholder: "Ex : Sans", type: "textarea" }],
+    delai: "1 à 5 jours ouvrés",
+    materiaux: "Métal doré émaillé",
+    stock: 13
+  },
+
+  {
+    id: 43,
+    nom: "Marque-page plume vert",
+    categorie: "Papeterie & Jeux",
+    prix: "à partir de 6,50",
+    prixOptions: { "Sans pendentif": 6.50,"N°1 — Écureuil": 9.00, "N°2 — Nuage souriant": 9.00,
+  "N°3 — Masque": 9.00,
+  "N°4 — Coccinelle": 9.00,
+  "N°5 — Appareil photo": 9.00,
+  "N°6 — Ballons": 9.00,
+  "N°7 — Ourson": 9.00,
+  "N°8 — Tasse de café avec chat": 9.00,
+  "N°9 — Fer à cheval": 9.00,
+  "N°10 — Fleur blanche": 9.00,
+  "N°11 — Lapin": 9.00,
+  "N°12 — Marguerite": 9.00,
+  "N°13 — Abeille dorée": 9.00,
+  "N°14 — Fraise": 9.00,
+  "N°15 — Enveloppe cœur": 9.00,
+  "N°16 — Cœur doré": 9.00,
+  "N°17 — Abeille": 9.00,
+  "N°18 — Arc-en-ciel": 9.00,
+  "N°19 — Étoile de mer": 9.00,
+  "N°20 — Gobelet café": 9.00,
+  "N°21 — Trèfle à quatre feuilles": 9.00,
+  "N°22 — Plume": 9.00,
+  "N°23 — Cerises": 9.00,
+   "Lettre A": 9.00,
+  "Lettre B": 9.00,
+  "Lettre C": 9.00,
+  "Lettre D": 9.00,
+  "Lettre E": 9.00,
+  "Lettre F": 9.00,
+  "Lettre G": 9.00,
+  "Lettre H": 9.00,
+  "Lettre I": 9.00,
+  "Lettre J": 9.00,
+  "Lettre K": 9.00,
+  "Lettre L": 9.00,
+  "Lettre M": 9.00,
+  "Lettre N": 9.00,
+  "Lettre O": 9.00,
+  "Lettre P": 9.00,
+  "Lettre Q": 9.00,
+  "Lettre R": 9.00,
+  "Lettre S": 9.00,
+  "Lettre T": 9.00,
+  "Lettre U": 9.00,
+  "Lettre V": 9.00,
+  "Lettre W": 9.00,
+  "Lettre X": 9.00,
+  "Lettre Y": 9.00,
+  "Lettre Z": 9.00 },
+     variationPrix: "Choix",
+    description: "<div style='color:#4A2060;'>" +
+"<div style='text-align:center'>🪶 <strong>Marque-Page Plume Vert & Or</strong> ✨</div>\n\n" +
+"Envolez-vous dans vos lectures avec ce marque-page plume, véritable bijou inspiré de la nature. Bien plus qu'un simple accessoire, c'est une invitation à la rêverie et à la légèreté. 💜\n\n" +
+"<strong>✨ Caractéristiques du produit :</strong>\n" +
+"• Matériau : Métal doré émaillé — finitions détaillées pour un rendu raffiné et élégant. ✨\n" +
+"• Dimensions : 8cm de hauteur × 2,5cm de largeur × 0,5mm d'épaisseur.\n" +
+"• Design : Forme plume avec petite breloque plume au bout d'une chaînette dorée. 🪶\n" +
+"• Personnalisation : Lettre initiale ou pendentif de votre choix (voir photos). 🎨\n\n" +
+"<strong>💡 Pourquoi vous allez l'adorer ?</strong>\n" +
+"• Une petite œuvre d'art : Les couleurs douces et les finitions détaillées transforment chaque lecture en évasion poétique. 📖\n" +
+"• Personnalisable : Choisissez la lettre ou le pendentif qui lui ressemble parmi les options disponibles. 💎\n" +
+"• Cadeau raffiné : Parfait pour les amateurs de livres, les passionnés de nature et toute personne qui apprécie les objets délicats. 🎁\n" +
+"• Idéal pour : Anniversaire, fête des mères, Noël ou simplement pour faire plaisir. 💐\n\n" +
+"Une envie particulière ? N'hésitez pas à me contacter pour vos demandes spéciales ! 💌\n\n" +
+"<div style='text-align:center'>❤️ Faites-vous plaisir ou gâtez vos proches ! ❤️</div>\n\n" +
+"<strong>⚠️ Note :</strong> Cet objet est une décoration, non un jouet. À manipuler avec précaution. 🛡️" +
+"</div>",
+
+    images: [
+      "pplumev1.webp",
+        "pplumev2.webp",
+          "pplumev3.webp",
+            "pplumev4.webp",
+      "pplumev5.jpg",
+      "pplumev6.jpg",
+      "pplumev7.jpg",
+      "pplumev8.jpg",
+    ],
+    variations: [
+      { nom: "Choix", type: "select", options: ["Sans pendentif" ,  "N°1 — Écureuil",
+  "N°2 — Nuage souriant",
+  "N°3 — Masque",
+  "N°4 — Coccinelle",
+  "N°5 — Appareil photo",
+  "N°6 — Ballons",
+  "N°7 — Ourson",
+  "N°8 — Tasse de café avec chat",
+  "N°9 — Fer à cheval",
+  "N°10 — Fleur blanche",
+  "N°11 — Lapin",
+  "N°12 — Marguerite",
+  "N°13 — Abeille dorée",
+  "N°14 — Fraise",
+  "N°15 — Enveloppe cœur",
+  "N°16 — Cœur doré",
+  "N°17 — Abeille",
+  "N°18 — Arc-en-ciel",
+  "N°19 — Étoile de mer",
+  "N°20 — Gobelet café",
+  "N°21 — Trèfle à quatre feuilles",
+  "N°22 — Plume",
+  "N°23 — Cerises",
+  "Lettre A",
+  "Lettre B",
+  "Lettre C",
+  "Lettre D",
+  "Lettre E",
+  "Lettre F",
+  "Lettre G",
+  "Lettre H",
+  "Lettre I",
+  "Lettre J",
+  "Lettre K",
+  "Lettre L",
+  "Lettre M",
+  "Lettre N",
+  "Lettre O",
+  "Lettre P",
+  "Lettre Q",
+  "Lettre R",
+  "Lettre S",
+  "Lettre T",
+  "Lettre U",
+  "Lettre V",
+  "Lettre W",
+  "Lettre X",
+  "Lettre Y",
+  "Lettre Z"] }
+    ],
+    champs: [{ label: "Choix", placeholder: "Ex : Sans", type: "textarea" }],
+    delai: "1 à 5 jours ouvrés",
+    materiaux: "Métal doré émaillé",
+    stock: 13
+  },
+  
+  
 ];

@@ -2340,19 +2340,18 @@ h2.pacifico-regular {
   /* Contact */
   .champgroupe { flex-direction: column; }
   .contactcard { padding: 20px 16px; }
-
-    /* Mini panier drawer */
-  .minipanier-drawer { width: 100% !important; max-width: 100vw; border-radius: 0; }
-  .minipanier-header { border-radius: 0; }
-  .minipanier-footer { border-radius: 0; padding-bottom: 24px; }
-  /* Footer */
+ 
+    /* Mini panier drawer — voir @media 480px */
   .basdepage { text-align: center; }
   .reseaux { justify-content: center; flex-wrap: wrap; }
   .basdepage nav ul { flex-direction: column; align-items: center; gap: 6px; }
-}
-
+ 
 /*MOBILE ≤ 480px */
 @media (max-width: 480px) {
+  /* Mini panier drawer */
+  .minipanier-drawer { width: 100% !important; max-width: 100vw; border-radius: 0; }
+  .minipanier-header { border-radius: 0; }
+  .minipanier-footer { border-radius: 0; padding-bottom: 24px; }
   .categories-grille { grid-template-columns: repeat(2, 1fr); }
   .pourquoi-grille { grid-template-columns: 1fr; }
   .avis-carrousel .avis-carte { min-width: 100%; max-width: 100%; }
@@ -2366,7 +2365,7 @@ h2.pacifico-regular {
   .fiche-thumbnails { gap: 6px; }
   .fiche-thumbnails img { width: 56px; height: 56px; }
 }
-
+ 
 /* TABLETTE ≤ 1024px */
 @media (max-width: 1024px) and (min-width: 769px) {
   .menuboutons { gap: 10px; padding: 0 10px; }
