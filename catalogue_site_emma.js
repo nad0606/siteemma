@@ -197,6 +197,13 @@ function rendreCatalogue() {
   });
  
   cartesVisibles = toutesLesCartes.slice();
+   if (window.location.pathname.includes('meilleuresventes')) {
+    cartesVisibles = toutesLesCartes.filter(function(carte) {
+      var p = produits.find(function(pr) { return pr.id === parseInt(carte.dataset.id); });
+      return p && p.bestseller;
+    });
+  }
+  
   pageActuelle = 1;
   afficherPage();
 }

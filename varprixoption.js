@@ -66,23 +66,28 @@ function majPrix(valeur) {
 /* ── Mise à jour prix multi-critères ── */
 function majPrixMulti() {
   if (!produit) return;
-  var prixUnitaireMulti = 0;
+  var totalPrix = 0;
   var nombreMulti = 1;
+  var aPrixParOption = false;
+ 
   produit.variations.forEach(function(v) {
     if (!v.affectePrix) return;
     var sel = document.querySelector('.fiche-select[data-nom="' + v.nom + '"]');
     if (!sel) return;
     if (v.prixParOption) {
-      prixUnitaireMulti = v.prixParOption[sel.value] || 0;
+      totalPrix += v.prixParOption[sel.value] || 0;
+      aPrixParOption = true;
     } else {
       nombreMulti = parseInt(sel.value) || 1;
     }
   });
-  if (prixUnitaireMulti > 0) {
-    var total = (prixUnitaireMulti * nombreMulti).toFixed(2).replace('.', ',');
+ 
+  if (aPrixParOption) {
+    var total = (totalPrix * nombreMulti).toFixed(2).replace('.', ',');
     document.getElementById('fichePrixAffiche').textContent = total + ' €';
   }
 }
+
  
 /* ── Ajouter au panier ── */
 function ajouterAuPanier() {
@@ -116,19 +121,19 @@ function ajouterAuPanier() {
   var quantite = 1;
   var prixFinal = parseFloat(produit.prix.replace(',', '.'));
  
-  if (hasMultiPrix) {
-    var prixUnitaireMulti = 0;
+   if (hasMultiPrix) {
+    var totalPrixMulti = 0;
     produit.variations.forEach(function(v) {
       if (!v.affectePrix) return;
       var sel = document.querySelector('.fiche-select[data-nom="' + v.nom + '"]');
       if (!sel) return;
       if (v.prixParOption) {
-        prixUnitaireMulti = v.prixParOption[sel.value] || 0;
+        totalPrixMulti += v.prixParOption[sel.value] || 0;
       } else {
         quantite = parseInt(sel.value) || 1;
       }
     });
-    prixFinal = prixUnitaireMulti;
+    prixFinal = totalPrixMulti;
   } else if (produit.prixUnitaire && produit.variationPrix) {
     var selectQte = document.querySelector('.fiche-select[data-nom="' + produit.variationPrix + '"]');
     if (selectQte) {
@@ -197,7 +202,7 @@ if (produit) {
     'Blanc':               '#FFFFFF',
     'Noir':                '#1A1A1A',
     'Or':                  '#C8952A',
-    'Sans':                '#FFFFFF',
+    'Sans':                '#fff',
     'Ruban 1 — Rouge':     '#CC1111',
     'Ruban 2 — Rose fuchsia': '#F0417A',
     'Ruban 3 — Orange':    '#F9663D',
@@ -246,12 +251,17 @@ if (produit) {
       var ronds = v.options.map(function(o, i) {
         var css = couleursCSS[o] || '#ccc';
         var estBlanc = o === 'Blanc';
+         var estSans  = o === 'Sans';
+        var styleExtra = estBlanc ? 'border:2px solid #ddd;' : '';
+        var contenu = estSans
+          ? '<svg viewBox="0 0 36 36" style="position:absolute;top:0;left:0;width:100%;height:100%"><line x1="4" y1="32" x2="32" y2="4" stroke="#cc2222" stroke-width="3" stroke-linecap="round"/></svg><span class="couleur-check">✓</span>'
+           : '<span class="couleur-check">✓</span>';
         return '<div class="couleur-option' + (i === 0 ? ' actif' : '') + '" ' +
           'data-valeur="' + o + '" ' +
           'title="' + o + '" ' +
           'onclick="choisirCouleur(this)" ' +
           'style="background:' + css + ';' + (estBlanc ? 'border:2px solid #ddd;' : '') + '">' +
-          '<span class="couleur-check">✓</span>' +
+              contenu +
           '</div>';
       }).join('');
       return '<div class="fiche-section-titre">' + v.nom + ' : <span class="couleur-label-valeur" data-nom="' + v.nom + '">' + v.options[0] + '</span></div>' +

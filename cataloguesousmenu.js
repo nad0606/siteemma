@@ -1,4 +1,3 @@
-
 var fermerTimer = null;
  
 function ouvrirSousMenu() {
@@ -10,14 +9,21 @@ function ouvrirSousMenu() {
   menu.style.left = rect.left + 'px';
   menu.classList.add('ouvert');
 }
+ 
 function fermerSousMenuDelai() {
   fermerTimer = setTimeout(function() {
     document.getElementById('insertSousMenu').classList.remove('ouvert');
   }, 200);
 }
+ 
 function annulerFermeture() {
   clearTimeout(fermerTimer);
 }
+ 
+/* ── Fermer le sous-menu au scroll (1 seul listener) ── */
+window.addEventListener('scroll', function() {
+  document.getElementById('insertSousMenu').classList.remove('ouvert');
+}, { passive: true });
  
 var motsThemes = {
   hiver:    ['hiver', 'noël', 'noel', 'banquise', 'bonhomme', 'renne', 'sapin', 'neige'],
@@ -43,18 +49,16 @@ function filtrerInsert(theme, btn) {
     return;
   }
  
+  /* ── Filtrer via cartesVisibles + pagination ── */
   var mots = motsThemes[theme] || [];
-  toutesLesCartes.forEach(function(carte) {
+  cartesVisibles = toutesLesCartes.filter(function(carte) {
     var cat = (carte.dataset.categorie || '').toLowerCase();
-    var nom = (carte.dataset.nom || carte.querySelector('.produit-nom') ? carte.querySelector('.produit-nom').textContent : '').toLowerCase();
- 
-    /* D'abord, cacher tout ce qui n'est pas Insert */
-    if (!cat.includes('insert')) {
-      carte.style.display = 'none';
-      return;
-    }
-    /* Puis filtrer par thème dans le nom */
-    var match = mots.some(function(m) { return nom.includes(m); });
-    carte.style.display = match ? '' : 'none';
+    if (!cat.includes('insert')) return false;
+    var nomEl = carte.querySelector('.produit-nom');
+    var nom = nomEl ? nomEl.textContent.toLowerCase() : '';
+    return mots.some(function(m) { return nom.includes(m); });
   });
+ 
+  pageActuelle = 1;
+  afficherPage();
 }

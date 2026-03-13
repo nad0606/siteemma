@@ -2912,5 +2912,150 @@ var produits = [
     stock: 13
   },
   
+  {
+   
+    id: 44,
+    nom: "Arbre de vie prénom personnalisée",
+    categorie: "Décoration Famille",
+    prix: "à partir de 25,00",
+    description:  "<div style='color:#4A2060;'>" +
+"<div style='text-align:center'>🌳 <strong>Arbre de Vie Personnalisé — Arbre Généalogique</strong> 💛</div>\n\n" +
+"Célébrez les liens qui vous unissent avec cet arbre de vie unique, gravé au laser avec les prénoms de votre famille. Un objet décoratif chargé d'émotion et de sens, à offrir ou à s'offrir. 🌿\n\n" +
+"<strong>✨ Caractéristiques du produit :</strong>\n" +
+"• Matériau : Bois, épaisseur 3mm — léger, élégant et durable. 🪵\n" +
+"• Dimensions : 20cm ou 30cm selon votre choix.\n" +
+"• Couleur : Disponible sans couleur ou avec couleur pour les lettres \"La Famille\" (voir photos). 🎨\n" +
+"• Support : Fourni avec son pied en bois pour le poser sur une étagère ou une commode.\n" +
+"• Cœurs : Fixation facile avec le scotch double face fourni — non collés à la livraison pour que vous choisissiez leur emplacement sur l'arbre. 💝\n\n" +
+"<strong>💡 Pourquoi vous allez l'adorer ?</strong>\n" +
+"• 100% Personnalisé : Les prénoms de votre famille gravés avec précision pour un rendu soigné et intemporel. 💎\n" +
+"• Modulable : Placez les cœurs où vous le souhaitez pour un arbre vraiment unique. 🌳\n" +
+"• Cadeau idéal : Anniversaire, naissance, baptême, fête des mères, fête des pères, Noël... il convient à toutes les occasions ! 🎁\n" +
+"• Fait Main en France : Découpe et gravure réalisées à la main dans mon atelier des Alpes-Maritimes (06). 💜\n\n" +
+"Une envie particulière ? Un prénom supplémentaire ? N'hésitez pas à me contacter pour vos demandes spéciales ! 💌\n\n" +
+"<div style='text-align:center'>❤️ Faites-vous plaisir ou gâtez vos proches ! ❤️</div>\n\n" +
+"<strong>⚠️ Note de sécurité & Authenticité :</strong>\n" +
+"• Cet objet est une décoration, non un jouet. À manipuler avec précaution. 🛡️\n" +
+"• Le charme du naturel : Chaque pièce est unique ! Le grain du bois et les nuances peuvent varier légèrement par rapport aux photos, ce qui fait tout le cachet de votre produit. 🪵✨" +
+"</div>",
+  images: [
+    "parbrevie1.webp",
+    "parbrevie2.webp",
+    "parbrevie3.webp",
+  ],
+    variations: [
+      { nom: "Couleur La Famille", type: "select", options: ["Sans","Rose clair","Rose","Bleu clair","Bleu","Bleu foncé","Rouge","Orange","Jaune","Vert","Vert foncé","Blanc","Noir","Or"] },
+      { nom: "Taille", type: "select", options: ["20cm","30cm"], prixParOption: {"20cm":25,"30cm":30}, affectePrix: true},
+      { nom: "Nombre de coeurs", type: "select", options: ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"], prixParOption: {"1":1,"2":2,"3":3,"4":4,"5":5,"6":6,"7":7,"8":8,"9":9,"10":10,"11":11,"12":12,"13":13,"14":14,"15":15,"16":16,"17":17,"18":18,"19":19,"20":20},  affectePrix: true}
+    ],
+ 
+    champs: [
+      { label: "Choix prénom", placeholder: "Ex : Merci de m'indiquer le ou les prénoms choisis.", type: "textarea" }
+    ],
+    delai: "1 à 5 jours ouvrés",
+    materiaux: "Bois de Bouleau",
+    stock: 10,
+    
+  },
+
+   {
+   
+    id: 45,
+    nom: "Cartes étapes Bébé personnalisées",
+    categorie: "Naissance et bébé",
+    prix: "29,00",
+    description: "<div style='color:#4A2060;'>" +
+"<div style='text-align:center'>📸 <strong>Cartes Étapes Bébé — 1 mois à 1 an</strong> 🌸</div>\n\n" +
+"Pour sa première année ! Marquez chaque étape et immortalisez les plus beaux moments de votre bébé avec ces cartes personnalisées, parfaites pour vos séances photo de naissance. 😃\n\n" +
+"<strong>✨ Caractéristiques du produit :</strong>\n" +
+"• Dimensions : 10cm de diamètre, épaisseur 3mm — léger et élégant. 🪵\n" +
+"• Modèles : 13 designs différents au choix (voir photos).\n" +
+"• Contenu : Cartes de 1 mois à 1 an pour accompagner toute la première année de bébé. 🗓️\n\n" +
+"<strong>💡 Pourquoi vous allez l'adorer ?</strong>\n" +
+"• Souvenirs uniques : Chaque mois devient un souvenir précieux à garder et partager. 💝\n" +
+"• Fait Main en France : Découpe et gravure réalisées à la main dans mon atelier des Alpes-Maritimes (06). 💜\n" +
+"• Cadeau idéal : Naissance, baby shower, baptême... un cadeau original et touchant ! 🎁\n\n" +
+"<div style='text-align:center'>❤️ Faites-vous plaisir ou gâtez vos proches ! ❤️</div>\n\n" +
+"<strong>⚠️ Note de sécurité & Authenticité :</strong>\n" +
+"• Cet objet est une décoration, non un jouet. À manipuler avec précaution. 🛡️\n" +
+"• Chaque pièce est unique ! Le grain du bois et les réglages d'affichage de votre écran peuvent entraîner de légères différences de coloris par rapport aux photos. 🪵✨" +
+"</div>",
+  images: [
+    "petape1.webp",
+    "petape2.webp",
+    "petape3.webp",
+    "petape4.webp",
+    "petape5.webp",
+    "petape6.webp",
+    "petape7.webp",
+    "petape8.webp",
+    "petape9.webp",
+  ],
+    variations: [
+       { nom: "Modèle", type: "select", options: ["Une de chaque modèle","Coeur 1","Coeur 2","Coeur 3","Couronne 1","Couronne 2","Girafe","Lion","Ourson","Elephant","Ailes 1","Aile 2","Maman - Enfant 1","Maman - Enfant 2"] }
+    ],
+    champs: [
+      { label: "Choix prénom", placeholder: "Ex : Merci de m'indiquer le prénom choisi.", type: "textarea" }
+    ],
+    delai: "1 à 5 jours ouvrés",
+    materiaux: "Bois de Bouleau",
+    stock: 10,
+    
+  },
+
+ {
+   
+    id: 46,
+    nom: "Ourson calendrier naissance personnalisées",
+    categorie: "Naissance et bébé",
+    prix: "à partir de 24,00",
+    variationPrix: "Taille",
+    prixOptions: {"20cm":24,"30cm":29},
+    description: "<div style='color:#4A2060;'>" +
+"<div style='text-align:center'>🐻 <strong>Ourson Personnalisé en Bois — Plaque de Naissance</strong> 💛</div>\n\n" +
+"Un ourson tout doux gravé avec les informations précieuses de votre bébé : prénom, date de naissance, poids, taille, heure et signe astrologique. Un souvenir intemporel à chérir toute une vie. 🌟\n\n" +
+"<strong>✨ Caractéristiques du produit :</strong>\n" +
+"• Matériau : Bois de tilleul vernis, épaisseur 3mm — doux, léger et durable. 🪵\n" +
+"• Dimensions : 20cm ou 30cm de hauteur selon vos envies.\n" +
+"• Gravure : Prénom, date de naissance, poids, taille, heure de naissance et signe astrologique. ⭐\n" +
+"• Fixation : Encoche ruban incluse ou scotch double face (marque 3M recommandée, non inclus). 🎀\n\n" +
+"<strong>💡 Pourquoi vous allez l'adorer ?</strong>\n" +
+"• 100% Personnalisé : Toutes les informations de naissance gravées avec précision pour un résultat soigné et intemporel. 💎\n" +
+"• Cadeau idéal : Naissance, baptême, anniversaire, Noël, fête des mères, fête des pères... il convient à toutes les occasions ! 🎁\n" +
+"• Fait Main en France : Découpe et gravure réalisées à la main dans mon atelier des Alpes-Maritimes (06). 💜\n\n" +
+"Une envie particulière ? N'hésitez pas à me contacter pour vos demandes spéciales ! 💌\n\n" +
+"<div style='text-align:center'>❤️ Faites-vous plaisir ou gâtez vos proches ! ❤️</div>\n\n" +
+"<strong>⚠️ Note de sécurité & Authenticité :</strong>\n" +
+"• Cet objet est une décoration, non un jouet. À manipuler avec précaution. 🛡️\n" +
+"• Chaque pièce est unique ! Le grain du bois et les réglages d'affichage de votre écran peuvent entraîner de légères différences de coloris par rapport aux photos. 🪵✨" +
+"</div>",
+  images: [
+    "pourson1.jpg",
+     "pourson2.jpg",
+      "pourson3.jpg",
+       "pourson4.jpg",
+        "pourson5.jpg",
+         "pourson6.jpg",
+          "pourson7.jpg",
+           "pourson8.jpg",
+            "pourson9.jpg",
+             "pourson10.avif",
+             "pruban.jpg"
+  ],
+    variations: [
+        { nom: "Ruban", type: "select", options: ["Ruban 1 — Rouge","Ruban 2 — Rose fuchsia", "Ruban 3 — Orange","Ruban 4 — Rose poudré", "Ruban 5 — Jaune", "Ruban 6 — Vert anis", "Ruban 7 — Vert","Ruban 8 — Turquoise", "Ruban 9 — Bleu roi", "Ruban 10 — Violet"] 
+  },
+      { nom: "Taille", type: "select", options: ["20cm","30cm"] }
+    
+    ],
+    champs: [
+      { label: "Choix prénom", placeholder: "Ex : Merci de m'indiquer Le prénom, La date de naissance, Le poids de naissance en kg, La taille de naissance en cm, L'heure de naissance et Le signe astrologique merci.", type: "textarea" }
+    ],
+    delai: "1 à 5 jours ouvrés",
+    materiaux: "Bois de Bouleau",
+    stock: 10,
+    
+  },
+
   
 ];
