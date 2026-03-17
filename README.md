@@ -30,5 +30,11 @@ Ce projet est un "Work in Progress" qui me permet de mettre en pratique :
 - La POO
 - l'utilisation de JavaScript, HTML et CSS
 
+# Images site
+
+![Page d'accueil](siteemmaimage.jpg)
+![Fiche produit](siteemmaficheproduit.jpg)
+![Page contact](siteemmacontact.jpg)
+![Page panier](siteemmapanier.jpg)
 
 
